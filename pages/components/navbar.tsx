@@ -1,12 +1,9 @@
 import { useDarkMode } from 'usehooks-ts'
 import React, { useEffect, useState } from 'react'
 
-export default function Navbar ({handleClick}) {
+export default function Navbar ({tabActive}) {
     const { isDarkMode, toggle, enable, disable } = useDarkMode()
-
-    // useEffect(() => {
-    //     disable()
-    // })
+    const [activeTab, setActiveTab] = useState('')
 
     return (
         <nav className="w-full h-20 z-50 top-0 fixed flex justify-center bg-white dark:bg-[#212121] text-sm 2xl:text-base transition-transform shadow-lg">
@@ -56,7 +53,8 @@ export default function Navbar ({handleClick}) {
 
                     <span className="dark:text-[#303030] font-medium">Fork me on GitHub</span>
                 </button>
-                <button id="toggle" onClick={() => {handleClick(isDarkMode); toggle()}} className="custom-toggle w-auto h-auto cursor-pointer">
+                {/* onClick={() => {handleClick(isDarkMode); toggle()}} */}
+                <button id="toggle" className="custom-toggle w-auto h-auto cursor-pointer">
                     <div className={"toggle-light w-auto h-auto rounded-md flex items-center justify-center cursor-pointer " + (isDarkMode ? 'hidden' : '')}>
                         <svg className="w-6 h-6 hover:rotate-[-15deg] transition-transform fill-[#303030] cursor-pointer" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.2756 24C16.977 24 20.3575 22.316 22.5971 19.5566C22.9284 19.1484 22.5671 18.5521 22.0551 18.6496C16.2331 19.7584 10.8866 15.2945 10.8866 9.41738C10.8866 6.03197 12.6988 2.91886 15.6443 1.24266C16.0983 0.984281 15.9841 0.295922 15.4682 0.200625C14.745 0.0672624 14.0111 0.000109516 13.2756 0C6.65178 0 1.27563 5.3677 1.27563 12C1.27563 18.6239 6.64334 24 13.2756 24Z"/>
@@ -98,11 +96,11 @@ export default function Navbar ({handleClick}) {
                         Why Shadowmere?
                     </button>
 
-                    <button className=" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%]">
+                    <button onClick={tabActive('about')} className=" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%]">
                         About
                     </button> 
                     
-                    <button className=" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%]">
+                    <button onClick={tabActive('servers')} className=" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%]">
                         Home
                     </button>
                 </div>
