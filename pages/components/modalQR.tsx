@@ -1,6 +1,6 @@
 
 
-export default function ModalQR (props) {
+export default function ModalQR (props: any) {
 
     return (
         // x-on:click.outside="$store.comps.qr_code = false, $store.comps.notTouchBgQR = false" x-show="$store.comps.qr_code"

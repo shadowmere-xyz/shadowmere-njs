@@ -10,7 +10,7 @@ export default function ServersList() {
     const [portPagination, setPortPagination] = useState('');
     const [countryPagination, setCountryPagination] = useState('');
 
-    const fetcher = (...args) => fetch(...args).then((res) => res.json())
+    const fetcher = (...args: [any,any]) => fetch(...args).then((res) => res.json())
 
     const { data, error } = useSWR('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true&location_country_code=' + countryPagination + '&port=' + portPagination + '&page=' + pageCounter.toString(), fetcher)
 
@@ -27,7 +27,7 @@ export default function ServersList() {
             <p className="dark:text-white"><span className="font-bold dark:text-white">Disclaimer: </span>This website is only a list of tunnels collected all around internet. We do <span className="font-bold ">NOT</span> provide or maintain any of these tunnels. <span className="bg-red-600 text-white">Use them at your own risk.</span></p>
 
             {
-                data.results.map((d, i) => (
+                data.results.map((d: any, i: number) => (
                     <Server key={d.id} proxy={d} />
                 ))
             }

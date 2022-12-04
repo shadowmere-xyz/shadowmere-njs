@@ -6,9 +6,9 @@ import Support from "../support";
 import Sub from "../subscription";
 
 
-export default function Content ({activeTab}) {
+export default function Content ({activeTab}: any) {
 
-    const setActiveTab = (tab) => {
+    const setActiveTab = (tab: string) => {
         switch(tab){
           case 'servers': return <Servers/>;
           case 'about': return <About/>;

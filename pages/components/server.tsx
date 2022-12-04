@@ -1,7 +1,7 @@
 import { localArray, getFlagEmoji, getPercentage } from './functions';
 import React, {useEffect, useState} from 'react';
 
-export default function Server (dataServer, {handleQR}) {
+export default function Server (dataServer: object, {handleQR}: any) {
     const [timeCopy, setTimeCopy] = useState(false)
 
     return (
