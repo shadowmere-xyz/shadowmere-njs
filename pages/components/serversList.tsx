@@ -28,7 +28,7 @@ export default function ServersList() {
 
             {
                 data.results.map((d, i) => (
-                    <Server proxy={d} />
+                    <Server key={d.id} proxy={d} />
                 ))
             }
 
