@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 import React, { useState, useEffect } from 'react';
-import { localArray, getFlagEmoji, getPercentage } from './functions';
+import { getFlagEmoji, getPercentage } from './functions';
 import Home from '../index';
 import Server from './server';
 
