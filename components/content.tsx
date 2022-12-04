@@ -1,9 +1,9 @@
 import Sidebar from "./sidebar"
-import Servers from "../servers"
-import About from "../about";
-import Why from "../why";
-import Support from "../support";
-import Sub from "../subscription";
+import Servers from "../pages/servers"
+import About from "../pages/about";
+import Why from "../pages/why";
+import Support from "../pages/support";
+import Sub from "../pages/subscription";
 
 
 export default function Content ({activeTab}: any) {

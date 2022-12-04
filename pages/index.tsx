@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Content from './components/content'
-import Navbar from './components/navbar'
+import Content from '../components/content'
+import Navbar from '../components/navbar'
 import About from './about'
-import ModalQR from './components/modalQR'
+import ModalQR from '../components/modalQR'
 import React, { useState, useEffect } from 'react'
 import { useDarkMode } from 'usehooks-ts'
 

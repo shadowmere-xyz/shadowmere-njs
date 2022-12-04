@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import React, { useState, useEffect } from 'react';
-import { getFlagEmoji, getPercentage } from '../../libs/functions';
-import Home from '../index';
+import { getFlagEmoji, getPercentage } from './functions';
+import Home from '../pages/index';
 import Server from './server';
 
 export default function ServersList() {

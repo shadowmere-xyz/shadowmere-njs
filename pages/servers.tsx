@@ -1,5 +1,5 @@
-import Pagination from "./components/pagination"
-import ServersList from "./components/serversList"
+import Pagination from "../components/pagination"
+import ServersList from "../components/serversList"
 
 
 export default function Servers() {

@@ -1,4 +1,4 @@
-import { getFlagEmoji, getPercentage } from '../../libs/functions';
+import { getFlagEmoji, getPercentage } from './functions';
 import React, {useEffect, useState} from 'react';
 
 export default function Server (dataServer:{proxy: any}) {
