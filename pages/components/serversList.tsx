@@ -27,7 +27,7 @@ export default function ServersList() {
             <p className="dark:text-white"><span className="font-bold dark:text-white">Disclaimer: </span>This website is only a list of tunnels collected all around internet. We do <span className="font-bold ">NOT</span> provide or maintain any of these tunnels. <span className="bg-red-600 text-white">Use them at your own risk.</span></p>
 
             {
-                data.results.map((d) => (
+                data.results.map((d, i) => (
                     <Server proxy={d} />
                 ))
             }
