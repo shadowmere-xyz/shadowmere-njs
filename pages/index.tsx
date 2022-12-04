@@ -4,8 +4,10 @@ import styles from '../styles/Home.module.css'
 import Content from './components/content'
 import Navbar from './components/navbar'
 import About from './about'
+import ModalQR from './components/modalQR'
 import React, { useState, useEffect } from 'react'
 import { useDarkMode } from 'usehooks-ts'
+
 
 // import { watch } from 'fs'
 
@@ -13,7 +15,7 @@ import { useDarkMode } from 'usehooks-ts'
 
 export default function Home() {
   const { isDarkMode, toggle, enable, disable } = useDarkMode()
-  // const [darkMode, setDarkMode] = useState('');
+  const [qrCode, setQRCode] = useState(false)
   const [tab, setTab] = useState('servers')
 
   useEffect(() => {
@@ -125,7 +127,7 @@ export default function Home() {
       </nav>
 
       <Content activeTab={tab} />
-
+      <ModalQR qrActive={qrCode} />
 
     </React.Fragment>
   )
