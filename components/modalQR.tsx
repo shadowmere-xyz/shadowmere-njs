@@ -1,4 +1,4 @@
-
+import Image from 'next/image'
 
 export default function ModalQR (props: any) {
 
@@ -8,7 +8,7 @@ export default function ModalQR (props: any) {
             <div className="w-auto h-auto flex flex-col gap-4 justify-center ">
                 <div className=" w-[328px] h-auto sm:w-[360px] bg-white rounded-lg flex flex-col gap-4">
                     {/* <!-- x-on:click.outside="$store.comps.qr_code = false, $store.comps.notTouchBgQR = false" --> */}
-                    <img className=" rounded-lg" alt="QR Code for server address" x-ref="image"/>
+                    <Image src={''} className=" rounded-lg" alt="QR Code for server address" x-ref="image"/>
                 </div>
                 <div className=" w-[328px] h-auto sm:w-[360px] flex flex-col gap-4 items-center" >
                     <h1 x-text="serverAddress" className=" w-[328px] sm:w-auto text-center text-white break-words"></h1>
