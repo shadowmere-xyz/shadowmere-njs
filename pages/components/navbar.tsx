@@ -1,7 +1,7 @@
 import { useDarkMode } from 'usehooks-ts'
 import React, { useEffect, useState } from 'react'
 
-export default function Navbar ({tabActive}) {
+export default function Navbar ({tabActive}: any) {
     const { isDarkMode, toggle, enable, disable } = useDarkMode()
     const [activeTab, setActiveTab] = useState('')
 
