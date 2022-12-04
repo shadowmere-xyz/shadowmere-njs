@@ -17,16 +17,21 @@ export default function Home() {
   const { isDarkMode, toggle, enable, disable } = useDarkMode()
   const [qrCode, setQRCode] = useState(false)
   const [tab, setTab] = useState('servers')
+  const [hasMounted, setHasMounted] = useState(false)
 
   useEffect(() => {
     // document.querySelector("html")?.classList.add(darkMode)
     document.querySelector('body')?.classList.add('overflow-y-scroll', 'bg-[#F8F8F8]', 'dark:bg-[#141414]')
+    setHasMounted(true)
   }, [])
+
+  if (!hasMounted) {
+    return null
+  }
 
   return (
     <React.Fragment>
       {/* <Navbar tabActive={handleTab} /> */}
-
       <nav className="w-full h-20 z-50 top-0 fixed flex justify-center bg-white dark:bg-[#212121] text-sm 2xl:text-base transition-transform shadow-lg">
         <div className="nav-wrapper container mx-auto dark:bg-[#212121] w-full h-full flex items-center justify-between px-4">
           <svg className="fill-[#303030] dark:fill-[#cfcfcf] w-[200px] h-auto cursor-pointer" width="260" height="50" viewBox="0 0 260 50" fill="none" xmlns="http://www.w3.org/2000/svg">

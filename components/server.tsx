@@ -25,7 +25,7 @@ export default function Server (dataServer:{proxy: any}) {
                     <div className={("w-14 h-6 before:content-[''] before:absolute before:rounded flex gap-1 items-center justify-start select-none bg-[#cfcfcf] font-medium text-xs sm:text-sm rounded overflow-visible ") + (((getPercentage(dataServer.proxy.times_check_succeeded, dataServer.proxy.times_checked) <= 79) && (getPercentage(dataServer.proxy.times_check_succeeded, dataServer.proxy.times_checked) > 30) && 'before:w-7 before:h-6 before:bg-yellow-500') || ((getPercentage(dataServer.proxy.times_check_succeeded, dataServer.proxy.times_checked) > 79) && 'before:w-14 before:h-6 before:bg-green-500') || ((getPercentage(dataServer.proxy.times_check_succeeded, dataServer.proxy.times_checked) <= 30) && 'before:w-4 before:h-6 before:bg-red-500'))} >
                         <div className="w-full h-full flex items-center justify-center z-10 gap-0.5 ">
                             <svg className=" fill-white" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_2111_1115)">
+                                <g clipPath="url(#clip0_2111_1115)">
                                     <path d="M3.44994 0.224375C3.46898 0.15958 3.50851 0.102699 3.56259 0.06225C3.61667 0.0218008 3.6824 -3.94915e-05 3.74994 5.36073e-08H6.24994C6.29943 3.7621e-05 6.3482 0.0118287 6.39224 0.0344027C6.43628 0.0569767 6.47433 0.0896881 6.50326 0.129844C6.53219 0.17 6.55116 0.216451 6.55863 0.265375C6.56609 0.314299 6.56183 0.364296 6.54619 0.41125L5.43369 3.75H7.81244C7.87096 3.74996 7.92832 3.76635 7.97798 3.79731C8.02764 3.82827 8.06761 3.87255 8.09334 3.92512C8.11906 3.97768 8.12952 4.03641 8.1235 4.09462C8.11748 4.15283 8.09525 4.20818 8.05931 4.25437L3.68431 9.87937C3.6395 9.93728 3.57577 9.9776 3.50425 9.99331C3.43274 10.009 3.35797 9.99913 3.29301 9.96534C3.22805 9.93156 3.17701 9.87604 3.14881 9.80847C3.1206 9.7409 3.11702 9.66557 3.13869 9.59562L4.26431 5.9375H2.18744C2.13885 5.93753 2.09093 5.92623 2.04748 5.9045C2.00403 5.88277 1.96624 5.8512 1.93712 5.81231C1.90799 5.77342 1.88834 5.72828 1.87972 5.68047C1.87109 5.63265 1.87374 5.58349 1.88744 5.53687L3.44994 0.224375Z" fill="#303030" />
                                 </g>
                                 <defs>
@@ -53,7 +53,7 @@ export default function Server (dataServer:{proxy: any}) {
                 <button title="Copy" className="opt-copiar relative w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-colors transition-transform active:scale-[95%]" onClick={() => {navigator.clipboard.writeText(dataServer.proxy.url+'#'+encodeURI(dataServer.proxy.location)); setTimeCopy(true); setTimeout(() => { setTimeCopy(false) }, 500)}}>
                     <div className={("absolute w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center ") + (timeCopy ? '': 'hidden')}>
                         <svg className=" bg-transparent w-6 h-6 stroke-[#303030] dark:stroke-[#cfcfcf]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 11.2L10.25 16L19 8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5 11.2L10.25 16L19 8" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
                             </svg>                                
                     </div>
                     <svg className={("fill-[#303030] dark:fill-[#cfcfcf] ") + (!timeCopy ? '' : 'hidden')} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +63,7 @@ export default function Server (dataServer:{proxy: any}) {
 
                 <button onClick={() => console.log('aaa')} title="QR Code" className="opt-codigo-qr w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-colors transition-transform active:scale-[95%]">
                     <svg className="fill-[#303030] dark:fill-[#cfcfcf] " width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_522_872)">
+                        <g clipPath="url(#clip0_522_872)">
                         <path d="M0.25 8.75H7.75V1.25H0.25V8.75ZM2.75 3.75H5.25V6.25H2.75V3.75ZM10.25 1.25V8.75H17.75V1.25H10.25ZM15.25 6.25H12.75V3.75H15.25V6.25ZM0.25 18.75H7.75V11.25H0.25V18.75ZM2.75 13.75H5.25V16.25H2.75V13.75ZM16.5 11.25H17.75V16.25H14V15H12.75V18.75H10.25V11.25H14V12.5H16.5V11.25ZM16.5 17.5H17.75V18.75H16.5V17.5ZM14 17.5H15.25V18.75H14V17.5Z"/>
                         </g>
                         <defs>
