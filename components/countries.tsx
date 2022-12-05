@@ -1,6 +1,21 @@
-
+import useSWR from "swr"
+import React, { useEffect } from "react"
+import { getFlagEmoji, getPercentage } from './functions';
 
 export default function Countries() {
+
+    const fetcher = (...args: [any,any]) => fetch(...args).then((res) => res.json())
+
+    const { data: countries, error } = useSWR('https://shadowmere.akiel.dev/api/country-codes', fetcher)
+
+    if (error) return <>Error</>
+    
+    if (!countries) return null
+
+    countries.unshift({
+        'code': 'UN',
+        'name': 'Worldwide'
+    })
 
     return (
         <div className="countries-filter flex flex-col gap-2 xl:gap-4">
@@ -14,9 +29,12 @@ export default function Countries() {
                 </div>
                 
                 <select title="Countries" name="countries" id="countries-selection" className="form-select font-twemoji rounded-md border-gray-300 mx-2 text-[#303030] dark:text-[#cfcfcf] dark:border-0 dark:bg-[#303030] outline-none cursor-pointer">
-                    {/* <template x-for="code in codes">
-                        <option id="opcion" className="bandera"></option>
-                    </template> */}
+                {/* <option value="UN" className="font-twemoji" >{getFlagEmoji('UN')} Worldwide</option> */}
+                {
+                    countries.map((country: any) => {
+                        return <option value={country.code} className="font-twemoji" >{getFlagEmoji(country.code)} {country.name}</option>
+                    })
+                }
                 </select>
         </div>
     )
