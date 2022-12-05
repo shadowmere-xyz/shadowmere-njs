@@ -19,8 +19,8 @@ export default function Ports(){
                 <select title="Ports" name="ports" id="port-selection" className="relative puertos form-select rounded-md overflow-scroll border-gray-300 mx-2 text-[#303030] dark:text-[#cfcfcf] dark:border-0 dark:bg-[#303030] outline-none cursor-pointer">
                     
                     {
-                        ports.map((port: any) => {
-                            return <option id="opcion">{port.port}</option>
+                        ports.map((port: any, i: number) => {
+                            return <option key={i} id="opcion">{port.port}</option>
                         })
                     }
                 </select>
