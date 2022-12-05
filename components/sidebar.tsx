@@ -1,4 +1,10 @@
+import useSWR from "swr"
+import Ports from "./ports"
+import Countries from "./countries"
+
+
 export default function Sidebar() {
+
     return (
         <div className="sidebar col-span-12 xl:col-span-3 w-auto h-auto 2xl:h-fit mb-4 bg-white dark:bg-[#212121] dark:text-[#cfcfcf] shadow-lg flex flex-col xl:flex-col gap-6 p-4 rounded-lg">
             <div className="online-vpns-filter flex flex-col gap-2 xl:gap-4">
@@ -27,35 +33,9 @@ export default function Sidebar() {
                 </div>
             </div>
 
-            <div className="ports-filter flex flex-col gap-2 xl:gap-4">
-                <div className="w-full h-6 flex items-center font-semibold gap-2">
-                    <svg className="fill-[#303030] dark:fill-[#cfcfcf]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="m22 15-3-4-3 4h1.906c-.436 2.469-2.438 4.471-4.906 4.906V13h2v-2h-2V9.336c1.543-.459 2.714-1.923 2.714-3.621C15.714 3.666 14.048 2 12 2S8.286 3.666 8.286 5.715c0 1.698 1.171 3.162 2.714 3.621V11H9v2h2v6.906C8.531 19.471 6.529 17.469 6.094 15H8l-3-4-3 4h2.073c.511 3.885 3.929 7 7.927 7s7.416-3.115 7.927-7H22zM10.286 5.715C10.286 4.77 11.055 4 12 4s1.714.77 1.714 1.715c0 .951-.801 1.785-1.714 1.785s-1.714-.834-1.714-1.785z"></path></svg> 
-                    Ports
-                </div>
-                
-                <select title="Ports" name="ports" id="port-selection" className="relative puertos form-select rounded-md overflow-scroll border-gray-300 mx-2 text-[#303030] dark:text-[#cfcfcf] dark:border-0 dark:bg-[#303030] outline-none cursor-pointer">
-                    {/* <template x-for="port in ports">
-                        <option id="opcion" :value="port.port" x-text="port.port"></option>
-                    </template> */}
-                </select>
-            </div>
+            <Ports/>
 
-            <div className="countries-filter flex flex-col gap-2 xl:gap-4">
-                <div className="w-full h-6 flex items-center font-semibold gap-2">
-                    <svg className="fill-[#303030] dark:fill-[#cfcfcf]" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5.58325 10.5C5.58637 11.4236 5.70204 12.3433 5.9277 13.2389H9.5277V7.97223H5.8777C5.68565 8.80122 5.58689 9.64907 5.58325 10.5V10.5Z"/>
-                        <path d="M10.4722 7.97223V13.2389H14.0722C14.3072 12.3445 14.4322 11.4247 14.4444 10.5C14.4426 9.64928 14.3457 8.80143 14.1555 7.97223H10.4722Z"/>
-                        <path d="M9.99998 1.61111C8.24192 1.61111 6.52335 2.13244 5.06157 3.10916C3.5998 4.08589 2.46049 5.47414 1.78771 7.09837C1.11494 8.72261 0.938906 10.5099 1.28189 12.2341C1.62487 13.9584 2.47145 15.5423 3.71458 16.7854C4.95772 18.0285 6.54157 18.8751 8.26584 19.2181C9.99012 19.5611 11.7774 19.385 13.4016 18.7123C15.0258 18.0395 16.4141 16.9002 17.3908 15.4384C18.3675 13.9766 18.8889 12.2581 18.8889 10.5C18.8889 8.14252 17.9524 5.8816 16.2854 4.21461C14.6184 2.54762 12.3575 1.61111 9.99998 1.61111V1.61111ZM16.7889 14.2278H14.7778C14.3975 15.4182 13.8353 16.5426 13.1111 17.5611C12.5767 17.794 12.0175 17.9655 11.4444 18.0722C12.4708 16.957 13.2607 15.6454 13.7666 14.2167H10.4778V18.1889H9.53887V14.2278H6.23331C6.73854 15.6585 7.52852 16.972 8.55553 18.0889C7.99423 17.9833 7.44642 17.8156 6.9222 17.5889C6.19544 16.5619 5.63313 15.4279 5.25553 14.2278H3.21109C3.03361 13.904 2.87951 13.568 2.74998 13.2222H4.9722C4.76397 12.3296 4.6559 11.4166 4.64998 10.5C4.65028 9.65041 4.73966 8.80318 4.91664 7.97223H2.64442C2.76125 7.6275 2.90235 7.29147 3.06664 6.96667H5.18331C5.58047 5.64392 6.1964 4.39703 7.00553 3.27778C7.51863 3.06518 8.05322 2.90871 8.59998 2.81111C7.49479 3.99725 6.66071 5.4095 6.15553 6.95H9.53887V2.72223H10.4778V6.96667H13.8611C13.3568 5.42863 12.5247 4.01839 11.4222 2.83334C11.9681 2.92389 12.5026 3.0729 13.0166 3.27778C13.8211 4.38895 14.435 5.62621 14.8333 6.93889H16.9278C17.092 7.2637 17.2331 7.59972 17.35 7.94445H15.0944C15.2752 8.78429 15.3665 9.64093 15.3666 10.5C15.3638 11.4219 15.2576 12.3406 15.05 13.2389H17.2722C17.1347 13.5796 16.9732 13.91 16.7889 14.2278Z"/>
-                        </svg> 
-                        Countries
-                </div>
-                
-                <select title="Countries" name="countries" id="countries-selection" className="form-select font-twemoji rounded-md border-gray-300 mx-2 text-[#303030] dark:text-[#cfcfcf] dark:border-0 dark:bg-[#303030] outline-none cursor-pointer">
-                    {/* <template x-for="code in codes">
-                        <option id="opcion" className="bandera"></option>
-                    </template> */}
-                </select>
-            </div> 
+            <Countries/> 
 
             <button className="button-reset w-auto h-12 flex items-center justify-center px-5 rounded-md bg-[#212121] hover:bg-[#444444] active:bg-[#303030] dark:bg-[#cfcfcf] dark:hover:bg-[#bfbfbf] dark:active:bg-white dark:transition-colors text-white">
                 <svg className="dark:fill-[#303030] fill-[#cfcfcf]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M12 16c1.671 0 3-1.331 3-3s-1.329-3-3-3-3 1.331-3 3 1.329 3 3 3z"></path><path d="M20.817 11.186a8.94 8.94 0 0 0-1.355-3.219 9.053 9.053 0 0 0-2.43-2.43 8.95 8.95 0 0 0-3.219-1.355 9.028 9.028 0 0 0-1.838-.18V2L8 5l3.975 3V6.002c.484-.002.968.044 1.435.14a6.961 6.961 0 0 1 2.502 1.053 7.005 7.005 0 0 1 1.892 1.892A6.967 6.967 0 0 1 19 13a7.032 7.032 0 0 1-.55 2.725 7.11 7.11 0 0 1-.644 1.188 7.2 7.2 0 0 1-.858 1.039 7.028 7.028 0 0 1-3.536 1.907 7.13 7.13 0 0 1-2.822 0 6.961 6.961 0 0 1-2.503-1.054 7.002 7.002 0 0 1-1.89-1.89A6.996 6.996 0 0 1 5 13H3a9.02 9.02 0 0 0 1.539 5.034 9.096 9.096 0 0 0 2.428 2.428A8.95 8.95 0 0 0 12 22a9.09 9.09 0 0 0 1.814-.183 9.014 9.014 0 0 0 3.218-1.355 8.886 8.886 0 0 0 1.331-1.099 9.228 9.228 0 0 0 1.1-1.332A8.952 8.952 0 0 0 21 13a9.09 9.09 0 0 0-.183-1.814z"></path></svg>
