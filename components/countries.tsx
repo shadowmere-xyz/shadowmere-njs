@@ -4,10 +4,10 @@ import { getFlagEmoji, getPercentage } from './functions';
 
 export default function Countries() {
 
-    const [worldwide, setWorldwide] = useState({
-        'code': 'UN',
-        'name': 'Worldwide'
-    })
+    // const [worldwide, setWorldwide] = useState({
+    //     'code': 'UN',
+    //     'name': 'Worldwide'
+    // })
 
     const fetcher = (...args: [any,any]) => fetch(...args).then((res) => res.json())
 
@@ -17,7 +17,7 @@ export default function Countries() {
     
     if (!countries) return null
 
-    countries.unshift(worldwide)
+    // countries.unshift(worldwide)
 
     return (
         <div className="countries-filter flex flex-col gap-2 xl:gap-4">
@@ -31,11 +31,11 @@ export default function Countries() {
                 </div>
                 
                 <select title="Countries" name="countries" id="countries-selection" className="form-select font-twemoji rounded-md border-gray-300 mx-2 text-[#303030] dark:text-[#cfcfcf] dark:border-0 dark:bg-[#303030] outline-none cursor-pointer">
-                {/* <option value="UN" className="font-twemoji" >{getFlagEmoji('UN')} Worldwide</option> */}
+                <option value="UN" className="font-twemoji" >{getFlagEmoji('UN')} Worldwide</option>
                 {
-                    countries.map((country: any, i: number) => {
-                        return <option key={i} value={country.code} className="font-twemoji" >{getFlagEmoji(country.code)} {country.name}</option>
-                    })
+                    countries.map((country: any, i: number) => (
+                        <option key={i} value={country.code} className="font-twemoji" >{getFlagEmoji(country.code)} {country.name}</option>
+                    ))
                 }
                 </select>
         </div>

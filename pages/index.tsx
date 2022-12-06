@@ -156,7 +156,6 @@ export default function Home() {
 
       <Content activeTab={tab} />
       <ModalQR qrActive={qrCode} />
-
     </>
   )
 }
