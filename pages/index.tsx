@@ -19,7 +19,7 @@ import { useTheme } from 'next-themes'
 export default function Home() {
   // const { isDarkMode, toggle, enable, disable } = useDarkMode()
   const { theme, setTheme } = useTheme()
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(Boolean)
   const [qrCode, setQRCode] = useState(false)
   const [tab, setTab] = useState('servers')
   const [hasMounted, setHasMounted] = useState(false)
@@ -28,11 +28,17 @@ export default function Home() {
     // document.querySelector("html")?.classList.add(darkMode)
     document.querySelector('body')?.classList.add('overflow-y-scroll', 'bg-[#F8F8F8]', 'dark:bg-[#141414]', 'text-[#212121]')
     setHasMounted(true)
+    console.log(isDarkMode)
+    // window.localStorage.setItem('isDarkMode', isDarkMode)
+
   }, [])
 
   const handleDark = () => {
     if (isDarkMode) setTheme('light')
     else setTheme('dark')
+    console.log(isDarkMode)
+
+    // window.localStorage.setItem('isDarkMode', isDarkMode)
   }
 
   if (!hasMounted) {
@@ -96,7 +102,7 @@ export default function Home() {
               </svg>
               <span className="dark:text-[#303030] font-medium">Fork me on GitHub</span>
             </button>
-            <button onClick={() => {
+            <button title='Theme Toggler' onClick={() => {
               
               setIsDarkMode(!isDarkMode);
               handleDark();
