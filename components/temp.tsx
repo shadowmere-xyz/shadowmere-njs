@@ -1,14 +1,4 @@
-import { useDarkMode } from 'usehooks-ts'
-import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
-import ToggleDarkMode from './toogleDarkMode'
-
-export default function Navbar ({active, handleDark}: any) {
-    // const { isDarkMode, toggle, enable, disable } = useDarkMode()
-    // const [activeTab, setActiveTab] = useState('')
-
-    return (
-        <nav className="w-full h-20 z-50 top-0 fixed  flex justify-center bg-white dark:bg-[#212121] text-sm 2xl:text-base transition-transform shadow-lg">
+<nav className="w-full h-20 z-50 top-0 fixed  flex justify-center bg-white dark:bg-[#212121] text-sm 2xl:text-base transition-transform shadow-lg">
         <div className="nav-wrapper container mx-auto dark:bg-[#212121] w-full h-full flex items-center justify-between px-4">
           <svg className="fill-[#303030] dark:fill-[#cfcfcf] w-[200px] h-auto cursor-pointer" width="260" height="50" viewBox="0 0 260 50" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M20.9424 4.88982L23.7489 0.941338L28.491 1.11554L34.5105 1.3478L25.607 4.46401L20.9424 4.88982Z" />
@@ -54,39 +44,60 @@ export default function Navbar ({active, handleDark}: any) {
               </svg>
               <span className="dark:text-[#303030] font-medium">Fork me on GitHub</span>
             </button>
-            <ToggleDarkMode/>
+            <button title='Theme Toggler' onClick={() => {
+              
+              handleDark();
+              console.log(isDarkMode)
+            
+            }} id="toggle" className="custom-toggle w-auto h-auto cursor-pointer">
+              <div className={"toggle-dark dark:hidden w-auto h-auto rounded-md flex items-center justify-center cursor-pointer "}>
+                <svg className="w-6 h-6 hover:rotate-[-15deg] transition-transform fill-[#303030] cursor-pointer" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13.2756 24C16.977 24 20.3575 22.316 22.5971 19.5566C22.9284 19.1484 22.5671 18.5521 22.0551 18.6496C16.2331 19.7584 10.8866 15.2945 10.8866 9.41738C10.8866 6.03197 12.6988 2.91886 15.6443 1.24266C16.0983 0.984281 15.9841 0.295922 15.4682 0.200625C14.745 0.0672624 14.0111 0.000109516 13.2756 0C6.65178 0 1.27563 5.3677 1.27563 12C1.27563 18.6239 6.64334 24 13.2756 24Z" />
+                </svg>
+              </div>
+              <div className={"toggle-light hidden dark:flex w-auto h-auto rounded-md flex items-center justify-center cursor-pointer "}>
+                <svg className="w-6 h-6 hover:rotate-[-30deg] transition-transform fill-[#303030] cursor-pointer" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clipPath="url(#clip0_524_2311)">
+                    <path d="M12.75 7.5C10.2703 7.5 8.25 9.52031 8.25 12C8.25 14.4797 10.2703 16.5 12.75 16.5C15.2297 16.5 17.25 14.4797 17.25 12C17.25 9.52031 15.2297 7.5 12.75 7.5ZM24.3 11.2734L19.8609 9.05625L21.4313 4.35C21.6422 3.7125 21.0375 3.10781 20.4047 3.32344L15.6984 4.89375L13.4766 0.45C13.1766 -0.15 12.3234 -0.15 12.0234 0.45L9.80625 4.88906L5.09531 3.31875C4.45781 3.10781 3.85313 3.7125 4.06875 4.34531L5.63906 9.05156L1.2 11.2734C0.6 11.5734 0.6 12.4266 1.2 12.7266L5.63906 14.9437L4.06875 19.6547C3.85781 20.2922 4.4625 20.8969 5.09531 20.6813L9.80156 19.1109L12.0188 23.55C12.3188 24.15 13.1719 24.15 13.4719 23.55L15.6891 19.1109L20.3953 20.6813C21.0328 20.8922 21.6375 20.2875 21.4219 19.6547L19.8516 14.9484L24.2906 12.7313C24.9 12.4266 24.9 11.5734 24.3 11.2734ZM16.9922 16.2422C14.6531 18.5812 10.8469 18.5812 8.50781 16.2422C6.16875 13.9031 6.16875 10.0969 8.50781 7.75781C10.8469 5.41875 14.6531 5.41875 16.9922 7.75781C19.3313 10.0969 19.3313 13.9031 16.9922 16.2422Z" fill="#CFCFCF" />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_524_2311">
+                      <rect width="24" height="24" fill="white" transform="translate(0.75)" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+            </button>
             {/* <p>{isDarkMode ? 'dark' : 'light'}</p> */}
             <div className="menu relative hidden xl:flex flex-row-reverse gap-2 xl:gap-4 items-center">
 
-              <Link href='https://shadowsocks5.github.io/en/download/clients.html' target={'_blank'} className="dark:text-[#cfcfcf] text-[#212121] font-medium after:content-['\f08e'] after:font-awesome after:text-sm after:ml-1 w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%]">
+              <button onClick={()=>{window.open('https://shadowsocks5.github.io/en/download/clients.html', '_blank')?.focus}} className="dark:text-[#cfcfcf] text-[#212121] font-medium after:content-['\f08e'] after:font-awesome after:text-sm after:ml-1 w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%]">
                 VPN Clients
-              </Link>
+              </button>
 
-              <Link href={'/subscription'} className={"relative dark:text-[#cfcfcf] font-medium group w-auto h-12 flex items-center justify-center px-3 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (active === 'sub' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
+              <button onClick={() => {setTab('sub')}} className={"relative dark:text-[#cfcfcf] font-medium group w-auto h-12 flex items-center justify-center px-3 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (tab === 'sub' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
                 Subscription
                 <span className="absolute h-[22px] flex items-center justify-center animate-pulse duration-100 py-px px-1 bg-[#dc2626] -top-2 -right-2 text-[8px] text-white rounded-sm">NEW</span>
-              </Link>
+              </button>
 
-              <Link href={'/support-us'} className={"relative dark:text-[#cfcfcf] font-medium group w-auto h-12 flex items-center justify-center px-3 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (active === 'support' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
+              <button onClick={() => {setTab('support')}} className={"relative dark:text-[#cfcfcf] font-medium group w-auto h-12 flex items-center justify-center px-3 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (tab === 'support' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
                 Support Us
                 {/* <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 149.9 149.9"><defs><style>.cls-1{fill:#dc2626;}.cls-2{fill:#fff;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect class="cls-1" width="149.9" height="149.9" rx="74.95"/><polygon class="cls-2" points="66.72 30.62 71.44 19.81 82.78 17.87 97.19 15.4 77.61 27.24 66.72 30.62"/><polygon class="cls-2" points="84.96 36.15 94.73 27.92 116.58 31.49 91.87 39.52 84.96 36.15"/><polygon class="cls-2" points="100.29 49.73 112.32 46.15 133.01 60.2 110.48 56.16 100.29 49.73"/><polygon class="cls-2" points="112.5 72.2 119.99 69.81 135.28 78.27 119.54 76.64 112.5 72.2"/><polygon class="cls-2" points="115.99 91.36 122.62 91.92 130.44 98.32 122.32 96.13 115.99 91.36"/><path class="cls-2" d="M110.62,69.51,81.14,34.85,58.46,30.71l2.38-11-7.37,6-17,13.67L14.62,86.56l.67,3.53,1.61.27,3.9,5.92,5.74-1L35.62,86l24.57-10L58.82,63.49l4.1,12.85L51.13,93.14l-8,23.63,15,8.93,5.31,1.46,2.33,3.08,7.14,4.25,46.87-27.09Zm-63-18.93-4,5.89-3.87,1.9L42,53.12l1.59-2.46,3-1.31h0l3.13-2.52Z"/><polygon class="cls-2" points="45.96 23.25 42.1 22.51 41.83 26.67 37.34 25.4 37.15 28.52 24.28 26.61 36.83 34.01 49.28 23.77 49.48 17.71 45.96 23.25"/></g></g></svg> */}
                 <span className="absolute h-[22px] flex items-center justify-center animate-pulse duration-100 py-px px-1 bg-[#dc2626] -top-2 -right-2 text-[8px] text-white rounded-sm">NEW</span>
-              </Link>
+              </button>
 
-              <Link href={'/why-shadowmere'} className={" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (active === 'why' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
+              <button onClick={() => {setTab('why')}} className={" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (tab === 'why' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
                 Why Shadowmere?
-              </Link>
+              </button>
 
-              <Link href={'/about'} className={" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (active === 'about' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
+              <button onClick={() => {setTab('about')}} className={" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (tab === 'about' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
                 About
-              </Link>
+              </button>
 
-              <Link href={'/'} className={" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (active === 'home' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
+              <button onClick={() => {setTab('servers')}} className={" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (tab === 'servers' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
                 Home
-              </Link>
+              </button>
             </div>
           </div>
         </div>
       </nav>
-    )
-}
