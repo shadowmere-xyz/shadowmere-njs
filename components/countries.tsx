@@ -46,7 +46,7 @@ export default function Countries() {
                         Countries
                 </div>
                 
-                <select title="Countries" name="countries" id="countries-selection" className="form-select font-twemoji rounded-md border-gray-300 mx-2 text-[#303030] dark:text-[#cfcfcf] dark:border-0 dark:bg-[#303030] outline-none cursor-pointer">
+                <select title="Countries" name="countries" id="countries-selection" className="form-select overflow-scroll font-twemoji rounded-md border-gray-300 mx-2 text-[#303030] dark:text-[#cfcfcf] dark:border-0 dark:bg-[#303030] outline-none cursor-pointer">
                 <option value="UN" className="font-twemoji" >{getFlagEmoji('UN')} Worldwide</option>
                 {
                     countries.map((country: any, i: number) => (

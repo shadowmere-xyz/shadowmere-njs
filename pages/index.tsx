@@ -23,7 +23,6 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [qrCode, setQRCode] = useState(false)
   const [hasMounted, setHasMounted] = useState(false)
-  const [text, setText] = useReco
 
   useEffect(() => {
     // document.querySelector("html")?.classList.add(darkMode)
@@ -47,7 +46,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Shadowmere</title>
+        <title>Shadowmere - Home</title>
         <meta charSet="UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
