@@ -11,10 +11,6 @@ import ModalQR from '../components/modalQR'
 import React, { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import Sidebar from '../components/sidebar'
-// import { useDarkMode } from 'usehooks-ts'
-
-
-// import { watch } from 'fs'
 
 
 
