@@ -1,7 +1,7 @@
 import useSWR from "swr"
 import Ports from "./ports"
 import Countries from "./countries"
-import { pageCounterState, portPaginationState, countryPaginationState, portSelectState, countrySelectState, proxiesState } from "./store"
+import { pageCounterState, portPaginationState, countryPaginationState, portSelectState, countrySelectState } from "./store"
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
 import { useEffect } from "react"
 
