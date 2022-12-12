@@ -40,7 +40,7 @@ export default function Ports(){
                     Ports
                 </div>
                 <select title="Ports" name="ports" id="port-selection" onChange={handleChange} className="relative puertos form-select rounded-md overflow-scroll border-gray-300 mx-2 text-[#303030] dark:text-[#cfcfcf] dark:border-0 dark:bg-[#303030] outline-none cursor-pointer">
-                    <option value={portSelect}>Any</option>
+                    <option value='Any'>Any</option>
                     {
                         ports.map((port: any, i: number) => (
                             <option key={i} id="opcion">{port.port}</option>
