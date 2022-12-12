@@ -18,10 +18,6 @@ export default function ServersList() {
 
     const { data, error } = useSWR('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true&location_country_code=' + countryPagination + '&port=' + portPagination + '&page=' + pageCounter.toString(), fetcher)
 
-    // useEffect(() => {
-    //     setCount(data.count)
-    // },[])
-
     if (error) return <div>failed to load</div>
     if (!data) return (
 
