@@ -12,7 +12,7 @@ export default function ServersList() {
     const [portPagination, setPortPagination] = useRecoilState(portPaginationState);
     const [countryPagination, setCountryPagination] = useRecoilState(countryPaginationState);
     const [count, setCount] = useRecoilState(proxiesCount)
-    const [skeleton, setSkeleton] = useState(Array(10).fill(0).map((i: number)=> <ServerSkeleton />))
+    const [skeleton, setSkeleton] = useState(Array(10))
 
     const fetcher = (...args: [any,any]) => fetch(...args).then((res) => res.json())
 
@@ -30,7 +30,10 @@ export default function ServersList() {
 
             <p className="dark:text-white"><span className="font-bold dark:text-white">Disclaimer: </span>This website is only a list of tunnels collected all around internet. We do <span className="font-bold ">NOT</span> provide or maintain any of these tunnels. <span className="bg-red-600 text-white">Use them at your own risk.</span></p>
             
-            {skeleton}
+            {/* {skeleton} */}
+            {
+                skeleton.fill(0).map((skel: any) => <ServerSkeleton key={skel.id} />)
+            }
 
         </div>
     
@@ -46,7 +49,7 @@ export default function ServersList() {
             <p className="dark:text-white"><span className="font-bold dark:text-white">Disclaimer: </span>This website is only a list of tunnels collected all around internet. We do <span className="font-bold ">NOT</span> provide or maintain any of these tunnels. <span className="bg-red-600 text-white">Use them at your own risk.</span></p>
             
             {
-                data.results.map((d: any, i: number) => (
+                data.results.map((d: any) => (
                     <Server key={d.id} proxy={d} />
                 ))
             }
