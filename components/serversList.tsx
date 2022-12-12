@@ -12,7 +12,7 @@ export default function ServersList() {
     const [portPagination, setPortPagination] = useRecoilState(portPaginationState);
     const [countryPagination, setCountryPagination] = useRecoilState(countryPaginationState);
     const [count, setCount] = useRecoilState(proxiesCount)
-    const [skeleton, setSkeleton] = useState(Array(10).fill(0).map((i: number)=> <ServerSkeleton key={i} />))
+    const [skeleton, setSkeleton] = useState(Array(10).fill(0).map((i: number)=> <ServerSkeleton />))
 
     const fetcher = (...args: [any,any]) => fetch(...args).then((res) => res.json())
 
@@ -24,7 +24,7 @@ export default function ServersList() {
 
     )
 
-    if (!data) return (
+    if (!data) {return (
 
     <div id="cuerpo" className="lista-servers-vpns col-span-12 xl:col-span-9 w-full h-full flex flex-col gap-4">
 
@@ -34,12 +34,7 @@ export default function ServersList() {
 
         </div>
     
-    )
-    
-    // if(data) {
-    //     setProxiesObj(data)
-    //     console.log(proxiesObj)
-    // }
+    )}
     
     console.log(data.count)
 
