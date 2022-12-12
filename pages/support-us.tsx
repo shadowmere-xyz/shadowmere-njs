@@ -1,6 +1,7 @@
 import Sidebar from "../components/sidebar";
 import Navbar from "../components/navbar";
 import Head from "next/head";
+import Image from "next/image";
 
 export default function Support() {
 	return (
@@ -33,7 +34,7 @@ export default function Support() {
 						<img
 							src="https://vangogh.teespring.com/v3/image/DFqA9cbp7_Wq95i0JwY5ul66ENI/800/800.jpg"
 							alt=""
-							srcset=""
+							srcSet=""
 							className="w-fit lg:w-96 h-auto rounded-lg "
 						/>
 						<img
