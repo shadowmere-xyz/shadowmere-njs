@@ -16,9 +16,14 @@ export default function ServersList() {
 
     const fetcher = (...args: [any,any]) => fetch(...args).then((res) => res.json())
 
-    const { data, error } = useSWR('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true&location_country_code=' + countryPagination + '&port=' + portPagination + '&page=' + pageCounter.toString(), fetcher)
+    const { data, error } = useSWR('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true&location_country_code=' + countryPagination + '&port=' + portPagination + '&page=' + pageCounter?.toString(), fetcher)
 
-    if (error) return <div>failed to load</div>
+    if (error) return (
+
+    <div>failed to load</div>
+
+    )
+
     if (!data) return (
 
     <div id="cuerpo" className="lista-servers-vpns col-span-12 xl:col-span-9 w-full h-full flex flex-col gap-4">
