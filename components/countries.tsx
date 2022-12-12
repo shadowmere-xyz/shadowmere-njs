@@ -56,7 +56,7 @@ export default function Countries({resetCountry}: any) {
                 </label>
                 
                 <select title="Countries" name="countries" id="countries-selection" onChange={handleChange} className="form-select overflow-scroll font-twemoji rounded-md border-gray-300 mx-2 text-[#303030] dark:text-[#cfcfcf] dark:border-0 dark:bg-[#303030] outline-none cursor-pointer">
-                    <option value={countrySelect} className="font-twemoji" >{getFlagEmoji('UN')} Worldwide</option>
+                    <option value='UN' className="font-twemoji" >{getFlagEmoji('UN')} Worldwide</option>
                     {
                         countries.map((country: any, i: number) => (
                             <option key={i} value={country.code} className="font-twemoji" >{getFlagEmoji(country.code)} {country.name}</option>
