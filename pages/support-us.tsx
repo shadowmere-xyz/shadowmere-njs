@@ -39,7 +39,7 @@ export default function Support() {
 						<img
 							src="https://vangogh.teespring.com/v3/image/r25YJ0ROGMCOU2lfd8vsVlXleP8/800/800.jpg"
 							alt=""
-							srcset=""
+							srcSet=""
 							className="w-fit lg:w-96 h-auto rounded-lg object-scale-down"
 						/>
 					</div>
