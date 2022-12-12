@@ -1,4 +1,9 @@
-<nav className="w-full h-20 z-50 top-0 fixed  flex justify-center bg-white dark:bg-[#212121] text-sm 2xl:text-base transition-transform shadow-lg">
+
+
+export default function Temp () {
+
+  return (
+    <nav className="w-full h-20 z-50 top-0 fixed  flex justify-center bg-white dark:bg-[#212121] text-sm 2xl:text-base transition-transform shadow-lg">
         <div className="nav-wrapper container mx-auto dark:bg-[#212121] w-full h-full flex items-center justify-between px-4">
           <svg className="fill-[#303030] dark:fill-[#cfcfcf] w-[200px] h-auto cursor-pointer" width="260" height="50" viewBox="0 0 260 50" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M20.9424 4.88982L23.7489 0.941338L28.491 1.11554L34.5105 1.3478L25.607 4.46401L20.9424 4.88982Z" />
@@ -101,3 +106,5 @@
           </div>
         </div>
       </nav>
+  )
+}
