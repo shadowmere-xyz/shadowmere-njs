@@ -1,5 +1,4 @@
 import useSWR from "swr";
-import { getProxAPI } from "./functions";
 
 const {atom, selector} = require("recoil")
 
