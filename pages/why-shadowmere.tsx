@@ -21,7 +21,7 @@ export default function Why() {
 					{/* <!-- Aqui va el contenido del About --> */}
 					<p>
 						Shadowmere is an enduring character in the Elder Scrolls series
-						since her first appearance in The Elder Scrolls IV: Oblivion's Dark
+						since her first appearance in The Elder Scrolls IV: Oblivion`&apos;`s Dark
 						Brotherhood questline.
 					</p>
 					<img
@@ -41,8 +41,8 @@ export default function Why() {
 						in The Elder Scrolls V: Skyrim. In Skyrim, Shadowmere is again
 						awarded to the player character for success, this time by Astrid.
 						When the player is granted the ability to summon the late Lucien
-						Lachance as a Spectral Assassin and does so in Shadowmere's
-						presence, Lachance's spectre will greet her as an 'old friend'. In
+						Lachance as a Spectral Assassin and does so in Shadowmere&apos;s
+						presence, Lachance&apos;s spectre will greet her as an &apos;old friend&apos;. In
 						ES V, however, Shadowmere is no longer absolutely indestructible.
 						<br />
 						<br />
@@ -50,7 +50,7 @@ export default function Why() {
 						game, it can be killed in steep falls and by concentrated frost or
 						fire attacks by Ancient-ranked dragons, especially when it cannot
 						manoeuvre out of close quarters when being attacked by said Ancient
-						dragon. Shadowmere can also be killed by Mehrunes' Razor. In
+						dragon. Shadowmere can also be killed by Mehrunes&apos; Razor. In
 						Oblivion, Shadowmere could be knocked unconscious by intensive
 						attacks. Then, players could store or retrieve objects from it just
 						like a container. In Skyrim, once Shadowmere is finally killed,

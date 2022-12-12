@@ -12,7 +12,7 @@ export default function ServersList() {
     const [portPagination, setPortPagination] = useRecoilState(portPaginationState);
     const [countryPagination, setCountryPagination] = useRecoilState(countryPaginationState);
     const [count, setCount] = useRecoilState(proxiesCount)
-    const [skeleton, setSkeleton] = useState(Array(10).fill(0).map(()=> <ServerSkeleton/>))
+    const [skeleton, setSkeleton] = useState(Array(10).fill(0).map((i: number)=> <ServerSkeleton key={i} />))
 
     const fetcher = (...args: [any,any]) => fetch(...args).then((res) => res.json())
 
