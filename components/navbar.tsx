@@ -2,6 +2,7 @@ import { useDarkMode } from 'usehooks-ts'
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import ToggleDarkMode from './toogleDarkMode'
+import NewFeature from './newFeature'
 
 export default function Navbar ({active, handleDark}: any) {
     // const { isDarkMode, toggle, enable, disable } = useDarkMode()
@@ -64,13 +65,13 @@ export default function Navbar ({active, handleDark}: any) {
 
               <Link href={'/subscription'} className={"relative dark:text-[#cfcfcf] font-medium group w-auto h-12 flex items-center justify-center px-3 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (active === 'sub' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
                 Subscription
-                <span className="absolute h-[22px] flex items-center justify-center animate-pulse duration-100 py-px px-1 bg-[#dc2626] -top-2 -right-2 text-[8px] text-white rounded-sm">NEW</span>
+                <NewFeature/>
               </Link>
 
               <Link href={'/support-us'} className={"relative dark:text-[#cfcfcf] font-medium group w-auto h-12 flex items-center justify-center px-3 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (active === 'support' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
                 Support Us
                 {/* <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 149.9 149.9"><defs><style>.cls-1{fill:#dc2626;}.cls-2{fill:#fff;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect class="cls-1" width="149.9" height="149.9" rx="74.95"/><polygon class="cls-2" points="66.72 30.62 71.44 19.81 82.78 17.87 97.19 15.4 77.61 27.24 66.72 30.62"/><polygon class="cls-2" points="84.96 36.15 94.73 27.92 116.58 31.49 91.87 39.52 84.96 36.15"/><polygon class="cls-2" points="100.29 49.73 112.32 46.15 133.01 60.2 110.48 56.16 100.29 49.73"/><polygon class="cls-2" points="112.5 72.2 119.99 69.81 135.28 78.27 119.54 76.64 112.5 72.2"/><polygon class="cls-2" points="115.99 91.36 122.62 91.92 130.44 98.32 122.32 96.13 115.99 91.36"/><path class="cls-2" d="M110.62,69.51,81.14,34.85,58.46,30.71l2.38-11-7.37,6-17,13.67L14.62,86.56l.67,3.53,1.61.27,3.9,5.92,5.74-1L35.62,86l24.57-10L58.82,63.49l4.1,12.85L51.13,93.14l-8,23.63,15,8.93,5.31,1.46,2.33,3.08,7.14,4.25,46.87-27.09Zm-63-18.93-4,5.89-3.87,1.9L42,53.12l1.59-2.46,3-1.31h0l3.13-2.52Z"/><polygon class="cls-2" points="45.96 23.25 42.1 22.51 41.83 26.67 37.34 25.4 37.15 28.52 24.28 26.61 36.83 34.01 49.28 23.77 49.48 17.71 45.96 23.25"/></g></g></svg> */}
-                <span className="absolute h-[22px] flex items-center justify-center animate-pulse duration-100 py-px px-1 bg-[#dc2626] -top-2 -right-2 text-[8px] text-white rounded-sm">NEW</span>
+                <NewFeature/>
               </Link>
 
               <Link href={'/why-shadowmere'} className={" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (active === 'why' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>

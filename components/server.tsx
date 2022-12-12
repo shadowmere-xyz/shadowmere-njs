@@ -12,7 +12,7 @@ export default function Server (dataServer:{proxy: any}) {
                     <div className="country-flag font-twemoji select-none flex items-center text-3xl sm:text-4xl w-auto h-6 cursor-pointer">{getFlagEmoji(dataServer.proxy.location_country_code)}</div>
                     <div className="nombre-ip w-auto h-auto flex flex-col ">
                         <span className=" leading-[1.10rem] font-semibold w-auto overflow-hidden truncate text-[14px] sm:text-[16px] ">{dataServer.proxy.location_country}</span>
-                        <span className=" leading-[1.10rem] font-medium w-auto overflow-hidden truncate text-[14px] text-[#7e7d7d] sm:text-[16px] ">{dataServer.proxy.ip_address}...</span>
+                        <span className=" leading-[1.10rem] font-medium w-auto overflow-hidden truncate text-[14px] text-[#7e7d7d] sm:text-[16px] ">{dataServer.proxy.ip_address}</span>
                     </div>
                 </div>
 
