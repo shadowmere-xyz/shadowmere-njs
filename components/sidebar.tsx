@@ -1,7 +1,7 @@
 import useSWR from "swr"
 import Ports from "./ports"
 import Countries from "./countries"
-import { pageCounterState, portFilterState, countryFilterState, proxiesObj } from "./store"
+import { pageCounterState, portFilterState, countryFilterState, proxiesObj, testApi } from "./store"
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
 import { useEffect } from "react"
 import { format } from "date-fns"
@@ -18,6 +18,7 @@ export default function Sidebar() {
         setPageCounter(1)
         setPortFilter('')
         setCountryFilter('')
+        // console.log(test)
     }
 
     const resetCountry = () => {
