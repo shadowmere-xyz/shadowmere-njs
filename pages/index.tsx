@@ -26,7 +26,7 @@ export default function Home() {
   useEffect(() => {
     document.querySelector('body')?.classList.add('overflow-y-scroll', 'bg-[#F8F8F8]', 'dark:bg-[#141414]', 'text-[#212121]')
     setHasMounted(true)
-    console.log(isDarkMode)
+    // console.log(isDarkMode)
   }, [])
 
   const handleDark = () => {
@@ -50,8 +50,7 @@ export default function Home() {
         <link rel="icon" type="image/svg+xml" href="/logo.svg" sizes="any"/>
       </Head>
 
-
-      
+      <ModalQR qrActive={qrScreenCode}/>      
       <Navbar active={'home'}/>
       <main className="wrapper container mx-auto w-full h-full xl:h-full grid grid-cols-12 auto-rows-auto mb-16 2xl:mb-0 mt-20 py-6 xl:py-8 gap-[30px] px-4 pb-4">
         <Sidebar/>

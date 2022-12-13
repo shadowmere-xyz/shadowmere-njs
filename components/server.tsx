@@ -1,8 +1,17 @@
 import { getFlagEmoji, getPercentage } from './functions';
 import React, {useEffect, useState} from 'react';
+import { proxyId, qrScreen } from './store';
+import { useRecoilState } from 'recoil';
 
 export default function Server (dataServer:{proxy: any}) {
     const [timeCopy, setTimeCopy] = useState(false)
+    const [proxID, setProxID] = useRecoilState(proxyId)
+    const [qrActive, setQrActive] = useRecoilState(qrScreen)
+
+    const handleQR = () => {
+        setProxID(dataServer.proxy.id)
+        setQrActive(!qrActive)
+    }
 
     return (
         <div className="item-server-vpn w-full h-24 sm:h-28 bg-white dark:bg-[#212121] dark:text-[#cfcfcf] rounded-lg shrink-0 flex items-center justify-between px-4 py-2 md:py-4 shadow-lg hover:cursor-pointer hover:-translate-y-[2px] dark:hover:bg-[#303030] hover:bg-[#FDFDFD] transition-all ">
@@ -61,7 +70,7 @@ export default function Server (dataServer:{proxy: any}) {
                             </svg> 
                 </button>
 
-                <button onClick={() => console.log('aaa')} title="QR Code" className="opt-codigo-qr w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-colors transition-transform active:scale-[95%]">
+                <button onClick={handleQR} title="QR Code" className="opt-codigo-qr w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-colors transition-transform active:scale-[95%]">
                     <svg className="fill-[#303030] dark:fill-[#cfcfcf] " width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_522_872)">
                         <path d="M0.25 8.75H7.75V1.25H0.25V8.75ZM2.75 3.75H5.25V6.25H2.75V3.75ZM10.25 1.25V8.75H17.75V1.25H10.25ZM15.25 6.25H12.75V3.75H15.25V6.25ZM0.25 18.75H7.75V11.25H0.25V18.75ZM2.75 13.75H5.25V16.25H2.75V13.75ZM16.5 11.25H17.75V16.25H14V15H12.75V18.75H10.25V11.25H14V12.5H16.5V11.25ZM16.5 17.5H17.75V18.75H16.5V17.5ZM14 17.5H15.25V18.75H14V17.5Z"/>

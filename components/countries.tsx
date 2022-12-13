@@ -1,12 +1,11 @@
 import useSWR from "swr"
 import React, { useEffect, useState } from "react"
 import { getFlagEmoji, getPercentage } from './functions';
-import { countryFilterState, countrySelectState } from "./store";
+import { countryFilterState } from "./store";
 import { useRecoilState } from "recoil";
 
 export default function Countries(props: any) {
     const [country, setCountry] = useRecoilState(countryFilterState)
-    const [countrySelect, setCountrySelect] = useRecoilState(countrySelectState)
 
     const fetcher = (...args: [any,any]) => fetch(...args).then((res) => res.json())
 

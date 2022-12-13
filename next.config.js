@@ -8,6 +8,17 @@ const nextConfig = {
       ssr: true
     },
   },
+  // images: {
+  //   remotePatterns: [
+  //     {
+  //       protocol: 'https',
+  //       hostname: 'shadowmere.akiel.dev',
+  //       port: '80',
+  //       pathname: '**/qr',
+  //       // pathname: '/account123/**',
+  //     },
+  //   ],
+  // },
 }
 
 module.exports = nextConfig

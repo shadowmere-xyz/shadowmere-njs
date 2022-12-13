@@ -30,18 +30,8 @@ export const countryFilterState = atom({
     default: ''
 })
 
-export const countrySelectState = atom({
-    key: 'countrySelectState',
-    default: 'UN',
-})
-
-export const portSelectState = atom({
-    key: 'portSelectState',
-    default: 'Any',
-})
-
 export const proxiesCount = atom({
-    key: 'proxiesState',
+    key: 'proxiesCount',
     default: 0,
 })
 
@@ -55,10 +45,15 @@ export const proxiesObj = selector({
     get:async ({get}:any) => {
         const response = await (await fetch('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true')).json()
         if (response.error){
-            throw response.error
+            return 'error'
         }
         return response
     },
+})
+
+export const proxyId = atom({
+    key: 'proxyId',
+    default: 0,
 })
 
 // export const proxiesObj = selector({
