@@ -1,4 +1,5 @@
 import useSWR from "swr";
+import { Proxies } from "./data";
 
 const {atom, selector} = require("recoil")
 
@@ -42,7 +43,7 @@ export const qrScreen = atom({
 
 export const proxiesObj = selector({
     key: 'proxiesObj',
-    get: async ({get}:any, response: Object) => {
+    get: async ({get}:any, response: Proxies) => {
         response = await (await fetch('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true')).json()
         if (!response){
             return console.error();
