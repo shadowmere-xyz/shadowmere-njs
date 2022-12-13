@@ -8,7 +8,7 @@ const nextConfig = {
       ssr: true
     },
   },
-  staticPageGenerationTimeout: 5000,
+  staticPageGenerationTimeout: 1000,
 }
 
 module.exports = nextConfig
