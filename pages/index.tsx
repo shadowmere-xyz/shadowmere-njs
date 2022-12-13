@@ -11,6 +11,8 @@ import ModalQR from '../components/modalQR'
 import React, { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import Sidebar from '../components/sidebar'
+import { useRecoilState } from 'recoil'
+import { qrScreen } from '../components/store'
 
 
 
@@ -19,13 +21,12 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false)
   const [qrCode, setQRCode] = useState(false)
   const [hasMounted, setHasMounted] = useState(false)
+  const [qrScreenCode, setQRScreenCode] = useRecoilState(qrScreen)
 
   useEffect(() => {
-    // document.querySelector("html")?.classList.add(darkMode)
     document.querySelector('body')?.classList.add('overflow-y-scroll', 'bg-[#F8F8F8]', 'dark:bg-[#141414]', 'text-[#212121]')
     setHasMounted(true)
     console.log(isDarkMode)
-    // setIsDarkMode(JSON.parse(localStorage.getItem('isDarkMode')))
   }, [])
 
   const handleDark = () => {
@@ -48,6 +49,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="icon" type="image/svg+xml" href="/logo.svg" sizes="any"/>
       </Head>
+
+
       
       <Navbar active={'home'}/>
       <main className="wrapper container mx-auto w-full h-full xl:h-full grid grid-cols-12 auto-rows-auto mb-16 2xl:mb-0 mt-20 py-6 xl:py-8 gap-[30px] px-4 pb-4">

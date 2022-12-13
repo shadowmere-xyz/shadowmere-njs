@@ -1,33 +1,36 @@
 import useSWR from "swr"
 import Ports from "./ports"
 import Countries from "./countries"
-import { pageCounterState, portPaginationState, countryPaginationState, portSelectState, countrySelectState } from "./store"
+import { pageCounterState, portFilterState, countryFilterState, portSelectState, countrySelectState, proxiesObj } from "./store"
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
 import { useEffect } from "react"
 
 
 export default function Sidebar() {
     const [pageCounter, setPageCounter] = useRecoilState(pageCounterState);
-    const [portPagination, setPortPagination] = useRecoilState(portPaginationState);
-    const [countryPagination, setCountryPagination] = useRecoilState(countryPaginationState);
+    const [portFilter, setPortFilter] = useRecoilState(portFilterState);
+    const [countryFilter, setCountryFilter] = useRecoilState(countryFilterState);
     const [countrySelect, setCountrySelect] = useRecoilState(countrySelectState)
-    // const proxiesObj = useRecoilState(proxiesState)
-
+    const proxies = useRecoilValue(proxiesObj)
 
 
     const handleClick = (event: any) => {
         setPageCounter(1)
-        setPortPagination('')
-        setCountryPagination('')
-        // resetCountry()
-        // setCountrySelect('UN')
-        // setPortSelect('Any')
-        // console.log(countrySelect)
+        setPortFilter('')
+        setCountryFilter('')
     }
 
     const resetCountry = () => {
         return 'UN'
     }
+
+    // const handleChange = (event: any) => {
+    //     if (event.target.value === 'Any') {
+    //         setPortFilter('')
+    //     } else {
+    //         setPortFilter(event.target.value)
+    //     }
+    // }
 
     return (
         <div className="sidebar col-span-12 xl:col-span-3 w-auto h-fit 2xl:h-fit mb-4 bg-white dark:bg-[#212121] dark:text-[#cfcfcf] shadow-lg flex flex-col xl:flex-col gap-6 p-4 rounded-lg">
@@ -41,7 +44,8 @@ export default function Sidebar() {
                 <div className="w-full h-6 flex items-center font-semibold gap-2 pl-4">
                     <svg className="fill-[#303030] dark:fill-[#cfcfcf]" width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.25 4.25H0.75C0.335789 4.25 0 3.91421 0 3.5V2C0 1.58579 0.335789 1.25 0.75 1.25H11.25C11.6642 1.25 12 1.58579 12 2V3.5C12 3.91421 11.6642 4.25 11.25 4.25ZM10.125 2.1875C9.81434 2.1875 9.5625 2.43934 9.5625 2.75C9.5625 3.06066 9.81434 3.3125 10.125 3.3125C10.4357 3.3125 10.6875 3.06066 10.6875 2.75C10.6875 2.43934 10.4357 2.1875 10.125 2.1875ZM8.625 2.1875C8.31434 2.1875 8.0625 2.43934 8.0625 2.75C8.0625 3.06066 8.31434 3.3125 8.625 3.3125C8.93566 3.3125 9.1875 3.06066 9.1875 2.75C9.1875 2.43934 8.93566 2.1875 8.625 2.1875ZM11.25 8H0.75C0.335789 8 0 7.66421 0 7.25V5.75C0 5.33579 0.335789 5 0.75 5H11.25C11.6642 5 12 5.33579 12 5.75V7.25C12 7.66421 11.6642 8 11.25 8ZM10.125 5.9375C9.81434 5.9375 9.5625 6.18934 9.5625 6.5C9.5625 6.81066 9.81434 7.0625 10.125 7.0625C10.4357 7.0625 10.6875 6.81066 10.6875 6.5C10.6875 6.18934 10.4357 5.9375 10.125 5.9375ZM8.625 5.9375C8.31434 5.9375 8.0625 6.18934 8.0625 6.5C8.0625 6.81066 8.31434 7.0625 8.625 7.0625C8.93566 7.0625 9.1875 6.81066 9.1875 6.5C9.1875 6.18934 8.93566 5.9375 8.625 5.9375ZM11.25 11.75H0.75C0.335789 11.75 0 11.4142 0 11V9.5C0 9.08579 0.335789 8.75 0.75 8.75H11.25C11.6642 8.75 12 9.08579 12 9.5V11C12 11.4142 11.6642 11.75 11.25 11.75ZM10.125 9.6875C9.81434 9.6875 9.5625 9.93934 9.5625 10.25C9.5625 10.5607 9.81434 10.8125 10.125 10.8125C10.4357 10.8125 10.6875 10.5607 10.6875 10.25C10.6875 9.93934 10.4357 9.6875 10.125 9.6875ZM8.625 9.6875C8.31434 9.6875 8.0625 9.93934 8.0625 10.25C8.0625 10.5607 8.31434 10.8125 8.625 10.8125C8.93566 10.8125 9.1875 10.5607 9.1875 10.25C9.1875 9.93934 8.93566 9.6875 8.625 9.6875Z"/>
-                        </svg> <span className="font-normal" ></span>
+                        </svg> 
+                    <span className="font-normal" >{proxies.count}</span>
                 </div>
             </div>
 
@@ -57,9 +61,9 @@ export default function Sidebar() {
                 </div>
             </div>
 
-            <Ports/>
+            <Ports valuePort={portFilter}/>
 
-            <Countries resetCountry={countrySelect}/> 
+            <Countries valueCountry={countryFilter}/> 
 
             <button onClick={handleClick} className="button-reset w-auto h-12 flex items-center justify-center px-5 rounded-md bg-[#212121] hover:bg-[#444444] active:bg-[#303030] dark:bg-[#cfcfcf] dark:hover:bg-[#bfbfbf] dark:active:bg-white dark:transition-colors text-white">
                 <svg className="dark:fill-[#303030] fill-[#cfcfcf]" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" ><path d="M12 16c1.671 0 3-1.331 3-3s-1.329-3-3-3-3 1.331-3 3 1.329 3 3 3z"></path><path d="M20.817 11.186a8.94 8.94 0 0 0-1.355-3.219 9.053 9.053 0 0 0-2.43-2.43 8.95 8.95 0 0 0-3.219-1.355 9.028 9.028 0 0 0-1.838-.18V2L8 5l3.975 3V6.002c.484-.002.968.044 1.435.14a6.961 6.961 0 0 1 2.502 1.053 7.005 7.005 0 0 1 1.892 1.892A6.967 6.967 0 0 1 19 13a7.032 7.032 0 0 1-.55 2.725 7.11 7.11 0 0 1-.644 1.188 7.2 7.2 0 0 1-.858 1.039 7.028 7.028 0 0 1-3.536 1.907 7.13 7.13 0 0 1-2.822 0 6.961 6.961 0 0 1-2.503-1.054 7.002 7.002 0 0 1-1.89-1.89A6.996 6.996 0 0 1 5 13H3a9.02 9.02 0 0 0 1.539 5.034 9.096 9.096 0 0 0 2.428 2.428A8.95 8.95 0 0 0 12 22a9.09 9.09 0 0 0 1.814-.183 9.014 9.014 0 0 0 3.218-1.355 8.886 8.886 0 0 0 1.331-1.099 9.228 9.228 0 0 0 1.1-1.332A8.952 8.952 0 0 0 21 13a9.09 9.09 0 0 0-.183-1.814z"></path></svg>

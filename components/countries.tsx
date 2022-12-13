@@ -1,11 +1,11 @@
 import useSWR from "swr"
 import React, { useEffect, useState } from "react"
 import { getFlagEmoji, getPercentage } from './functions';
-import { countryPaginationState, countrySelectState } from "./store";
+import { countryFilterState, countrySelectState } from "./store";
 import { useRecoilState } from "recoil";
 
-export default function Countries({resetCountry}: any) {
-    const [country, setCountry] = useRecoilState(countryPaginationState)
+export default function Countries(props: any) {
+    const [country, setCountry] = useRecoilState(countryFilterState)
     const [countrySelect, setCountrySelect] = useRecoilState(countrySelectState)
 
     const fetcher = (...args: [any,any]) => fetch(...args).then((res) => res.json())
@@ -26,14 +26,13 @@ export default function Countries({resetCountry}: any) {
                 </div>
                 
                 <select title="Countries" name="countries" id="component-placeholder" className="form-select font-twemoji rounded-md border-gray-300 mx-2 text-[#303030] dark:text-[#cfcfcf] dark:border-0 dark:bg-[#303030] outline-none cursor-pointer">
-                <option value="UN" className="font-twemoji" >{getFlagEmoji('UN')} Worldwide</option>
-                    <option className="font-twemoji" ></option>
+                    <option value="UN" className="font-twemoji" >{getFlagEmoji('UN')} Worldwide</option>
                 </select>
         </div>
     )
 
     const handleChange = (event: any) => {
-        if (event.target.value === 'UN' || event.target.value === resetCountry) {
+        if (event.target.value === 'UN') {
             setCountry('')
         } else {
             setCountry(event.target.value)
@@ -55,7 +54,7 @@ export default function Countries({resetCountry}: any) {
                     Countries
                 </label>
                 
-                <select title="Countries" name="countries" id="countries-selection" onChange={handleChange} className="form-select overflow-scroll font-twemoji rounded-md border-gray-300 mx-2 text-[#303030] dark:text-[#cfcfcf] dark:border-0 dark:bg-[#303030] outline-none cursor-pointer">
+                <select title="Countries" name="countries" id="countries-selection" value={props.valueCountry} onChange={handleChange} className="form-select overflow-scroll font-twemoji rounded-md border-gray-300 mx-2 text-[#303030] dark:text-[#cfcfcf] dark:border-0 dark:bg-[#303030] outline-none cursor-pointer">
                     <option value='UN' className="font-twemoji" >{getFlagEmoji('UN')} Worldwide</option>
                     {
                         countries.map((country: any, i: number) => (
