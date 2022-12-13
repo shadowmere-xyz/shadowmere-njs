@@ -5,13 +5,14 @@ import { pageCounterState, portFilterState, countryFilterState, proxiesObj } fro
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
 import { useEffect } from "react"
 import { format } from "date-fns"
+import { Proxies } from "./data"
 
 
 export default function Sidebar() {
     const [pageCounter, setPageCounter] = useRecoilState(pageCounterState);
     const [portFilter, setPortFilter] = useRecoilState(portFilterState);
     const [countryFilter, setCountryFilter] = useRecoilState(countryFilterState);
-    const proxies = useRecoilValue(proxiesObj)
+    const proxies: Proxies = useRecoilValue(proxiesObj)
 
 
     const handleClick = (event: any) => {

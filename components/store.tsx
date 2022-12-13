@@ -43,8 +43,8 @@ export const qrScreen = atom({
 
 export const proxiesObj = selector({
     key: 'proxiesObj',
-    get: async ({get}:any, response: Proxies) => {
-        response = await (await fetch('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true')).json()
+    get: async ({get}:any) => {
+        const response: Proxies = await (await fetch('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true')).json()
         if (!response){
             return console.error();
         }
@@ -56,25 +56,3 @@ export const proxyId = atom({
     key: 'proxyId',
     default: 0,
 })
-
-// export const proxiesObj = selector({
-//     key: 'proxiesObj',
-//     get: ({get}:any) => {
-//         const fetcher = (...args: [any,any]) => fetch(...args).then((res) => res.json())
-//         const { data, error } = useSWR('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true', fetcher)
-//         if (error) return 'error'
-//         if(!data) return 'loading'
-//         return data
-//     },
-// })
-
-// export const testApi = selector({
-//     key: 'testApi',
-//     get: () => {
-//         const fetcher = (...args: [any,any]) => fetch(...args).then((res) => res.json())
-//         const { data, error } = useSWR('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true', fetcher)
-//         if (error) return 'error'
-//         if(!data) return 'loading'
-//         return data
-//     }
-// })
