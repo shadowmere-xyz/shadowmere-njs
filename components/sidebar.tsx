@@ -20,6 +20,7 @@ export default function Sidebar() {
         setPortFilter('')
         setCountryFilter('')
         // console.log(test)
+        console.log(proxies?.count)
     }
 
     const resetCountry = () => {

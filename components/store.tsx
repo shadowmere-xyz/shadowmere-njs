@@ -56,3 +56,14 @@ export const proxyId = atom({
     key: 'proxyId',
     default: 0,
 })
+
+// export const proxiesObj2 = selector ({
+//     key: 'proxiesObj2',
+//     get: () => {
+//         const fetcher = (...args: [any,any]) => fetch(...args).then((res) => res.json())
+//         const { data, error } = useSWR('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true&location_country_code=' + '' + '&port=' + '' + '&page=' + '1', fetcher)
+//         if (error) return console.error()
+//         if (!data) return 'loading'
+//         return data
+//     }
+// })
