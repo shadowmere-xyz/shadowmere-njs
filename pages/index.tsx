@@ -1,24 +1,19 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Script from 'next/script'
-import Link from 'next/link'
-import styles from '../styles/Home.module.css'
-import Content from '../components/content'
 import Navbar from '../components/navbar'
 import Servers from './servers'
-import About from './about'
 import ModalQR from '../components/modalQR'
+import { Meta } from '../components/meta'
 import React, { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import Sidebar from '../components/sidebar'
 import { useRecoilState } from 'recoil'
-import { qrScreen } from '../components/store'
+import { qrScreen, darkModeState } from '../components/store'
 
 
 
 export default function Home() {
   const { theme, setTheme } = useTheme()
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useRecoilState(darkModeState)
   const [qrCode, setQRCode] = useState(false)
   const [hasMounted, setHasMounted] = useState(false)
   const [qrScreenCode, setQRScreenCode] = useRecoilState(qrScreen)
@@ -42,13 +37,13 @@ export default function Home() {
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>Shadowmere - Home</title>
         <meta charSet="UTF-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link rel="icon" type="image/svg+xml" href="/logo.svg" sizes="any"/>
-      </Head>
+      </Head> */}
 
       <ModalQR qrActive={qrScreenCode}/>      
       <Navbar active={'home'}/>
