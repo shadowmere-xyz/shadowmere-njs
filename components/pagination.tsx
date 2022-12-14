@@ -29,7 +29,7 @@ export default function Pagination (props: any) {
     }
 
     return (
-        <div className={"buttonPagesWrapper w-full h-auto flex items-center justify-center" + props.isVisible ? '' : 'hidden'}>
+        <div className={("buttonPagesWrapper w-full h-auto flex items-center justify-center ") + (props.isVisible ? '' : 'hidden')}>
                 <div className="buttonPages w-[328px] h-14 flex items-center justify-between">
                     <button onClick={handleFirst} className="button-first w-12 h-12 bg-[#212121] hover:bg-[#303030] dark:hover:bg-[#303030] dark:bg-[#212121] text-[#cfcfcf] transition-colors flex items-center justify-center shrink-0 font-bold font-awesome rounded-lg shadow-xl" type="button" >
                         <div className="w-12 h-12 font-awesome text-xl flex items-center justify-center after:content-['\f100'] after:hover:-translate-x-[2px] after:hover:transition-all"></div>                        

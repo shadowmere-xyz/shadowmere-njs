@@ -53,7 +53,7 @@ export default function Navbar ({active, handleDark}: any) {
                   </clipPath>
                 </defs>
               </svg>
-              <span className="dark:text-[#303030] font-medium">Fork me on GitHub</span>
+              <a href='https://github.com/jadolg/shadowmere' target={'_blank'} className="dark:text-[#303030] font-medium">Fork me on GitHub</a>
             </button>
             <ToggleDarkMode/>
             {/* <p>{isDarkMode ? 'dark' : 'light'}</p> */}
