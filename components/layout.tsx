@@ -3,8 +3,12 @@ import Navbar from "./navbar";
 import Sidebar from "./sidebar";
 import Servers from "../pages/servers";
 import ModalQR from "./modalQR";
+import { useRecoilState } from "recoil";
+import { qrScreen } from "./store";
 
 export default function Layout({ children }: any) {
+  const [qrScreenCode, setQRScreenCode] = useRecoilState(qrScreen)
+
     return (
         <>
             <Meta />

@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <RecoilRoot>
-      <Suspense fallback={
+      {/* <Suspense fallback={
         <div className='w-full h-full top-0 z-[90] bg-white dark:bg-[#141414] fixed flex items-center justify-center'>
           <div className="loader-screen w-full h-full top-0 z-[90] bg-white dark:bg-[#141414] fixed flex items-center justify-center">
             <Player src='/logo-animation-2-dark.json' background="transparent" speed={1} style={{ width: '100px', height: '100px' }} loop={true} autoplay={true}></Player>
@@ -22,13 +22,13 @@ export default function App({ Component, pageProps }: AppProps) {
             <Player src='/logo-animation-2.json' background="transparent" speed={1} style={{ width: '100px', height: '100px' }} loop={true} autoplay={true}></Player>
           </div>
         </div>
-      }>
+      }> */}
         <ThemeProvider enableSystem={true} attribute="class">
           <Layout>
             <Component {...pageProps} />
           </Layout>
         </ThemeProvider>
-      </Suspense>
+      {/* </Suspense> */}
     </RecoilRoot>
   )
 }
