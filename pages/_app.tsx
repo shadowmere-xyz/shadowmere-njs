@@ -4,7 +4,7 @@ import { ThemeProvider } from 'next-themes'
 import { Provider } from 'react-redux'
 import { RecoilRoot, useRecoilState } from 'recoil'
 import { Suspense } from 'react'
-import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import { Player, Controls } from '@lottiefiles/react-lottie-player'
 import { darkModeState } from '../components/store'
 import Layout from '../components/layout'
 
@@ -23,11 +23,11 @@ export default function App({ Component, pageProps }: AppProps) {
           </div>
         </div>
       }> */}
-        <ThemeProvider enableSystem={true} attribute="class">
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </ThemeProvider>
+      <ThemeProvider enableSystem={true} attribute="class">
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
       {/* </Suspense> */}
     </RecoilRoot>
   )

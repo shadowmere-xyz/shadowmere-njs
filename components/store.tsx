@@ -1,20 +1,12 @@
 import useSWR from "swr";
 import { Proxies } from "./data";
 
-const {atom, selector} = require("recoil")
+const { atom, selector } = require("recoil")
 
 export const darkModeState = atom({
     key: 'darkModeState',
     default: false,
 })
-
-// export const darkState = selector({
-//     key: 'darkState',
-//     get: ({get}:any) => {
-//         const dark = get(darkModeState)
-//         return !dark
-//     }),
-// })
 
 export const pageCounterState = atom({
     key: 'pageCounterState',
@@ -41,29 +33,23 @@ export const qrScreen = atom({
     default: false,
 })
 
-export const proxiesObj = selector({
-    key: 'proxiesObj',
-    get: async ({get}:any) => {
-        const response: Proxies = await (await fetch('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true')).json()
-        if (!response){
-            return console.error();
-        }
-        return response
-    },
-})
+// export const proxiesObj = selector({
+//     key: 'proxiesObj',
+//     get: async ({ get }: any) => {
+//         const response: Proxies = await (await fetch('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true')).json()
+//         if (!response) {
+//             return console.error();
+//         }
+//         return response
+//     },
+// })
 
 export const proxyId = atom({
     key: 'proxyId',
     default: 0,
 })
 
-// export const proxiesObj2 = selector ({
-//     key: 'proxiesObj2',
-//     get: () => {
-//         const fetcher = (...args: [any,any]) => fetch(...args).then((res) => res.json())
-//         const { data, error } = useSWR('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true&location_country_code=' + '' + '&port=' + '' + '&page=' + '1', fetcher)
-//         if (error) return console.error()
-//         if (!data) return 'loading'
-//         return data
-//     }
-// })
+export const activeTab = atom({
+    key: 'activeTab',
+    default: 'home',
+})

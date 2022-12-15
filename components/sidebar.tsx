@@ -1,31 +1,37 @@
 import useSWR from "swr"
 import Ports from "./ports"
 import Countries from "./countries"
-import { pageCounterState, portFilterState, countryFilterState, proxiesObj } from "./store"
+import { pageCounterState, portFilterState, countryFilterState } from "./store"
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { format } from "date-fns"
 import { Proxies } from "./data"
 
 
-export default function Sidebar() {
+export default function Sidebar(props: any) {
     const [pageCounter, setPageCounter] = useRecoilState(pageCounterState);
     const [portFilter, setPortFilter] = useRecoilState(portFilterState);
     const [countryFilter, setCountryFilter] = useRecoilState(countryFilterState);
-    const proxies: Proxies = useRecoilValue(proxiesObj)
+    // const proxies: Proxies = useRecoilValue(proxiesObj)
+    const [proxies, setProxies] = useState<Proxies>()
 
 
     const handleClick = (event: any) => {
         setPageCounter(1)
         setPortFilter('')
         setCountryFilter('')
-        // console.log(test)
-        console.log(proxies?.count)
+        // console.log(props.data)
+        console.log(proxies?.results[0].last_checked)
     }
 
     const resetCountry = () => {
         return 'UN'
     }
+
+    useEffect(()=>{
+        setProxies(props.data)
+        console.log(proxies?.results[0].last_checked)
+    })
 
     return (
         <div className="sidebar col-span-12 xl:col-span-3 w-auto h-fit 2xl:h-fit mb-4 bg-white dark:bg-[#212121] dark:text-[#cfcfcf] shadow-lg flex flex-col xl:flex-col gap-6 p-4 rounded-lg">
@@ -52,7 +58,7 @@ export default function Sidebar() {
                         Last check
                 </div>
                 <div className="w-full h-6 flex items-center font-semibold gap-2 pl-4">
-                    <span className="font-normal">{format(new Date(proxies.results[0].last_checked), 'MMMM do yyyy, h:mm:ss a')}</span>
+                    <span className="font-normal">{format(new Date(proxies?.results[0].last_checked), 'MMMM do yyyy, h:mm:ss a')}</span>
                 </div>
             </div>
 
