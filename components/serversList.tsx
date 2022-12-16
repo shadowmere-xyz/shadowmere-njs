@@ -15,19 +15,19 @@ export default function ServersList() {
     // const proxies = useRecoilValue(proxiesObj)
     const [skeleton, setSkeleton] = useState(Array(10))
     const [proxyCounter, setProxyCounter] = useRecoilState(proxiesCount)
-    const [data, setData] = useRecoilState<Proxies>(proxiesObj)
+    // const [data, setData] = useRecoilState<Proxies>(proxiesObj)
 
 
-    // const fetcher = (...args: [any,any]) => fetch(...args).then((res) => res.json())
-    // const { data, error } = useSWR('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true&location_country_code=' + countryFilter + '&port=' + portFilter + '&page=' + pageCounter?.toString(), fetcher)
+    const fetcher = (...args: [any,any]) => fetch(...args).then((res) => res.json())
+    const { data, error } = useSWR('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true&location_country_code=' + countryFilter + '&port=' + portFilter + '&page=' + pageCounter?.toString(), fetcher)
 
     
 
-    // if (error) return (
-    //     <div id="cuerpo" className="lista-servers-vpns col-span-12 xl:col-span-9 w-full h-screen flex flex-col items-center justify-center gap-4">
-    //         <span className=' dark:text-[#cfcfcf]' >Error to load...</span>
-    //     </div>
-    // )
+    if (error) return (
+        <div id="cuerpo" className="lista-servers-vpns col-span-12 xl:col-span-9 w-full h-screen flex flex-col items-center justify-center gap-4">
+            <span className=' dark:text-[#cfcfcf]' >Error to load...</span>
+        </div>
+    )
 
     if (!data) return (
     <div id="cuerpo" className="lista-servers-vpns col-span-12 xl:col-span-9 w-full h-full flex flex-col gap-4">
