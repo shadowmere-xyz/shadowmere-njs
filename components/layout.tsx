@@ -4,7 +4,7 @@ import Sidebar from "./sidebar";
 import Servers from "../pages/servers";
 import ModalQR from "./modalQR";
 import { useRecoilState } from "recoil";
-import { qrScreen } from "./store";
+import { proxiesObj, qrScreen } from "./store";
 import { useEffect } from "react";
 import { activeTab } from "./store";
 import useSWR from 'swr'
@@ -16,6 +16,7 @@ export default function Layout({ children }: any) {
     const [pageCounter, setPageCounter] = useRecoilState(pageCounterState);
     const [portFilter, setPortFilter] = useRecoilState(portFilterState);
     const [countryFilter, setCountryFilter] = useRecoilState(countryFilterState);
+    const [prox, setProx] = useRecoilState(proxiesObj)
 
     const fetcher = (...args: [any, any]) => fetch(...args).then((res) => res.json())
     const { data: proxies, error } = useSWR('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true&location_country_code=' + countryFilter + '&port=' + portFilter + '&page=' + pageCounter?.toString(), fetcher)
@@ -29,6 +30,10 @@ export default function Layout({ children }: any) {
 
     useEffect(() => {
         document.querySelector('body')?.classList.add('overflow-y-scroll', 'bg-[#F8F8F8]', 'dark:bg-[#141414]', 'text-[#212121]')
+        if (proxies) {
+            setProx(proxies)
+        }
+        console.log(prox)
     })
 
     return (

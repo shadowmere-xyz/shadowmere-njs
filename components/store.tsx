@@ -53,3 +53,8 @@ export const activeTab = atom({
     key: 'activeTab',
     default: 'home',
 })
+
+export const proxiesObj = atom({
+    key: 'proxiesObj',
+    default: null,
+})

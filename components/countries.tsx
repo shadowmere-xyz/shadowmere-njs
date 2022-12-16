@@ -1,11 +1,12 @@
 import useSWR from "swr"
 import React, { useEffect, useState } from "react"
 import { getFlagEmoji, getPercentage } from './functions';
-import { countryFilterState } from "./store";
+import { countryFilterState, pageCounterState } from "./store";
 import { useRecoilState } from "recoil";
 
 export default function Countries(props: any) {
     const [country, setCountry] = useRecoilState(countryFilterState)
+    const [pageFilter, setPageFilter] = useRecoilState(pageCounterState)
 
     const fetcher = (...args: [any,any]) => fetch(...args).then((res) => res.json())
 
@@ -35,6 +36,7 @@ export default function Countries(props: any) {
             setCountry('')
         } else {
             setCountry(event.target.value)
+            setPageFilter(1)
         }
     }
 

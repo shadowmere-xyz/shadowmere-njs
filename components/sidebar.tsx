@@ -6,6 +6,7 @@ import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil"
 import { useEffect, useState } from "react"
 import { format } from "date-fns"
 import { Proxies } from "./data"
+import { parseISO } from "date-fns/esm"
 
 
 export default function Sidebar(props: any) {
@@ -14,6 +15,7 @@ export default function Sidebar(props: any) {
     const [countryFilter, setCountryFilter] = useRecoilState(countryFilterState);
     // const proxies: Proxies = useRecoilValue(proxiesObj)
     const [proxies, setProxies] = useState<Proxies>()
+    const [time, setTime] = useState('')
 
 
     const handleClick = (event: any) => {
@@ -29,8 +31,12 @@ export default function Sidebar(props: any) {
     }
 
     useEffect(()=>{
-        setProxies(props.data)
-        console.log(proxies?.results[0].last_checked)
+        if (props.data) {
+            setProxies(props.data)
+            // setTime(proxies?.results[0].last_checked)
+        }
+        console.log(proxies)
+
     })
 
     return (
@@ -58,7 +64,8 @@ export default function Sidebar(props: any) {
                         Last check
                 </div>
                 <div className="w-full h-6 flex items-center font-semibold gap-2 pl-4">
-                    {/* <span className="font-normal">{format(new Date(proxies?.results[0].last_checked), 'MMMM do yyyy, h:mm:ss a')}</span> */}
+                    {/* <span className="font-normal">{format(new Date(time), 'MMMM do yyyy, h:mm:ss a')}</span> */}
+                    <span className="font-normal">{proxies?.results[0].last_checked}</span>
                 </div>
             </div>
 
