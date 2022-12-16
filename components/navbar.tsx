@@ -67,12 +67,12 @@ export default function Navbar({ handleDark }: any) {
                   </clipPath>
                 </defs>
               </svg>
-              <a href='https://github.com/jadolg/shadowmere' target={'_blank'} className="dark:text-[#303030] font-medium">Fork me on GitHub</a>
+              <a href='https://github.com/jadolg/shadowmere' target={'_blank'} rel="noreferrer" className="dark:text-[#303030] font-medium">Fork me on GitHub</a>
             </button>
             <ToggleDarkMode />
 
             <div className="menu relative hidden xl:flex flex-row-reverse gap-2 xl:gap-4 items-center">
-              <Link href='https://shadowsocks5.github.io/en/download/clients.html' target={'_blank'} className="dark:text-[#cfcfcf] text-[#212121] font-medium after:content-['\f08e'] after:font-awesome after:text-sm after:ml-1 w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%]">
+              <Link href='https://shadowsocks5.github.io/en/download/clients.html' target={'_blank'} rel="noreferrer" className="dark:text-[#cfcfcf] text-[#212121] font-medium after:content-['\f08e'] after:font-awesome after:text-sm after:ml-1 w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%]">
                 VPN Clients
               </Link>
 

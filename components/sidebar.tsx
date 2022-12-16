@@ -58,7 +58,7 @@ export default function Sidebar(props: any) {
                         Last check
                 </div>
                 <div className="w-full h-6 flex items-center font-semibold gap-2 pl-4">
-                    <span className="font-normal">{format(new Date(proxies?.results[0].last_checked), 'MMMM do yyyy, h:mm:ss a')}</span>
+                    {/* <span className="font-normal">{format(new Date(proxies?.results[0].last_checked), 'MMMM do yyyy, h:mm:ss a')}</span> */}
                 </div>
             </div>
 
