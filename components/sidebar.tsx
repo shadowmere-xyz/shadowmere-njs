@@ -23,7 +23,6 @@ export default function Sidebar(props: any) {
         setPortFilter('')
         setCountryFilter('')
         // console.log(props.data)
-        console.log(proxies?.results[0].last_checked)
     }
 
     const resetCountry = () => {
@@ -35,8 +34,6 @@ export default function Sidebar(props: any) {
             setProxies(props.data)
             // setTime(proxies?.results[0].last_checked)
         }
-        console.log(proxies)
-
     })
 
     return (

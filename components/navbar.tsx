@@ -8,7 +8,6 @@ import { activeTab } from './store'
 import MenuMobile from './menuMobile'
 
 export default function Navbar({ handleDark }: any) {
-  // const { isDarkMode, toggle, enable, disable } = useDarkMode()
   const [tabActive, setTabActive] = useRecoilState(activeTab)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [hasMounted, setHasMounted] = useState(false)
@@ -76,25 +75,25 @@ export default function Navbar({ handleDark }: any) {
                 VPN Clients
               </Link>
 
-              <Link href={'/subscription'} onClick={() => setTabActive('sub')} className={"relative dark:text-[#cfcfcf] font-medium group w-auto h-12 flex items-center justify-center px-3 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (tabActive === 'sub' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
+              <Link href={'/subscription'} onClick={() => setTabActive('sub')} className={"relative dark:text-[#cfcfcf] font-medium group w-auto h-12 flex items-center justify-center px-3 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors active:scale-[99%] " + (tabActive === 'sub' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
                 Subscription
                 <NewFeature />
               </Link>
 
-              <Link href={'/support-us'} onClick={() => setTabActive('support')} className={"relative dark:text-[#cfcfcf] font-medium group w-auto h-12 flex items-center justify-center px-3 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (tabActive === 'support' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
+              <Link href={'/support-us'} onClick={() => setTabActive('support')} className={"relative dark:text-[#cfcfcf] font-medium group w-auto h-12 flex items-center justify-center px-3 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors active:scale-[99%] " + (tabActive === 'support' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
                 Support Us
                 <NewFeature />
               </Link>
 
-              <Link href={'/why-shadowmere'} onClick={() => setTabActive('why')} className={" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (tabActive === 'why' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
+              <Link href={'/why-shadowmere'} onClick={() => setTabActive('why')} className={" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors active:scale-[99%] " + (tabActive === 'why' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
                 Why Shadowmere?
               </Link>
 
-              <Link href={'/about'} onClick={() => setTabActive('about')} className={" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (tabActive === 'about' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
+              <Link href={'/about'} onClick={() => setTabActive('about')} className={" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors active:scale-[99%] " + (tabActive === 'about' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
                 About
               </Link>
 
-              <Link href={'/'} onClick={() => setTabActive('home')} className={" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors transition-transform active:scale-[99%] " + (tabActive === 'home' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
+              <Link href={'/'} onClick={() => setTabActive('home')} className={" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors active:scale-[99%] " + (tabActive === 'home' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
                 Home
               </Link>
             </div>

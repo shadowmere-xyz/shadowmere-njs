@@ -8,6 +8,14 @@
       {
         "nested-interactive": "off"
       }
+    ],
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "color-scheme"
+        ]
+      }
     ]
   }
 }

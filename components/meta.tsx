@@ -24,3 +24,4 @@ Meta.defaultProps = {
     keywords: 'vpn, proxies, freedom of internet, community, productivity',
     description: 'A list of Shadowsocks proxies',
 }
+

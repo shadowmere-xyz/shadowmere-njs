@@ -37,7 +37,6 @@ export default function Layout({ children }: any) {
                 setTime(proxies.results[0].last_checked)
             }
         }
-        console.log(prox)
     })
 
     return (
