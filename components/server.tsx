@@ -59,7 +59,7 @@ export default function Server (dataServer:{proxy: any}) {
                 </div>
             </div>
             <div className="data-operations gap-4 flex flex-row-reverse items-center" >     
-                <button title="Copy" className="opt-copiar relative w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-colors transition-transform active:scale-[95%]" onClick={() => {navigator.clipboard.writeText(dataServer.proxy.url+'#'+encodeURI(dataServer.proxy.location)); setTimeCopy(true); setTimeout(() => { setTimeCopy(false) }, 500)}}>
+                <button title="Copy" className="opt-copiar relative w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all active:scale-[95%]" onClick={() => {navigator.clipboard.writeText(dataServer.proxy.url+'#'+encodeURI(dataServer.proxy.location)).then(()=>{setTimeCopy(true); setTimeout(() => { setTimeCopy(false) }, 500)}).catch(() => {alert("something went wrong");}) }}>
                     <div className={("absolute w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center ") + (timeCopy ? '': 'hidden')}>
                         <svg className=" bg-transparent w-6 h-6 stroke-[#303030] dark:stroke-[#cfcfcf]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 11.2L10.25 16L19 8" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
