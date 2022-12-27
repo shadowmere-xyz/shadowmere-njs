@@ -75,8 +75,6 @@ export default function ServersList() {
                 ))
                 
             }
-            
         </div>
-
     )
 }
