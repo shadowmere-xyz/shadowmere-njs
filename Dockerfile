@@ -1,2 +1,2 @@
 FROM nginx:alpine
-ADD out /usr/share/nginx/html
+ADD ./out /usr/share/nginx/html
