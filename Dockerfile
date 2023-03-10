@@ -1,2 +1,2 @@
 FROM nginx:alpine
-COPY ./out /usr/share/nginx/html
+COPY ./shadowmere-njs/out /usr/share/nginx/html
