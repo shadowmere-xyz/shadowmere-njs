@@ -9,7 +9,7 @@ type Props = {
 export function Meta ({ title, keywords, description}: Props) {
     return (
         <Head>
-            <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+            <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta name="keywords" content={keywords} />
             <meta name="description" content={description} />
@@ -21,7 +21,7 @@ export function Meta ({ title, keywords, description}: Props) {
 
 Meta.defaultProps = {
     title: 'Shadowmere',
-    keywords: 'vpn, proxies, freedom of internet, community, productivity',
-    description: 'A list of Shadowsocks proxies',
+    keywords: 'vpn, proxies, freedom of internet, community, productivity, shadowsocks, cuba, servers, internet',
+    description: 'A list of Shadowsocks proxies to avoid censorship',
 }
 

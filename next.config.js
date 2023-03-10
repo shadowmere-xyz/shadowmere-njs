@@ -10,7 +10,7 @@ const nextConfig = {
     },
   },
   staticPageGenerationTimeout: 1000,
-  output: 'standalone',
+  // output: 'standalone',
 }
 
 module.exports = nextConfig
