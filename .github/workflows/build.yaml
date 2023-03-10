@@ -26,6 +26,9 @@ jobs:
           node-version: 19
       - run: npm install
       - run: npm run export
+      - run: |
+          pwd
+          ls
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
