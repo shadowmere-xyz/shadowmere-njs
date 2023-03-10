@@ -1,14 +1,12 @@
 import useSWR from 'swr'
 import React, { useState, useEffect } from 'react';
-import { getFlagEmoji, getPercentage } from './functions';
-import Home from '../pages/index';
 import Server from './server';
 import { RecoilRoot, atom, selector, useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
 import { pageCounterState, portFilterState, countryFilterState, proxiesCount, proxiesObj } from './store';
 import ServerSkeleton from './serverSkeleton';
-import { Proxies } from './data';
 
 export default function ServersList() {
+    
     const [pageCounter, setPageCounter] = useRecoilState(pageCounterState);
     const [portFilter, setPortFilter] = useRecoilState(portFilterState);
     const [countryFilter, setCountryFilter] = useRecoilState(countryFilterState);
@@ -20,12 +18,16 @@ export default function ServersList() {
 
 
     const fetcher = (...args: [any,any]) => fetch(...args).then((res) => res.json())
-    const { data, error } = useSWR('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true&location_country_code=' + countryFilter + '&port=' + portFilter + '&page=' + pageCounter?.toString(), fetcher)
+    const { data, error, mutate } = useSWR('https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true&location_country_code=' + countryFilter + '&port=' + portFilter + '&page=' + pageCounter?.toString(), fetcher)
 
-    // useEffect(()=>{
-    //     if (data.results?.lenght == 0)
-    //         setNoResults('There is no results')
-    // },[])
+    useEffect(()=>{
+        if (data?.results.lenght == 0)
+            setNoResults('There is no results')
+    },[])
+
+    useEffect(()=>{
+        mutate()
+    },[data])
 
     if (error) return (
         <div id="cuerpo" className="lista-servers-vpns col-span-12 xl:col-span-9 w-full h-screen flex flex-col items-center justify-center gap-4">
