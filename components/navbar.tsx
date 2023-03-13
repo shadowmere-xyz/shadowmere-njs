@@ -15,7 +15,7 @@ export default function Navbar({ handleDark }: any) {
   useEffect(() => {
     setHasMounted(true)
     // console.log(mobileMenuOpen)
-  })
+  },[])
 
   if (!hasMounted) {
     return null

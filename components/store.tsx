@@ -58,3 +58,8 @@ export const proxiesObj = atom({
     key: 'proxiesObj',
     default: null,
 })
+
+export const loaderPage = atom({
+    key: 'loaderPage',
+    default: false,
+})
