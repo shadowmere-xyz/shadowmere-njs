@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Script
 				strategy='afterInteractive'
 				src="https://www.googletagmanager.com/gtag/js?id=G-KQ4KMVJEXY" />
-        <Script strategy='afterInteractive' dangerouslySetInnerHTML={{__html: `
+        <Script id={`gtag`} strategy='afterInteractive' dangerouslySetInnerHTML={{__html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
