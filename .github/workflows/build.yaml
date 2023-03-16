@@ -43,4 +43,4 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/shadowmere-frontend-njs:latest
       - name: Deploy
         run: |
-          curl -H "Authorization: ${{ secrets.DEPLOY_TOKEN }}" "https://smd.akiel.dev/deploy?script=deploy_shadowmere_frontend.sh"
+          curl --fail -H "Authorization: ${{ secrets.DEPLOY_TOKEN }}" "https://smd.akiel.dev/deploy?script=deploy_shadowmere_frontend.sh"
