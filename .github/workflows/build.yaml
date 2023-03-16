@@ -41,3 +41,6 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/shadowmere-frontend-njs:latest
+      - name: Deploy
+        run: |
+          curl -H "Authorization: ${{ secrets.DEPLOY_TOKEN }}" "https://smd.akiel.dev/deploy?script=deploy_shadowmere_frontend.sh"
