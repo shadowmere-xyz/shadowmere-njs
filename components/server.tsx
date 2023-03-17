@@ -14,7 +14,7 @@ export default function Server(dataServer: { proxy: any }) {
 	};
 
 	return (
-		<div className="item-server-vpn w-full h-24 sm:h-24 bg-white dark:bg-[#212121] dark:text-[#cfcfcf] rounded-lg shrink-0 flex items-center justify-between px-4 py-2 md:py-4 hover:cursor-pointer hover:-translate-y-[2px] dark:hover:bg-[#303030] transition-all border border-[#e0e0e0] dark:border-[#303030] hover:border-[#cfcfcf] dark:hover:border-[#3a3a3a] ">
+		<div className="item-server-vpn w-full h-24 sm:h-24 bg-white dark:bg-[#212121] dark:text-[#cfcfcf] rounded-lg shrink-0 flex items-center justify-between px-4 py-2 md:py-4 hover:cursor-pointer hover:-translate-y-[2px] dark:hover:bg-[#303030] transition-all border border-[#e0e0e0] dark:border-[#303030] hover:border-[#b1b1b1] dark:hover:border-[#3a3a3a] ">
 			<div className="data-country-ip gap-1 flex flex-col items-start justify-center">
 				<div className="w-auto h-auto flex gap-2 items-center">
 					<div className="country-flag font-twemoji select-none flex items-center text-3xl sm:text-4xl w-auto h-6 cursor-pointer">
@@ -113,7 +113,7 @@ export default function Server(dataServer: { proxy: any }) {
 			<div className="data-operations gap-4 flex flex-row-reverse items-center">
 				<button
 					title="Copy"
-					className="opt-copiar relative w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all active:scale-[95%]"
+					className="opt-copiar relative w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all duration-150 active:scale-[95%]"
 					onClick={() => {
 						navigator.clipboard
 							.writeText(
@@ -173,7 +173,7 @@ export default function Server(dataServer: { proxy: any }) {
 				<button
 					onClick={handleQR}
 					title="QR Code"
-					className="opt-codigo-qr w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-colors transition-transform active:scale-[95%]">
+					className="opt-codigo-qr w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all duration-150 active:scale-[95%]">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						className="icon icon-tabler icon-tabler-qrcode stroke-[#303030] dark:stroke-[#cfcfcf]"
@@ -207,7 +207,7 @@ export default function Server(dataServer: { proxy: any }) {
 						"https://shadowmere.akiel.dev/" + dataServer.proxy.id + "/config"
 					}
 					title="Download"
-					className="opt-descargar w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-colors transition-transform active:scale-[95%]">
+					className="opt-descargar w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all duration-150 active:scale-[95%]">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						className="icon icon-tabler icon-tabler-download stroke-[#303030] dark:stroke-[#cfcfcf]"

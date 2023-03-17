@@ -37,7 +37,7 @@ export default function Sidebar(props: any) {
     })
 
     return (
-        <div className="sidebar col-span-12 xl:col-span-3 w-auto h-fit 2xl:h-fit mb-4 bg-white dark:bg-[#212121] dark:text-[#cfcfcf] shadow-lg flex flex-col xl:flex-col gap-6 p-4 rounded-lg border border-[#303030]  ">
+        <div className="sidebar col-span-12 xl:col-span-3 w-auto h-fit 2xl:h-fit mb-4 bg-white dark:bg-[#212121] dark:text-[#cfcfcf]  flex flex-col xl:flex-col gap-6 p-4 rounded-lg border border-[#e0e0e0] dark:border-[#303030]  ">
             <div className="online-vpns-filter flex flex-col gap-2 xl:gap-4">
                 <div className="w-full h-6 flex items-center font-semibold gap-2">
                     <svg className="fill-[#303030] dark:fill-[#cfcfcf]" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
