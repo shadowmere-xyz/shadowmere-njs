@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { useRecoilState } from "recoil"
-import { activeTab } from "./store"
+import { activeTab } from "../libs/store"
 
 
 

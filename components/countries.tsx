@@ -1,7 +1,7 @@
 import useSWR from "swr"
 import React, { useEffect, useState } from "react"
-import { getFlagEmoji, getPercentage } from './functions';
-import { countryFilterState, pageCounterState } from "./store";
+import { getFlagEmoji, getPercentage } from '../libs/functions';
+import { countryFilterState, pageCounterState } from "../libs/store";
 import { useRecoilState } from "recoil";
 
 export default function Countries(props: any) {

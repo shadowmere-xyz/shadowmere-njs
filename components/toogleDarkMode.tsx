@@ -1,6 +1,6 @@
 import { useTheme } from 'next-themes'
 import React, { useState, useEffect, useRef } from 'react'
-import { useOutsideClick } from './functions'
+import { useOutsideClick } from '../libs/functions'
 import Icon from './iconMode'
 
 

@@ -1,6 +1,6 @@
-import { getFlagEmoji, getPercentage } from './functions';
+import { getFlagEmoji, getPercentage } from '../libs/functions';
 import React, {useEffect, useState} from 'react';
-import { proxyId, qrScreen } from './store';
+import { proxyId, qrScreen } from '../libs/store';
 import { useRecoilState } from 'recoil';
 
 export default function Server (dataServer:{proxy: any}) {

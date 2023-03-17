@@ -1,6 +1,6 @@
 import useSWR from "swr"
 import React, { useEffect } from "react"
-import { portFilterState, pageCounterState } from "./store"
+import { portFilterState, pageCounterState } from "../libs/store"
 import { useRecoilState } from "recoil"
 
 export default function Ports(props: any){

@@ -4,7 +4,7 @@ import { ThemeProvider } from 'next-themes'
 import { Provider } from 'react-redux'
 import { RecoilRoot, useRecoilState } from 'recoil'
 import { Player, Controls } from '@lottiefiles/react-lottie-player'
-import { darkModeState, loaderPage } from '../components/store'
+import { darkModeState, loaderPage } from '../libs/store'
 import Layout from '../components/layout'
 import Script from 'next/script'
 

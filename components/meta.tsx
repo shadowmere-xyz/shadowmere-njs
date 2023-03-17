@@ -2,7 +2,7 @@ import Head, { defaultHead } from "next/head";
 import Script from "next/script";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { countryFilterState, pageCounterState, portFilterState } from "./store";
+import { countryFilterState, pageCounterState, portFilterState } from "../libs/store";
 
 type Props = {
 	title: string;

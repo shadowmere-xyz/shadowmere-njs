@@ -4,7 +4,7 @@ import Link from 'next/link'
 import ToggleDarkMode from './toogleDarkMode'
 import NewFeature from './newFeature'
 import { useRecoilState } from 'recoil'
-import { activeTab } from './store'
+import { activeTab } from '../libs/store'
 import MenuMobile from './menuMobile'
 
 export default function Navbar({ handleDark }: any) {
@@ -23,8 +23,8 @@ export default function Navbar({ handleDark }: any) {
 
   return (
     <>
-      <nav className="w-full h-20 z-50 top-0 fixed  flex justify-center bg-white dark:bg-[#212121] text-sm 2xl:text-base transition-transform shadow-lg">
-        <div className="nav-wrapper container mx-auto dark:bg-[#212121] w-full h-full flex items-center justify-between px-4">
+      <nav className="w-full h-20 z-50 top-0 fixed  flex justify-center bg-white dark:bg-[#212121] text-sm 2xl:text-base transition-transform shadow-lg border border-[#303030]">
+        <div className="nav-wrapper container mx-auto dark:bg-[#212121] w-full h-full flex items-center justify-between px-4 ">
           <svg className="fill-[#303030] dark:fill-[#cfcfcf] w-[200px] h-auto cursor-pointer" width="260" height="50" viewBox="0 0 260 50" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M20.9424 4.88982L23.7489 0.941338L28.491 1.11554L34.5105 1.3478L25.607 4.46401L20.9424 4.88982Z" />
             <path d="M28.7812 7.19311L33.4265 4.69627L41.9235 8.00603L31.2781 9.12864L28.7812 7.19311Z" />
@@ -93,7 +93,7 @@ export default function Navbar({ handleDark }: any) {
                 About
               </Link>
 
-              <Link href={'/'} onClick={() => setTabActive('home')} className={" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors active:scale-[99%] " + (tabActive === 'home' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
+              <Link href={'/servers'} onClick={() => setTabActive('home')} className={" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors active:scale-[99%] " + (tabActive === 'home' && 'bg-[#EBEBEB] dark:bg-[#1B1B1B]')}>
                 Home
               </Link>
             </div>

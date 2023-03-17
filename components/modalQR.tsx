@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { proxyId, qrScreen } from './store'
+import { proxyId, qrScreen } from '../libs/store'
 import { useRecoilState } from 'recoil'
 
 export default function ModalQR (props: any) {

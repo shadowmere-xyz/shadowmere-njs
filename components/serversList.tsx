@@ -16,7 +16,7 @@ import {
 	proxiesCount,
 	proxiesObj,
 	loaderPage,
-} from "./store";
+} from "../libs/store";
 import ServerSkeleton from "./serverSkeleton";
 
 export default function ServersList() {

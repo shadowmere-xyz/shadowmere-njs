@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useRecoilState, useRecoilValue } from "recoil"
-import { Proxies } from "./data"
-import { proxiesObj, pageCounterState } from "./store"
+import { Proxies } from "../libs/data"
+import { proxiesObj, pageCounterState } from "../libs/store"
 
 
 

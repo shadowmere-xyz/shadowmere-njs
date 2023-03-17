@@ -3,7 +3,7 @@ import Navbar from "./navbar";
 import Sidebar from "./sidebar";
 import ModalQR from "./modalQR";
 import { useRecoilState } from "recoil";
-import { proxiesObj, qrScreen } from "./store";
+import { proxiesObj, qrScreen } from "../libs/store";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 import {
@@ -11,7 +11,7 @@ import {
 	portFilterState,
 	countryFilterState,
 	loaderPage,
-} from "./store";
+} from "../libs/store";
 import { Player } from "@lottiefiles/react-lottie-player";
 import Loader from "./loader";
 import Script from "next/script";
@@ -81,7 +81,7 @@ export default function Layout({ children }: any) {
 
 	return (
 		<>
-			<Loader isLoading={loader} />
+			{/* <Loader isLoading={loader} /> */}
 			<Meta />
 			<Navbar />
 			<ModalQR qrActive={qrScreenCode} />
