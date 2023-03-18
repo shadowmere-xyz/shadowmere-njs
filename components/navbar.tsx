@@ -93,7 +93,7 @@ export default function Navbar({ handleDark }: any) {
 							<button
 								title="fork"
 								type="button"
-								className="button-fork w-auto h-12 hidden xl:flex gap-2 items-center justify-center px-5 rounded-md bg-[#303030] hover:bg-[#444444] active:bg-[#303030] dark:hover:bg-[#3a3a3a] dark:active:bg-[#3a3a3a]dark:transition-colors text-white border dark:border-[#3a3a3a]">
+								className="button-fork w-auto h-12 hidden xl:flex gap-2 items-center justify-center px-5 rounded-md bg-[#303030] hover:bg-[#444444] active:bg-[#303030] dark:hover:bg-[#3a3a3a] dark:active:bg-[#3a3a3a]dark:transition-colors text-white border dark:border-[#3a3a3a] transition-all">
 								<svg
 									className="fill-white "
 									width="24"

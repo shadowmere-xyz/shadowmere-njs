@@ -87,7 +87,7 @@ export default function Ports(props: any) {
 				name="ports"
 				id="port-selection"
 				onChange={handleChange}
-				className="relative puertos form-select rounded-md overflow-scroll border-gray-300 hover:border-[#b1b1b1] mx-2 text-[#303030] dark:text-[#cfcfcf] dark:hover:bg-[#3a3a3a] dark:bg-[#303030] outline-none cursor-pointer border dark:border-[#3a3a3a]">
+				className="relative puertos form-select rounded-md overflow-scroll border-gray-300 hover:border-[#b1b1b1] mx-2 text-[#303030] dark:text-[#cfcfcf] dark:hover:bg-[#3a3a3a] dark:bg-[#303030] outline-none cursor-pointer border dark:border-[#3a3a3a] transition-all">
 				<option value="Any" defaultValue={"Any"}>
 					Any
 				</option>

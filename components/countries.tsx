@@ -49,7 +49,7 @@ export default function Countries(props: any) {
 					title="Countries"
 					name="countries"
 					id="component-placeholder"
-					className="form-select font-twemoji rounded-md border-gray-300 mx-2 text-[#303030] dark:text-[#cfcfcf]  dark:hover:bg-[#3a3a3a] dark:bg-[#303030] outline-none cursor-pointer border dark:border-[#3a3a3a]">
+					className="form-select font-twemoji rounded-md border-gray-300 mx-2 text-[#303030] dark:text-[#cfcfcf]  dark:hover:bg-[#3a3a3a] dark:bg-[#303030] outline-none cursor-pointer border dark:border-[#3a3a3a] transition-all">
 					<option value="UN" className="font-twemoji">
 						{getFlagEmoji("UN")} Worldwide
 					</option>
@@ -104,7 +104,7 @@ export default function Countries(props: any) {
 				id="countries-selection"
 				value={props.valueCountry}
 				onChange={handleChange}
-				className="form-select font-twemoji rounded-md border-gray-300 mx-2 text-[#303030] hover:border-[#b1b1b1] dark:text-[#cfcfcf]  dark:hover:bg-[#3a3a3a] dark:bg-[#303030] outline-none cursor-pointer border dark:border-[#3a3a3a]">
+				className="form-select font-twemoji rounded-md border-gray-300 mx-2 text-[#303030] hover:border-[#b1b1b1] dark:text-[#cfcfcf]  dark:hover:bg-[#3a3a3a] dark:bg-[#303030] outline-none cursor-pointer border dark:border-[#3a3a3a] transition-all">
 				<option value="UN" className="font-twemoji">
 					{getFlagEmoji("UN")} Worldwide
 				</option>
