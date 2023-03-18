@@ -47,7 +47,6 @@ export default function ShadowsockSubs() {
 				className="w-full h-[640px] rounded-lg"
 				src="https://www.youtube.com/embed/YvQjOExb4no"
 				title="Set up shadowsocks subscription from Shadowmere"
-				frameBorder="0"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 				allowFullScreen></iframe>
 		</>

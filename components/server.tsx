@@ -31,13 +31,6 @@ export default function Server(dataServer: { proxy: any }) {
 				</div>
 
 				<div className=" w-auto h-auto flex gap-2">
-					<div className=" hidden relative w-11 h-6 flex items-center justify-start select-none bg-[#cfcfcf] font-medium text-xs sm:text-sm rounded overflow-hidden">
-						<div className="w-full h-full"></div>
-						<span className="absolute w-12 h-6 z-10 text-[#303030] flex items-center justify-center px-2">
-							aasdasdasd
-						</span>
-					</div>
-
 					<div
 						className={
 							"w-14 h-6 before:content-[''] before:absolute before:rounded flex gap-1 items-center justify-start select-none bg-[#cfcfcf] font-medium text-xs sm:text-sm rounded overflow-visible " +
