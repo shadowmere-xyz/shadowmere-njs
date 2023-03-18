@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function VmessSubs() {
+export default function V2raySubs() {
 	const [copyLink, setCopyLink] = useState(false);
 
 	return (
@@ -10,10 +10,10 @@ export default function VmessSubs() {
 				<a
 					href="https://play.google.com/store/apps/details?id=com.github.shadowsocks"
 					className="text-[#579eff] font-bold after:content-['\f08e'] hover:text-[#467ecc] transition-colors after:pl-1 after:font-awesome after:text-sm">
-					Vmess for Android
+					V2Ray for Android
 				</a>
 				{` allow`} users to subscribe to a list of servers. You can subscribe to
-				Shadowmere&apos;s using this link:
+				Shadowmere&apos;s using this link: 
 				<span
 					onClick={() => {
 						navigator.clipboard.writeText(
@@ -25,7 +25,7 @@ export default function VmessSubs() {
 						}, 1000);
 					}}
 					className=" group text-[#579eff] cursor-pointer font-bold hover:text-[#467ecc] transition-colors after:pl-1 dark:after:text-[#7a7a7a] after:text-[#c1c1c1] after:font-awesome after:text-sm ">
-					https://shadowmere.akiel.dev/api/sub{" "}
+					https://shadowmere.akiel.dev/api/sub 
 					<span
 						className={
 							"font-semibold text-[#c1c1c1] dark:text-[#7a7a7a] " +

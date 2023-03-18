@@ -13,7 +13,7 @@ export default function ShadowsockSubs() {
 					Shadowsocks for Android
 				</a>
 				{` allow`} users to subscribe to a list of servers. You can subscribe to
-				Shadowmere&apos;s using this link:
+				Shadowmere&apos;s using this link: 
 				<span
 					onClick={() => {
 						navigator.clipboard.writeText(

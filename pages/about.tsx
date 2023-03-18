@@ -2,10 +2,19 @@ import Sidebar from "../components/sidebar";
 import Navbar from "../components/navbar";
 import Content from "../components/content";
 import Head from "next/head";
+import { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { activeTab } from "../libs/store";
 
 export default function About() {
+	const [tabActive, setTabActive] = useRecoilState(activeTab)
+
+    useEffect(()=>{
+        setTabActive('about')
+    },[])
+
 	return (
-		<div className="contenido-about col-span-12 xl:col-span-9 w-full h-fit bg-white dark:bg-[#212121] dark:text-[#cfcfcf] rounded-lg shadow-lg flex flex-col gap-6 p-8 mb-4 2xl:mb-40">
+		<div className="contenido-about col-span-12 xl:col-span-9 w-full h-fit bg-white dark:bg-[#212121] dark:text-[#cfcfcf] rounded-lg flex flex-col gap-6 p-8 mb-4 2xl:mb-40 border border-[#e0e0e0] dark:border-[#303030]">
 			<h1 className="text-2xl font-bold">About Us</h1>
 			{/* <!-- Aqui va el contenido del About --> */}
 			<p>Shadowmere. A list of Shadowsocks proxies</p>

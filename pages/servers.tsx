@@ -2,9 +2,18 @@ import Pagination from "../components/pagination"
 import ServersList from "../components/serversList"
 import Sidebar from "../components/sidebar"
 import Navbar from "../components/navbar"
+import { useEffect } from "react"
+import { activeTab } from "../libs/store"
+import { useRecoilState } from "recoil"
 
 
 export default function Servers() {
+    const [tabActive, setTabActive] = useRecoilState(activeTab)
+
+    useEffect(()=>{
+        setTabActive('home')
+    },[])
+
     return (
         <div className="lista-servers-vpns col-span-12 xl:col-span-9 w-full h-full flex flex-col gap-4">
             <Pagination isVisible={true} />
