@@ -38,6 +38,6 @@ export function Meta({ title, keywords, description }: Props) {
 Meta.defaultProps = {
 	title: "Shadowmere",
 	keywords:
-		"vpn, proxies, freedom of internet, community, productivity, shadowsocks, cuba, servers, internet",
+		"vpn, proxies, freedom of internet, community, productivity, shadowsocks, cuba, iran, india, china, servers, internet",
 	description: "A list of Shadowsocks proxies to avoid censorship",
 };

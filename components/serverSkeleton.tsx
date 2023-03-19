@@ -1,9 +1,13 @@
+import { useRecoilState } from "recoil"
+import { viewDataLayout } from "../libs/store"
 
 
 export default function ServerSkeleton () {
+    const [viewMode, setViewMode] = useRecoilState(viewDataLayout)
+
 
     return (
-        <div className="item-server-skeleton w-full h-24 sm:h-28 bg-[#EBEBEB] dark:bg-[#212121] dark:text-[#cfcfcf] rounded-lg shrink-0 flex items-center justify-between px-4 py-2 md:py-4 transition-all ">
+        <div className={`item-server-skeleton w-full h-24 sm:h-24 bg-[#EBEBEB] dark:bg-[#212121] dark:text-[#cfcfcf] rounded-lg shrink-0 flex items-center justify-between px-4 py-2 md:py-4 transition-all ${viewMode === 'details' && 'col-span-12'} ${viewMode === 'cols' && 'col-span-6'} `}>
 
             <div className="data-country-ip animate-pulse gap-1 flex flex-col items-start justify-center">
                 <div className="w-auto h-auto flex gap-2 items-center">

@@ -48,7 +48,7 @@ export default function Sidebar(props: any) {
 						width={20}
 						height={20}
 						viewBox="0 0 24 24"
-						stroke-width={2}
+						strokeWidth={2}
 						stroke="currentColor"
 						fill="none"
 						strokeLinecap="round"
@@ -81,7 +81,7 @@ export default function Sidebar(props: any) {
 						width={20}
 						height={20}
 						viewBox="0 0 24 24"
-						stroke-width={2}
+						strokeWidth={2}
 						stroke="currentColor"
 						fill="none"
 						strokeLinecap="round"
@@ -104,7 +104,7 @@ export default function Sidebar(props: any) {
 
 			<button
 				onClick={handleClick}
-				className="button-reset w-auto h-12 flex gap-2 items-center justify-center px-5 rounded-md bg-[#212121] hover:bg-[#444444] active:bg-[#303030] dark:bg-[#303030] dark:hover:bg-[#3a3a3a] dark:active:bg-white dark:transition-colors text-white border dark:border-[#3a3a3a] transition-all">
+				className="button-reset w-auto h-12 flex gap-2 items-center justify-center px-5 rounded-md bg-[#212121] hover:bg-[#444444] active:bg-[#303030] dark:bg-[#303030] dark:transition-colors text-white border dark:border-[#3a3a3a] transition-all item-server-vpn after:blur-3xl backdrop-blur-sm overflow-hidden">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					className="icon icon-tabler icon-tabler-rotate-2 stroke-[#cfcfcf]"

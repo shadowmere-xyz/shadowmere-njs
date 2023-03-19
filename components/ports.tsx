@@ -29,7 +29,7 @@ export default function Ports(props: any) {
 						width={20}
 						height={20}
 						viewBox="0 0 24 24"
-						stroke-width={2}
+						strokeWidth={2}
 						stroke="currentColor"
 						fill="none"
 						strokeLinecap="round"
@@ -44,7 +44,7 @@ export default function Ports(props: any) {
 					title="Ports"
 					name="ports"
 					id="port-selection-skeleton"
-					className="relative puertos form-select rounded-md overflow-scroll border-gray-300 mx-2 text-[#303030] dark:text-[#cfcfcf] dark:hover:bg-[#3a3a3a] dark:bg-[#303030] outline-none cursor-pointer border dark:border-[#3a3a3a]">
+					className="relative puertos form-select rounded-md overflow-scroll border-gray-300 mx-2 text-[#303030] dark:text-[#cfcfcf] dark:hover:bg-[#3a3a3a] dark:bg-[#303030] outline-none cursor-pointer border dark:border-[#3a3a3a] ">
 					<option value="Any">Any</option>
 				</select>
 			</div>
@@ -70,7 +70,7 @@ export default function Ports(props: any) {
 						width={20}
 						height={20}
 						viewBox="0 0 24 24"
-						stroke-width={2}
+						strokeWidth={2}
 						stroke="currentColor"
 						fill="none"
 						strokeLinecap="round"

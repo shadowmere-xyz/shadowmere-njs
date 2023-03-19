@@ -3,83 +3,116 @@
 @tailwind utilities;
 
 @layer base {
-  [x-cloak] {
-      display: none
-  }
-  body {
-      transition-property: color;
-      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 150ms;
-  }
- 
-  html {
-      -webkit-tap-highlight-color: transparent;
-  }
-  .range-dark::-webkit-slider-thumb {
-      height: 3px;
-      width: 16px;
-      border-radius: 13px;
-      background: #cfcfcf;
-      cursor: pointer;
-      -webkit-appearance: none;
-      pointer-events: none;
-  }
-  .range-light::-webkit-slider-thumb {
-      height: 3px;
-      width: 16px;
-      border-radius: 13px;
-      background: #303030;
-      cursor: pointer;
-      -webkit-appearance: none;
-      pointer-events: none;
-  }
+	[x-cloak] {
+		display: none;
+	}
+	body {
+		transition-property: color;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 150ms;
+	}
 
-  .lista1::-webkit-scrollbar-track {
-      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-      /* border-radius: 6px; */
-      background-color: #303030;
-    }
+	html {
+		-webkit-tap-highlight-color: transparent;
+	}
+	.range-dark::-webkit-slider-thumb {
+		height: 3px;
+		width: 16px;
+		border-radius: 13px;
+		background: #cfcfcf;
+		cursor: pointer;
+		-webkit-appearance: none;
+		pointer-events: none;
+	}
+	.range-light::-webkit-slider-thumb {
+		height: 3px;
+		width: 16px;
+		border-radius: 13px;
+		background: #303030;
+		cursor: pointer;
+		-webkit-appearance: none;
+		pointer-events: none;
+	}
+
+	.lista1::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+		/* border-radius: 6px; */
+		background-color: #303030;
+	}
+
+	.item-server-vpn:after {
+		content: "";
+		width: 18rem;
+		height: 18rem;
+		border-radius: 9999px;
+		opacity: 0;
+		position: absolute;
+		top: var(--y);
+		left: var(--x);
+    background-color: rgba(206, 206, 206, 0.1);
+		z-index: -1;
+		transition: opacity 0.5s ease-out;
+	}
+	.item-server-vpn:hover:after {
+		opacity: 100%;
+	}
+
+  .data-country-ip {
+    pointer-events: none;
+  }
+  .data-operations {
+    pointer-events: none;
+  }
+  .opt-copiar {
+    pointer-events: painted;
+  }
+  .opt-codigo-qr {
+    pointer-events: visible;
+  }
+  .opt-descargar {
+    pointer-events: visible;
+  }
 }
 
 @font-face {
-  font-family: "Twemoji";
-  src: url("../fonts/twemoji.woff2") format("woff2");
-  size-adjust: 120%;
+	font-family: "Twemoji";
+	src: url("../fonts/twemoji.woff2") format("woff2");
+	size-adjust: 120%;
 }
 
 @font-face {
-font-family: "FontAwesome";
-src: url("../fonts/fa-regular-400.eot") format("eot"),
-  url("../fonts/fa-regular-400.svg") format("svg"),
-  url("../fonts/fa-regular-400.ttf") format("truetype"),
-  url("../fonts/fa-regular-400.woff") format("woff"),
-  url("../fonts/fa-regular-400.woff2") format("woff2");
-      font-weight: 400;
+	font-family: "FontAwesome";
+	src: url("../fonts/fa-regular-400.eot") format("eot"),
+		url("../fonts/fa-regular-400.svg") format("svg"),
+		url("../fonts/fa-regular-400.ttf") format("truetype"),
+		url("../fonts/fa-regular-400.woff") format("woff"),
+		url("../fonts/fa-regular-400.woff2") format("woff2");
+	font-weight: 400;
 }
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+	html {
+		color-scheme: dark;
+	}
+	body {
+		color: white;
+		background: black;
+	}
 }

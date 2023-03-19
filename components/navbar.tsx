@@ -56,7 +56,7 @@ export default function Navbar({ handleDark }: any) {
 						<path d="M250.303 17.3546V23.1612H257.852V26.7033H250.303V32.6453H260V36.3035H245.6V13.6965H260V17.3546H250.303Z" />
 					</svg>
 
-					<div className="nav-content flex w-auto h-full items-center flex-row-reverse gap-6 mx-0">
+					<div className="nav-content flex w-auto h-full items-center flex-row-reverse gap-2 mx-0">
 						<button
 							onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
 							title="toggle"
@@ -93,7 +93,7 @@ export default function Navbar({ handleDark }: any) {
 							<button
 								title="fork"
 								type="button"
-								className="button-fork w-auto h-12 hidden xl:flex gap-2 items-center justify-center px-5 rounded-md bg-[#303030] hover:bg-[#444444] active:bg-[#303030] dark:hover:bg-[#3a3a3a] dark:active:bg-[#3a3a3a]dark:transition-colors text-white border dark:border-[#3a3a3a] transition-all">
+								className="button-fork w-auto h-12 hidden xl:flex gap-2 items-center justify-center px-5 rounded-md bg-[#303030] hover:bg-[#444444] active:bg-[#303030] dark:hover:bg-[#3a3a3a] dark:active:bg-[#3a3a3a]dark:transition-colors text-white border dark:border-[#3a3a3a] transition-all item-server-vpn after:blur-3xl backdrop-blur-sm overflow-hidden">
 								<svg
 									className="fill-white "
 									width="24"

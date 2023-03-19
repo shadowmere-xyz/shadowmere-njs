@@ -32,23 +32,23 @@ export default function Pagination(props: any) {
 	return (
 		<div
 			className={
-				"buttonPagesWrapper w-full h-auto flex items-center justify-center " +
+				"buttonPagesWrapper w-auto h-auto flex items-center justify-center " +
 				(props.isVisible ? "" : "hidden")
 			}>
 			<div className="buttonPages w-[328px] h-14 flex items-center justify-between">
 				<button
 					title="First page"
 					onClick={handleFirst}
-					className="button-first w-12 h-12 bg-[#212121] hover:bg-[#303030] dark:hover:bg-[#303030] dark:bg-[#212121] text-[#cfcfcf] transition-colors flex items-center justify-center shrink-0 font-bold font-awesome rounded-lg border border-[#e0e0e0] dark:border-[#303030]"
+					className="button-first w-10 h-10 rounded-[4px] bg-white hover:border-[#3a3a3a] dark:hover:bg-[#303030] dark:bg-[#212121] text-[#cfcfcf] transition-colors flex items-center justify-center shrink-0 font-bold font-awesome border border-[#e0e0e0] dark:border-[#303030]"
 					type="button">
 					{/* <div className="w-12 h-12 font-awesome text-xl flex items-center justify-center after:content-['\f100'] after:hover:-translate-x-[2px] after:hover:transition-all"></div> */}
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						className="icon icon-tabler icon-tabler-chevrons-left"
+						className="icon icon-tabler icon-tabler-chevrons-left dark:stroke-[#cfcfcf] stroke-[#212121]"
 						width={24}
 						height={24}
 						viewBox="0 0 24 24"
-						stroke-width={2}
+						strokeWidth={2}
 						stroke="currentColor"
 						fill="none"
 						strokeLinecap="round"
@@ -62,16 +62,16 @@ export default function Pagination(props: any) {
 				<button
 					title="Previous page"
 					onClick={() => pageCounter > 1 && setPageCounter(pageCounter - 1)}
-					className="button-previous w-12 h-12 bg-[#212121] hover:bg-[#303030] dark:hover:bg-[#303030] dark:bg-[#212121] text-[#cfcfcf] transition-colors flex items-center justify-center shrink-0 font-bold rounded-lg border border-[#e0e0e0] dark:border-[#303030]"
+					className="button-previous w-10 h-10 rounded-[4px] bg-white hover:border-[#3a3a3a] dark:hover:bg-[#303030] dark:bg-[#212121] text-[#cfcfcf] transition-colors flex items-center justify-center shrink-0 font-bold border border-[#e0e0e0] dark:border-[#303030]"
 					type="button">
 					{/* <div className="w-12 h-12 font-awesome text-xl flex items-center justify-center after:content-['\f104'] after:hover:-translate-x-[2px] after:hover:transition-all"></div> */}
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						className="icon icon-tabler icon-tabler-chevron-left"
+						className="icon icon-tabler icon-tabler-chevron-left dark:stroke-[#cfcfcf] stroke-[#212121]"
 						width={24}
 						height={24}
 						viewBox="0 0 24 24"
-						stroke-width={2}
+						strokeWidth={2}
 						stroke="currentColor"
 						fill="none"
 						strokeLinecap="round"
@@ -90,16 +90,16 @@ export default function Pagination(props: any) {
 					onClick={() =>
 						pageCounter < prox.total_pages && setPageCounter(pageCounter + 1)
 					}
-					className="button-next w-12 h-12 bg-[#212121] hover:bg-[#303030] dark:hover:bg-[#303030] dark:bg-[#212121] text-[#cfcfcf] transition-colors flex items-center justify-center shrink-0 font-bold rounded-lg border border-[#e0e0e0] dark:border-[#303030]"
+					className="button-next w-10 h-10 rounded-[4px] bg-white hover:border-[#3a3a3a] dark:hover:bg-[#303030] dark:bg-[#212121] text-[#cfcfcf] transition-colors flex items-center justify-center shrink-0 font-bold border border-[#e0e0e0] dark:border-[#303030]"
 					type="button">
 					{/* <div className="w-12 h-12 font-awesome text-xl flex items-center justify-center after:content-['\f105'] after:hover:translate-x-[2px] after:hover:transition-all"></div> */}
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						className="icon icon-tabler icon-tabler-chevron-right"
+						className="icon icon-tabler icon-tabler-chevron-right dark:stroke-[#cfcfcf] stroke-[#212121]"
 						width={24}
 						height={24}
 						viewBox="0 0 24 24"
-						stroke-width={2}
+						strokeWidth={2}
 						stroke="currentColor"
 						fill="none"
 						strokeLinecap="round"
@@ -112,16 +112,16 @@ export default function Pagination(props: any) {
 				<button
 					title="Last page"
 					onClick={handleLast}
-					className="button-last w-12 h-12 bg-[#212121] hover:bg-[#303030] dark:hover:bg-[#303030] dark:bg-[#212121] text-[#cfcfcf] transition-colors flex items-center justify-center shrink-0 font-bold rounded-lg border border-[#e0e0e0] dark:border-[#303030]"
+					className="button-last w-10 h-10 rounded-[4px] bg-white hover:border-[#3a3a3a] dark:hover:bg-[#303030] dark:bg-[#212121] text-[#cfcfcf] transition-colors flex items-center justify-center shrink-0 font-bold border border-[#e0e0e0] dark:border-[#303030]"
 					type="button">
 					{/* <div className="w-12 h-12 font-awesome text-xl flex items-center justify-center after:content-['\f101'] after:hover:translate-x-[2px] after:hover:transition-all"></div> */}
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						className="icon icon-tabler icon-tabler-chevrons-right"
+						className="icon icon-tabler icon-tabler-chevrons-right dark:stroke-[#cfcfcf] stroke-[#212121]"
 						width={24}
 						height={24}
 						viewBox="0 0 24 24"
-						stroke-width={2}
+						strokeWidth={2}
 						stroke="currentColor"
 						fill="none"
 						strokeLinecap="round"

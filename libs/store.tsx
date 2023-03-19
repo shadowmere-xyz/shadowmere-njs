@@ -46,7 +46,7 @@ export const qrScreen = atom({
 
 export const proxyId = atom({
     key: 'proxyId',
-    default: 0,
+    default: null,
 })
 
 export const activeTab = atom({
@@ -62,4 +62,9 @@ export const proxiesObj = atom({
 export const loaderPage = atom({
     key: 'loaderPage',
     default: false,
+})
+
+export const viewDataLayout = atom({
+    key: 'viewDataLayout',
+    default: 'details'
 })
