@@ -3,7 +3,7 @@ import ServersList from "../components/serversList";
 import Sidebar from "../components/sidebar";
 import Navbar from "../components/navbar";
 import { useEffect, useState } from "react";
-import { activeTab, viewDataLayout } from "../libs/store";
+import { activeTab, viewDataLayout } from "./store";
 import { useRecoilState } from "recoil";
 import ServersListCols from "../components/serversListCols";
 import DetailsLayoutButton from "../components/detailsLayoutButton";
