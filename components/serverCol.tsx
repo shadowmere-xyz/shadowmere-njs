@@ -14,6 +14,12 @@ export default function ServerCol(dataServer: { proxy: any }) {
 	const [hasMounted, setHasMounted] = useState(false);
 	const [style, setStyle] = useState("");
     const [viewMode, setViewMode] = useRecoilState(viewDataLayout)
+	const [viewLayout, setViewLayout] = useState('')
+
+	useEffect(() => {
+		const view = JSON.parse(localStorage.getItem('viewMode')!)
+		setViewMode(view)
+	}, [viewLayout])
 
 
 	const handleQR = () => {

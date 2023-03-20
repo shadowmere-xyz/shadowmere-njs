@@ -167,7 +167,7 @@ export default function Navbar({ handleDark }: any) {
 							</Link>
 
 							<Link
-								href={"/servers"}
+								href={"/"}
 								onClick={() => setTabActive("home")}
 								className={
 									" dark:text-[#cfcfcf] font-medium w-auto h-12 flex items-center justify-center px-5 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors active:scale-[99%] " +

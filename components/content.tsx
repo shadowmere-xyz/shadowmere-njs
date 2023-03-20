@@ -1,5 +1,5 @@
 import Sidebar from "./sidebar"
-import Servers from "../pages/servers"
+import Servers from "../libs/servers"
 import About from "../pages/about";
 import Why from "../pages/why-shadowmere";
 import Support from "../pages/support-us";
