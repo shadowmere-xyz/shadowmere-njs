@@ -22,6 +22,9 @@ export default function Home() {
 		} else {
 			setViewMode(JSON.parse(localStorage.getItem('viewMode')!))
 		}
+		if (window.innerWidth <= 640) {
+			localStorage.setItem('viewMode', JSON.stringify('details'))
+		}
 	}, []);
 
 	useEffect(() => {
