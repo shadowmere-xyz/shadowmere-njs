@@ -1,16 +1,15 @@
-import Sidebar from "../components/sidebar";
-import Navbar from "../components/navbar";
-import Content from "../components/content";
-import Head from "next/head";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { activeTab } from "../libs/store";
+import { useRouter } from "next/router";
 
 export default function About() {
 	const [tabActive, setTabActive] = useRecoilState(activeTab)
+	const router = useRouter()
 
     useEffect(()=>{
         setTabActive('about')
+		router.push('/about')
     },[])
 
 	return (
