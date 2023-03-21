@@ -30,6 +30,7 @@ export default function Navbar({ handleDark }: any) {
 					<svg
 						onClick={() => {
 							router.push("/");
+							setTabActive('home')
 						}}
 						className="fill-[#303030] dark:fill-[#cfcfcf] w-[200px] h-auto cursor-pointer"
 						width="260"
