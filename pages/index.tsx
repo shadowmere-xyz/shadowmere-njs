@@ -12,6 +12,7 @@ export default function Home() {
 	const [hasMounted, setHasMounted] = useState(false);
 	const router = useRouter();
 	const [viewMode, setViewMode] = useRecoilState(viewDataLayout);
+	const [windowWidth, setWindowWidth] = useState(1920);
 
 
 	useEffect(() => {
@@ -22,10 +23,14 @@ export default function Home() {
 		} else {
 			setViewMode(JSON.parse(localStorage.getItem('viewMode')!))
 		}
-		if (window.innerWidth <= 640) {
+	}, []);
+
+	useEffect(() => {
+		setWindowWidth(window.innerWidth)
+		if (windowWidth <= 640) {
 			localStorage.setItem('viewMode', JSON.stringify('details'))
 		}
-	}, []);
+	}, [windowWidth]);
 
 	useEffect(() => {
 		setHasMounted(true);

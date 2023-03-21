@@ -29,7 +29,7 @@ export default function Navbar({ handleDark }: any) {
 				<div className="nav-wrapper container mx-auto dark:bg-[#212121] w-full h-full flex items-center justify-between px-4 ">
 					<svg
 						onClick={() => {
-							router.push("/servers");
+							router.push("/");
 						}}
 						className="fill-[#303030] dark:fill-[#cfcfcf] w-[200px] h-auto cursor-pointer"
 						width="260"
