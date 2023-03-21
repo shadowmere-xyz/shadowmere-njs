@@ -34,6 +34,7 @@ export default function Home() {
 
 	useEffect(() => {
 		setHasMounted(true);
+		console.log(router.pathname)
 	}, []);
 
 	if (!hasMounted) {

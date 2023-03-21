@@ -8,8 +8,9 @@ export default function About() {
 	const router = useRouter()
 
     useEffect(()=>{
-        setTabActive('about')
-		router.push('/about')
+		if (router.pathname === '/about'){
+			setTabActive('about')
+		}
     },[])
 
 	return (
