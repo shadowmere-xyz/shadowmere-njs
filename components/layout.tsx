@@ -15,6 +15,10 @@ import {
 import { Player } from "@lottiefiles/react-lottie-player";
 import Loader from "./loader";
 import Script from "next/script";
+import ServerStatsCard from "./serversStatsCard";
+import ItemSubscription from "./itemSubscriptionSSoscks";
+import ItemSubscriptionSSocks from "./itemSubscriptionSSoscks";
+import ItemSubscriptionV2Ray from "./itemSubscriptionV2Ray";
 
 export default function Layout({ children }: any) {
 	const [qrScreenCode, setQRScreenCode] = useRecoilState(qrScreen);
@@ -56,10 +60,10 @@ export default function Layout({ children }: any) {
 		if (proxies) {
 			setProx(proxies);
 			if (countryFilter === "" && pageCounter == 1 && portFilter === "") {
-				setTime(proxies.results[0].last_checked);
+				setTime(proxies?.results[0]?.last_checked);
 			}
 		}
-		window.addEventListener("load", function () {
+		window.addEventListener("load", function() {
 			(window as any).wpcc?.init({
 				border: "thin",
 				corners: "small",
@@ -77,7 +81,7 @@ export default function Layout({ children }: any) {
 				position: "bottom",
 			});
 		});
-	},[proxies]);
+	}, [proxies]);
 
 	return (
 		<>
@@ -86,7 +90,16 @@ export default function Layout({ children }: any) {
 			<Navbar />
 			{qrScreenCode && <ModalQR />}
 			<main className="wrapper container mx-auto w-full h-full xl:h-full grid grid-cols-12 auto-rows-auto mb-16 2xl:mb-0 mt-20 py-6 xl:py-8 gap-[30px] px-4 pb-4">
-				<Sidebar data={proxies} time={time} />
+				<div className="sidebar-wrapper col-span-12 xl:col-span-3 gap-4 ">
+					<div className="server-subs-wrapper w-full h-auto flex gap-4 ">
+						<ServerStatsCard data={proxies} time={time} />
+						<div className="server-subs-wrapper w-full h-auto flex flex-col">
+							<ItemSubscriptionSSocks/>
+							<ItemSubscriptionV2Ray/>
+						</div>
+					</div>
+					<Sidebar data={proxies} time={time} />
+				</div>
 				{children}
 			</main>
 		</>

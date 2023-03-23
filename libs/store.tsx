@@ -66,5 +66,5 @@ export const loaderPage = atom({
 
 export const viewDataLayout = atom({
     key: 'viewDataLayout',
-    default: 'details'
+    default: 'cols'
 })
