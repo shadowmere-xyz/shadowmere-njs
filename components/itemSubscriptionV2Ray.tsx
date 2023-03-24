@@ -32,7 +32,7 @@ export default function ItemSubscriptionV2Ray(props: any) {
 	return (
 		<div
 			className={`itemSub w-full h-full mb-4 bg-white dark:bg-[#212121] dark:text-white flex items-center gap-2
-                 p-4 rounded-lg border border-[#e0e0e0] dark:border-[#303030] cursor-pointer item-server-vpn after:blur-3xl backdrop-blur-sm overflow-hidden `}
+                 p-4 rounded-lg border border-[#e0e0e0] dark:border-[#303030] hover:border-[#3a3a3a] cursor-pointer item-server-vpn after:blur-3xl backdrop-blur-sm overflow-hidden transition-all `}
 			onMouseEnter={handleOver}
 			onMouseLeave={handleLeave}
 			onClick={handleClick}>
@@ -49,6 +49,7 @@ export default function ItemSubscriptionV2Ray(props: any) {
 								d="M2.88672 4.5H6.72763L11.6026 17.5L17.364 4.5"
 								stroke="#cfcfcf"
 								stroke-linecap="round"
+								strokeWidth="1.5"
 							/>
 						</svg>
 					) : (
@@ -71,7 +72,7 @@ export default function ItemSubscriptionV2Ray(props: any) {
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						className={
-							"icon icon-tabler icon-tabler-clipboard-copy stroke-[#303030] dark:stroke-[#cfcfcf]  "
+							"icon icon-tabler icon-tabler-clipboard-copy  "
 						}
 						width={24}
 						height={24}
@@ -90,12 +91,12 @@ export default function ItemSubscriptionV2Ray(props: any) {
 			</div>
 			<div className={`flex flex-col `}>
 				{!timeCopy && (
-					<span className="text-[#cfcfcf] text-sm capitalize pointer-events-none">
+					<span className="dark:text-[#cfcfcf] text-sm capitalize pointer-events-none">
 						V2Ray
 					</span>
 				)}
 				{timeCopy && (
-					<span className="text-[#cfcfcf] text-md capitalize leading-4 pointer-events-none">
+					<span className="dark:text-[#cfcfcf] text-md capitalize leading-4 pointer-events-none">
 						Copied to Clipboard!
 					</span>
 				)}

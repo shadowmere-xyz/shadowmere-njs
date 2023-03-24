@@ -5,7 +5,7 @@ export default function ServerStatsCard(props: any) {
 	return (
 		<>
 			<div
-				className={`sidebar w-full h-auto 2xl:h-fit mb-4 bg-white dark:bg-[#212121] dark:text-[#cfcfcf] flex flex-col xl:flex-col gap-2
+				className={`sidebar w-1/2 h-auto mb-4 bg-white dark:bg-[#212121] dark:text-[#cfcfcf] flex flex-col xl:flex-col gap-2
                  p-4 rounded-lg border border-[#e0e0e0] dark:border-[#303030]  `}>
 				<div className="flex gap-2 w-full items-center">
 					<div className="icon-server w-8 h-8 flex shrink-0 rounded bg-[#303030] items-center justify-center">
@@ -34,6 +34,7 @@ export default function ServerStatsCard(props: any) {
 				<div className="">
 					<div className="flex gap-2 items-center">
 						<svg
+							className="stroke-[#212121] dark:stroke-[#949494]"
 							width="20"
 							height="21"
 							viewBox="0 0 20 21"
@@ -42,35 +43,30 @@ export default function ServerStatsCard(props: any) {
 							<g clip-path="url(#clip0_2435_1849)">
 								<path
 									d="M2.5 6.33333C2.5 5.67029 2.76339 5.0344 3.23223 4.56556C3.70107 4.09672 4.33696 3.83333 5 3.83333H15C15.663 3.83333 16.2989 4.09672 16.7678 4.56556C17.2366 5.0344 17.5 5.67029 17.5 6.33333V7.99999C17.5 8.66304 17.2366 9.29892 16.7678 9.76776C16.2989 10.2366 15.663 10.5 15 10.5H5C4.33696 10.5 3.70107 10.2366 3.23223 9.76776C2.76339 9.29892 2.5 8.66304 2.5 7.99999V6.33333Z"
-									stroke="#949494"
 									stroke-width="2"
 									stroke-linecap="round"
 									stroke-linejoin="round"
 								/>
 								<path
 									d="M12.5 17.1667H5C4.33696 17.1667 3.70107 16.9033 3.23223 16.4344C2.76339 15.9656 2.5 15.3297 2.5 14.6667V13C2.5 12.337 2.76339 11.7011 3.23223 11.2322C3.70107 10.7634 4.33696 10.5 5 10.5H15"
-									stroke="#949494"
 									stroke-width="2"
 									stroke-linecap="round"
 									stroke-linejoin="round"
 								/>
 								<path
 									d="M5.83301 7.16667V7.17501"
-									stroke="#949494"
 									stroke-width="2"
 									stroke-linecap="round"
 									stroke-linejoin="round"
 								/>
 								<path
 									d="M5.83301 13.8333V13.8417"
-									stroke="#949494"
 									stroke-width="2"
 									stroke-linecap="round"
 									stroke-linejoin="round"
 								/>
 								<path
 									d="M16.6667 13L15 15.5H17.5L15.8333 18"
-									stroke="#949494"
 									stroke-width="2"
 									stroke-linecap="round"
 									stroke-linejoin="round"
@@ -87,11 +83,11 @@ export default function ServerStatsCard(props: any) {
 								</clipPath>
 							</defs>
 						</svg>
-						<span className="text-[#949494] text-sm">Servers</span>
+						<span className="dark:text-[#949494] text-sm">Servers</span>
 					</div>
 					<div>
 						<h1 className="text-4xl font-bold">{props.data?.count}</h1>
-						<span className="text-xs text-[#949494]">
+						<span className="text-xs dark:text-[#949494]">
                             {props.time && format(new Date(props.time), "MMM. dd, yyyy, HH:mm aa")}
 							
 						</span>
