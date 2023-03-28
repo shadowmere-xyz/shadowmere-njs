@@ -78,6 +78,7 @@
 	font-family: "Twemoji";
 	src: url("../fonts/twemoji.woff2") format("woff2");
 	size-adjust: 120%;
+	font-display: swap;
 }
 
 @font-face {
@@ -88,6 +89,7 @@
 		url("../fonts/fa-regular-400.woff") format("woff"),
 		url("../fonts/fa-regular-400.woff2") format("woff2");
 	font-weight: 400;
+	font-display: swap;
 }
 
 html,
