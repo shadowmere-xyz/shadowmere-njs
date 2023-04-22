@@ -19,6 +19,10 @@ export default function Navbar({ handleDark }: any) {
 		// console.log(mobileMenuOpen)
 	}, []);
 
+	const handleOpen = () => {
+		setMobileMenuOpen(false);
+	}
+
 	if (!hasMounted) {
 		return null;
 	}
@@ -180,7 +184,7 @@ export default function Navbar({ handleDark }: any) {
 					</div>
 				</div>
 			</nav>
-			<MenuMobile open={mobileMenuOpen} />
+			<MenuMobile open={mobileMenuOpen} handleOpen={handleOpen} />
 		</>
 	);
 }
