@@ -44,4 +44,4 @@ jobs:
       - name: Deploy
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
-          curl --fail -H "Authorization: ${{ secrets.DEPLOY_TOKEN }}" "https://smd.akiel.dev/hook?script=c7c664c0-0d0e-11ee-a3c9-17023c4d78f3"
+          curl --fail -H "Authorization: ${{ secrets.DEPLOY_TOKEN }}" "https://smd.akiel.dev/hook?script=e02f06d2-1594-11ee-bfb7-b7512e68e792"
