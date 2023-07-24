@@ -44,4 +44,4 @@ jobs:
       - name: Deploy
         if: ${{ github.ref == 'refs/heads/main' }}
         run: |
-          curl --fail -H "Authorization: ${{ secrets.DEPLOY_TOKEN }}" "https://smd.akiel.dev/deploy?script=deploy_shadowmere_frontend.sh"
+          curl --fail -H "Authorization: ${{ secrets.DEPLOY_TOKEN }}" "https://smd.akiel.dev/hook?script=e02f06d2-1594-11ee-bfb7-b7512e68e792"
