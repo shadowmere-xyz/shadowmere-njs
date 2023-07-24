@@ -92,7 +92,7 @@ export default function ItemSubscriptionV2Ray(props: any) {
 			<div className={`flex flex-col `}>
 				{!timeCopy && (
 					<span className="dark:text-[#cfcfcf] text-sm capitalize pointer-events-none">
-						V2Ray
+						V2Ray subscription
 					</span>
 				)}
 				{timeCopy && (

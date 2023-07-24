@@ -93,7 +93,7 @@ export default function ItemSubscriptionSSocks(props: any) {
 			<div className={`flex flex-col dark:text-[#cfcfcf]`}>
 				{!timeCopy && (
 					<span className="dark:text-[#cfcfcf]  text-sm capitalize pointer-events-none">
-						Shadowsocks
+						Shadowsocks subscription
 					</span>
 				)}
 				{timeCopy && (
