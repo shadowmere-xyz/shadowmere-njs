@@ -17,7 +17,7 @@ export default function V2raySubs() {
 				<span
 					onClick={() => {
 						navigator.clipboard.writeText(
-							"https://shadowmere.akiel.dev/api/sub"
+							"https://shadowmere.akiel.dev/api/b64sub/"
 						);
 						setCopyLink(true);
 						setTimeout(() => {
@@ -25,7 +25,7 @@ export default function V2raySubs() {
 						}, 1000);
 					}}
 					className=" group text-[#579eff] cursor-pointer font-bold hover:text-[#467ecc] transition-colors after:pl-1 dark:after:text-[#7a7a7a] after:text-[#c1c1c1] after:font-awesome after:text-sm ">
-					https://shadowmere.akiel.dev/api/sub 
+					https://shadowmere.akiel.dev/api/b64sub/ 
 					<span
 						className={
 							"font-semibold text-[#c1c1c1] dark:text-[#7a7a7a] " +
