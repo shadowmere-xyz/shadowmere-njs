@@ -13,20 +13,6 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
       <ThemeProvider enableSystem={true} defaultTheme={'system'} attribute="class" >
-      <Script
-				strategy='afterInteractive'
-				src="https://www.googletagmanager.com/gtag/js?id=G-KQ4KMVJEXY" />
-        <Script id={`gtag`} strategy='afterInteractive' dangerouslySetInnerHTML={{__html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-KQ4KMVJEXY', {
-          page_path: window.location.pathname,
-          });
-        `}} />
-        <Script
-				src="https://cdn.websitepolicies.io/lib/cookieconsent/1.0.3/cookieconsent.min.js"
-				defer />
           <Layout>
             <Component {...pageProps} />
           </Layout>
