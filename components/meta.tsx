@@ -22,10 +22,6 @@ export function Meta({ title, keywords, description }: Props) {
 			<meta name="description" content={description} />
 			<link rel="icon" type="image/svg+xml" href="/logo.svg" sizes="any" />
 			<link
-				type="text/css"
-				rel="stylesheet"
-				href="https://cdn.websitepolicies.io/lib/cookieconsent/1.0.3/cookieconsent.min.css"></link>
-			<link
 				rel="preload"
 				href={`https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true&location_country_code=${countryFilter}&port=${portFilter}&page=${pageCounter?.toString()}`}
 				as="fetch"
