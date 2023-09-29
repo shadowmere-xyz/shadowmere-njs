@@ -16,7 +16,9 @@ export default function App({Component, pageProps}: AppProps) {
                 <Script type="text/javascript"
                         src="https://www.termsfeed.com/public/cookie-consent/4.1.0/cookie-consent.js"
                         charset="UTF-8"></Script>
-                <Script type="text/javascript" charset="UTF-8">
+                <Script type="text/javascript" charset="UTF-8"
+                        dangerouslySetInnerHTML={{
+                            __html: `
                     document.addEventListener('DOMContentLoaded', function () {
                     cookieconsent.run({
                         "notice_banner_type": "simple",
@@ -29,8 +31,8 @@ export default function App({Component, pageProps}: AppProps) {
                         "page_refresh_confirmation_buttons": false,
                         "website_name": "Shadowmere"
                     });
-                });
-                </Script>
+                });`
+                        }}/>
 
                 <Script type="text/plain" data-cookie-consent="tracking" async src="https://umami.akiel.dev/script.js"
                         data-website-id="ab0233a0-d8c9-49a3-ba07-00c2adcbc9cc"></Script>
