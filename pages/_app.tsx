@@ -14,8 +14,7 @@ export default function App({Component, pageProps}: AppProps) {
         <RecoilRoot>
             <ThemeProvider enableSystem={true} defaultTheme={'system'} attribute="class">
                 <Script strategy='afterInteractive'
-                        src="https://www.termsfeed.com/public/cookie-consent/4.1.0/cookie-consent.js"
-                        charset="UTF-8"></Script>
+                        src="https://www.termsfeed.com/public/cookie-consent/4.1.0/cookie-consent.js"/>
                 <Script id={`cookie_consent`} strategy='afterInteractive'
                         dangerouslySetInnerHTML={{
                             __html: `
@@ -35,7 +34,7 @@ export default function App({Component, pageProps}: AppProps) {
                         }}/>
 
                 <Script strategy='afterInteractive' data-cookie-consent="tracking" async src="https://umami.akiel.dev/script.js"
-                        data-website-id="ab0233a0-d8c9-49a3-ba07-00c2adcbc9cc"></Script>
+                        data-website-id="ab0233a0-d8c9-49a3-ba07-00c2adcbc9cc" />
                 <Layout>
                     <Component {...pageProps} />
                 </Layout>
