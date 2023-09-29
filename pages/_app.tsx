@@ -16,7 +16,7 @@ export default function App({Component, pageProps}: AppProps) {
                 <Script type="text/javascript"
                         src="https://www.termsfeed.com/public/cookie-consent/4.1.0/cookie-consent.js"
                         charset="UTF-8"></Script>
-                <Script type="text/javascript" charset="UTF-8"
+                <Script id={`cookie_consent`} type="text/javascript" charset="UTF-8"
                         dangerouslySetInnerHTML={{
                             __html: `
                     document.addEventListener('DOMContentLoaded', function () {
