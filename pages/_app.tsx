@@ -13,11 +13,10 @@ export default function App({Component, pageProps}: AppProps) {
     return (
         <RecoilRoot>
             <ThemeProvider enableSystem={true} defaultTheme={'system'} attribute="class">
-                <!-- Cookie Consent by TermsFeed https://www.TermsFeed.com -->
-                <script type="text/javascript"
+                <Script type="text/javascript"
                         src="https://www.termsfeed.com/public/cookie-consent/4.1.0/cookie-consent.js"
-                        charset="UTF-8"></script>
-                <script type="text/javascript" charset="UTF-8">
+                        charset="UTF-8"></Script>
+                <Script type="text/javascript" charset="UTF-8">
                     document.addEventListener('DOMContentLoaded', function () {
                     cookieconsent.run({
                         "notice_banner_type": "simple",
@@ -30,15 +29,11 @@ export default function App({Component, pageProps}: AppProps) {
                         "page_refresh_confirmation_buttons": false,
                         "website_name": "Shadowmere"
                     });
-                })
-                ;
-                </script>
+                });
+                </Script>
 
-                <!-- umami -->
-                <script type="text/plain" data-cookie-consent="tracking" async src="https://umami.akiel.dev/script.js"
-                        data-website-id="ab0233a0-d8c9-49a3-ba07-00c2adcbc9cc"></script>
-                <!-- end of umami-->
-                <!-- End Cookie Consent by TermsFeed https://www.TermsFeed.com -->
+                <Script type="text/plain" data-cookie-consent="tracking" async src="https://umami.akiel.dev/script.js"
+                        data-website-id="ab0233a0-d8c9-49a3-ba07-00c2adcbc9cc"></Script>
                 <Layout>
                     <Component {...pageProps} />
                 </Layout>
