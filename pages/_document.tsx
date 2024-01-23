@@ -37,6 +37,13 @@ export default function Document() {
           src="https://umami.akiel.dev/script.js"
           data-website-id="ab0233a0-d8c9-49a3-ba07-00c2adcbc9cc"
         />
+        <Script
+          strategy="beforeInteractive"
+          data-cookie-consent="tracking"
+          async
+          src="https://umami.akiel.dev/script.js"
+          data-website-id="13bc4fc5-cf08-41fe-81a8-bba2d4509cba"
+        />
       </Head>
       <body>
         <Main />

@@ -106,6 +106,8 @@ export default function Server(dataServer: { proxy: any }) {
 			<div className="data-operations gap-4 flex flex-row-reverse items-center">
 				<button
 					title="Copy"
+					id="copy-button"
+					data-umami-event="Copy Server"
 					className="opt-copiar relative w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all duration-150 active:scale-[95%]"
 					onClick={() => {
 						navigator.clipboard
@@ -164,6 +166,7 @@ export default function Server(dataServer: { proxy: any }) {
 				</button>
 
 				<button
+					data-umami-event="qr button"
 					onClick={handleQR}
 					title="QR Code"
 					className="opt-codigo-qr w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all duration-150 active:scale-[95%]">
@@ -196,6 +199,7 @@ export default function Server(dataServer: { proxy: any }) {
 
 				{/* <a> */}
 				<a
+					data-umami-event="download button"
 					href={
 						"https://shadowmere.akiel.dev/" + dataServer.proxy.id + "/config"
 					}
