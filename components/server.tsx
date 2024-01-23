@@ -105,6 +105,8 @@ export default function Server(dataServer: { proxy: any }) {
 			</div>
 			<div className="data-operations gap-4 flex flex-row-reverse items-center">
 				<button
+					id="copy-server"
+					data-umami-event={'Copy Server'}
 					title="Copy"
 					id="copy-button"
 					data-umami-event="Copy Server"
