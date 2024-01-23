@@ -105,7 +105,8 @@ export default function Server(dataServer: { proxy: any }) {
 			</div>
 			<div className="data-operations gap-4 flex flex-row-reverse items-center">
 				<button
-					data-umami-event="clipboard button"
+					id="copy-server"
+					data-umami-event={'Copy Server'}
 					title="Copy"
 					className="opt-copiar relative w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all duration-150 active:scale-[95%]"
 					onClick={() => {
