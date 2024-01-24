@@ -4,6 +4,7 @@ import { proxyId, qrScreen, viewDataLayout } from "../libs/store";
 import { useRecoilState } from "recoil";
 import useMousePosition from "../libs/useMousePosition";
 import { useEffectOnce } from "usehooks-ts";
+import { IconCheck, IconClipboard } from "@tabler/icons-react";
 
 export default function ServerCol(dataServer: { proxy: any }) {
 	const [timeCopy, setTimeCopy] = useState(false);
@@ -155,45 +156,10 @@ export default function ServerCol(dataServer: { proxy: any }) {
 								alert("something went wrong");
 							});
 					}}>
-					<div
-						className={
-							"absolute w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center  " +
-							(timeCopy ? "" : "hidden")
-						}>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							className={"icon icon-tabler icon-tabler-check "}
-							width={24}
-							height={24}
-							viewBox="0 0 24 24"
-							strokeWidth="2"
-							stroke="currentColor"
-							fill="none"
-							strokeLinecap="round"
-							strokeLinejoin="round">
-							<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-							<path d="M5 12l5 5l10 -10"></path>
-						</svg>
-					</div>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						className={
-							"icon icon-tabler icon-tabler-clipboard-copy stroke-[#303030] dark:stroke-[#cfcfcf]  " +
-							(!timeCopy ? "" : "hidden")
-						}
-						width={24}
-						height={24}
-						viewBox="0 0 24 24"
-						strokeWidth="2"
-						stroke="currentColor"
-						fill="none"
-						strokeLinecap="round"
-						strokeLinejoin="round">
-						<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-						<path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h3m9 -9v-5a2 2 0 0 0 -2 -2h-2"></path>
-						<path d="M13 17v-1a1 1 0 0 1 1 -1h1m3 0h1a1 1 0 0 1 1 1v1m0 3v1a1 1 0 0 1 -1 1h-1m-3 0h-1a1 1 0 0 1 -1 -1v-1"></path>
-						<path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"></path>
-					</svg>
+					
+					{
+						timeCopy ? <IconCheck/> : <IconClipboard/>
+					}
 				</div>
 
 				<button
