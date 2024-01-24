@@ -134,11 +134,9 @@ export default function ServersList() {
 					Use them at your own risk.
 				</span>
 			</p>
-			{/* <ServerSkeleton/> */}
-			{/* {setProxyCounter(data.count)} */}
-			{data.results.map((d: any) => (
+			{/* {data.results.map((d: any) => (
 				<Server key={d.id} proxy={d} />
-			))}
+			))} */}
 		</div>
 	);
 }
