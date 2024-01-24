@@ -1,6 +1,6 @@
 import useSWR from "swr";
 import React, { useState, useEffect } from "react";
-import Server from "./server";
+// import Server from "./server";
 import {
 	RecoilRoot,
 	atom,
