@@ -2,6 +2,7 @@ import { getFlagEmoji, getPercentage } from "../libs/functions";
 import React, { useEffect, useState } from "react";
 import { proxyId, qrScreen } from "../libs/store";
 import { useRecoilState } from "recoil";
+import { IconCheck, IconClipboard } from "@tabler/icons-react";
 
 export default function Server(dataServer: { proxy: any }) {
 	const [timeCopy, setTimeCopy] = useState(false);
@@ -126,7 +127,7 @@ export default function Server(dataServer: { proxy: any }) {
 								alert("something went wrong");
 							});
 					}}>
-					<div
+					{/* <div
 						className={
 							"absolute w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center " +
 							(timeCopy ? "" : "hidden")
@@ -161,7 +162,10 @@ export default function Server(dataServer: { proxy: any }) {
 						<path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h3m9 -9v-5a2 2 0 0 0 -2 -2h-2"></path>
 						<path d="M13 17v-1a1 1 0 0 1 1 -1h1m3 0h1a1 1 0 0 1 1 1v1m0 3v1a1 1 0 0 1 -1 1h-1m-3 0h-1a1 1 0 0 1 -1 -1v-1"></path>
 						<path d="M9 3m0 2a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v0a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2z"></path>
-					</svg>
+					</svg> */}
+					{
+						timeCopy ? <IconCheck/> : <IconClipboard/>
+					}
                     
 				</button>
 
