@@ -11,6 +11,8 @@ import {
   IconDownload,
   IconQrcode,
 } from "@tabler/icons-react";
+import NewFeature from "./newFeature";
+import NewServer from "./newServer";
 
 export default function ServerCol(dataServer: { proxy: any }) {
   const [timeCopy, setTimeCopy] = useState(false);
@@ -60,9 +62,12 @@ export default function ServerCol(dataServer: { proxy: any }) {
             {getFlagEmoji(dataServer.proxy.location_country_code)}
           </div>
           <div className="nombre-ip w-auto h-auto flex flex-col ">
-            <span className=" leading-[1.10rem] font-semibold w-auto overflow-hidden truncate text-[14px] sm:text-[16px] ">
-              {dataServer.proxy.location_country}
-            </span>
+            <div className="flex gap-1">
+              <span className=" leading-[1.10rem] font-semibold w-auto overflow-hidden truncate text-[14px] sm:text-[16px] ">
+                {dataServer.proxy.location_country}
+              </span>
+              {dataServer.proxy.times_checked < 10 && <NewServer />}
+            </div>
             <span className=" leading-[1.10rem] font-medium w-auto overflow-hidden truncate text-[14px] text-[#7e7d7d] sm:text-[16px] ">
               {dataServer.proxy.ip_address}
             </span>
