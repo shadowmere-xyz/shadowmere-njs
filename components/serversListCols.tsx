@@ -137,7 +137,7 @@ export default function ServersListCols(props: any) {
 			</p>
 			{/* <ServerSkeleton/> */}
 			{/* {setProxyCounter(data.count)} */}
-				{data.results.map((d: any) => (
+				{data.results?.map((d: any) => (
 					<ServerCol key={d.id} proxy={d} />
 				))}
 		</div>
