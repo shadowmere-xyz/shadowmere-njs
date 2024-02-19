@@ -31,11 +31,11 @@ export default function Pagination(props: any) {
   return (
     <div
       className={
-        "buttonPagesWrapper w-full  h-auto flex items-center justify-center sm:justify-end " +
+        "buttonPagesWrapper w-full h-auto flex items-center justify-center sm:justify-end " +
         (props.isVisible ? "" : "hidden")
       }
     >
-      <div className="buttonPages  w-full sm:w-auto h-14 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-2">
+      <div className="buttonPages w-full sm:w-auto h-auto sm:h-14 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-2">
         <div className="flex gap-2 w-full sm:w-auto justify-center px-1">
           <button
             title="First page"
