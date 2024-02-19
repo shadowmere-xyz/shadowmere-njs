@@ -59,17 +59,28 @@ export default function Pagination(props: any) {
         <div className="w-auto h-10 flex items-center justify-center gap-2 dark:text-[#cfcfcf] text-center font-semibold text-sm sm:text-base">
           <input
             title="page"
-            className=" w-1/3 sm:w-14 h-10 rounded text-center bg-[#ebebeb] dark:bg-[#111111] text-[#212121] dark:text-[#cfcfcf] placeholder:text-[#212121] dark:placeholder:text-[#cfcfcf]"
+            className=" w-1/3 sm:w-14 h-10 rounded text-center bg-[#ebebeb] dark:bg-[#111111] text-[#212121] dark:text-[#cfcfcf] placeholder:text-[#212121] dark:placeholder:text-[#7a7a7a]"
             type="number"
             placeholder={pageCounter.toString()}
+            onFocus={(e) => {
+              e.currentTarget.placeholder = "";
+            }}
+            onBlur={(e) => {
+              e.currentTarget.placeholder = pageCounter.toString();
+            }}
             onKeyDownCapture={(e) => {
               if (
                 parseInt(e.currentTarget.value) > 0 &&
                 parseInt(e.currentTarget.value) <= prox.total_pages
               ) {
-                e.key === "Enter" &&
-                  setPageCounter(parseInt(e.currentTarget.value));
-                e.currentTarget.value == "";
+                if (e.key === "Enter") {
+                  setPageCounter(parseInt(e.currentTarget.value))
+                  e.currentTarget.value = ""
+                  e.currentTarget.blur()
+                }
+                // e.key === "Enter" &&
+                //   setPageCounter(parseInt(e.currentTarget.value));
+                // e.currentTarget.value == "";
               }
             }}
             // onChange={(e) => {
