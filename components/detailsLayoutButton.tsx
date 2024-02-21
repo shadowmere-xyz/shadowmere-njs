@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { viewDataLayout } from "../libs/store";
+import { IconListDetails } from "@tabler/icons-react";
 
 export default function DetailsLayoutButton() {
 	const [viewMode, setViewMode] = useRecoilState(viewDataLayout);
@@ -24,25 +25,7 @@ export default function DetailsLayoutButton() {
 					? "border-[#3a3a3a] dark:border-[#cfcfcf]"
 					: "border-[#e0e0e0] dark:border-[#3a3a3a]"
 			} `}>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				className="icon icon-tabler icon-tabler-list-details dark:stroke-[#cfcfcf] stroke-[#212121] "
-				width={20}
-				height={20}
-				viewBox="0 0 24 24"
-				strokeWidth={2}
-				stroke="currentColor"
-				fill="none"
-				strokeLinecap="round"
-				strokeLinejoin="round">
-				<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-				<path d="M13 5h8"></path>
-				<path d="M13 9h5"></path>
-				<path d="M13 15h8"></path>
-				<path d="M13 19h5"></path>
-				<path d="M3 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
-				<path d="M3 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
-			</svg>
+			<IconListDetails className="dark:stroke-[#cfcfcf] stroke-[#212121]"/>
 		</div>
 	);
 }
