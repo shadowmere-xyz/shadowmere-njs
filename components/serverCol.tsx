@@ -13,6 +13,7 @@ import {
 } from "@tabler/icons-react";
 import NewFeature from "./newFeature";
 import NewServer from "./newServer";
+import Link from "next/link";
 
 export default function ServerCol(dataServer: { proxy: any }) {
   const [timeCopy, setTimeCopy] = useState(false);
@@ -28,7 +29,7 @@ export default function ServerCol(dataServer: { proxy: any }) {
   useEffect(() => {
     const view = JSON.parse(localStorage.getItem("viewMode")!);
     setViewMode(view);
-  }, [viewLayout]);
+  }, [viewLayout, setViewMode]);
 
   const handleQR = () => {
     setProxID(dataServer.proxy.id);
@@ -43,11 +44,6 @@ export default function ServerCol(dataServer: { proxy: any }) {
     console.log(localX, localY);
   };
 
-  // useEffect(() => {
-  // 	setHasMounted(true);
-  // },[]);
-
-  // after:contents-[''] after:absolute after:-z-10 after:w-8 after:h-8 after:rounded-full after:bg-white ${hasMounted && style}
   return (
     <div
       ref={ref}
@@ -175,16 +171,14 @@ export default function ServerCol(dataServer: { proxy: any }) {
           <IconQrcode />
         </button>
 
-        <a
-          href={
-            "https://shadowmere.akiel.dev/" + dataServer.proxy.id + "/config"
-          }
+        <Link
           title="Download"
           data-umami-event={"Download"}
+          href={`https://shadowmere.akiel.dev/${dataServer.proxy.id}/config`}
           className="opt-descargar w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all duration-150 active:scale-[95%]"
         >
           <IconDownload />
-        </a>
+        </Link>
       </div>
     </div>
   );

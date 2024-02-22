@@ -4,11 +4,9 @@ import { Proxies } from "../libs/data";
 import { proxiesObj, pageCounterState } from "../libs/store";
 
 export default function Pagination(props: any) {
-  // const proxies: Proxies = useRecoilValue(proxiesObj)
   const [prox, setProx] = useRecoilState<Proxies>(proxiesObj);
   const [pageCounter, setPageCounter] =
     useRecoilState<number>(pageCounterState);
-  // const [page, setPage] = useState(pageCounter)
 
   const handleFirst = () => {
     setPageCounter(1);
@@ -78,16 +76,8 @@ export default function Pagination(props: any) {
                   e.currentTarget.value = ""
                   e.currentTarget.blur()
                 }
-                // e.key === "Enter" &&
-                //   setPageCounter(parseInt(e.currentTarget.value));
-                // e.currentTarget.value == "";
               }
             }}
-            // onChange={(e) => {
-            //   if (parseInt(e.currentTarget.value) >= 0 && parseInt(e.currentTarget.value) <= prox.total_pages) {
-            //     setPageCounter(parseInt(e.currentTarget.value));
-            //   }
-            // }}
           />
           {`of ${prox?.total_pages}`}
         </div>
