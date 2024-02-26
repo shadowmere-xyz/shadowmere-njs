@@ -19,6 +19,12 @@ const nextConfig = {
         port: '',
         pathname: '/v3/image/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'mockup-api.teespring.com',
+        port: '',
+        pathname: '/v3/image/**',
+      },
     ],
   },
 }

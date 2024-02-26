@@ -34,7 +34,7 @@ export default function Support() {
           width={328}
           height={328}
           placeholder="blur"
-          blurDataURL="https://vangogh.teespring.com/v3/image/DFqA9cbp7_Wq95i0JwY5ul66ENI/800/800.jpg"
+          blurDataURL="https://mockup-api.teespring.com/v3/image/DFqA9cbp7_Wq95i0JwY5ul66ENI/800/10.jpg"
           className=" w-fit lg:w-96 h-auto rounded-lg "
         />
         <Image
@@ -43,7 +43,7 @@ export default function Support() {
           width={328}
           height={328}
           placeholder="blur"
-          blurDataURL="https://vangogh.teespring.com/v3/image/r25YJ0ROGMCOU2lfd8vsVlXleP8/800/800.jpg"
+          blurDataURL="https://mockup-api.teespring.com/v3/image/DFqA9cbp7_Wq95i0JwY5ul66ENI/800/10.jpg"
           className="relative w-fit lg:w-96 h-auto rounded-lg object-scale-down"
         />
       </div>
