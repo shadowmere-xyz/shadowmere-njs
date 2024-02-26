@@ -11,6 +11,16 @@ const nextConfig = {
   // },
   staticPageGenerationTimeout: 1000,
   // output: 'standalone',
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'vangogh.teespring.com',
+        port: '',
+        pathname: '/v3/image/**',
+      },
+    ],
+  },
 }
 
 module.exports = nextConfig

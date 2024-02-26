@@ -36,9 +36,12 @@ export default function ServerCol(dataServer: { proxy: any }) {
     setQrActive(!qrActive);
   };
 
-  const handleMoveCapture = (e: any) => {
-    const localX = e.clientX - e.target.offsetLeft - 60;
-    const localY = e.clientY - e.target.offsetTop - 90;
+  const handleMoveCapture = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    // const target = e.target as HTMLDivElement
+    const localX = e.clientX - (e.target as HTMLDivElement).offsetLeft - 60;
+    const localY = e.clientY - (e.target as HTMLDivElement).offsetTop - 90;
     ref.current?.style.setProperty("--x", localX + "px");
     ref.current?.style.setProperty("--y", localY + "px");
     console.log(localX, localY);
@@ -117,10 +120,10 @@ export default function ServerCol(dataServer: { proxy: any }) {
                 </defs>
               </svg>
               <span className="w-auto h-6 text-[#303030] flex items-center justify-center">
-                {getPercentage(
+                {`${getPercentage(
                   dataServer.proxy.times_check_succeeded,
                   dataServer.proxy.times_checked
-                ).toString() + "%"}
+                ).toString()}%`}
               </span>
             </div>
           </div>
