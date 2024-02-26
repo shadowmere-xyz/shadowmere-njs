@@ -12,6 +12,7 @@ const nextConfig = {
   staticPageGenerationTimeout: 1000,
   // output: 'standalone',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
