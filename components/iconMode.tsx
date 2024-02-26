@@ -1,6 +1,6 @@
 import { IconDeviceImac, IconMoon, IconSun } from "@tabler/icons-react";
 
-export default function Icon(props: {name: String, rotate: boolean}){
+export default function Icon (props: {name: String, rotate: boolean}){
 	switch (props.name) {
 		case 'light': {
 			return <IconSun className={`stroke-[#303030] dark:stroke-[#cfcfcf]`} />
