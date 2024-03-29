@@ -3,14 +3,10 @@ const nextConfig = {
   distDir: 'dist',
   reactStrictMode: true,
   swcMinify: true,
-  // compiler: {
-  //   styledComponents: {
-  //     displayName: true,
-  //     ssr: true
-  //   },
-  // },
+  env: {
+    BASE_URL:'https://shadowmere.akiel.dev/api/proxies/?format=json',
+  },
   staticPageGenerationTimeout: 1000,
-  // output: 'standalone',
   images: {
     unoptimized: true,
     remotePatterns: [

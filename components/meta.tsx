@@ -23,7 +23,7 @@ export function Meta({ title, keywords, description }: Props) {
 			<link rel="icon" type="image/svg+xml" href="/logo.svg" sizes="any" />
 			<link
 				rel="preload"
-				href={`https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true&location_country_code=${countryFilter}&port=${portFilter}&page=${pageCounter?.toString()}`}
+				href={`${process.env.BASE_URL}&is_active=true&location_country_code=${countryFilter}&port=${portFilter}&page=${pageCounter?.toString()}`}
 				as="fetch"
 				crossOrigin="anonymous"></link>
 			<title>{title}</title>

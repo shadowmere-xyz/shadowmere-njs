@@ -32,7 +32,7 @@ export default function Layout({ children }: any) {
 	const fetcher = (...args: [any, any]) =>
 		fetch(...args).then((res) => res.json());
 	const { data: proxies, error } = useSWR(
-		"https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true&location_country_code=" +
+		`${process.env.BASE_URL}&is_active=true&location_country_code=` +
 			countryFilter +
 			"&port=" +
 			portFilter +

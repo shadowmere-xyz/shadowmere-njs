@@ -34,7 +34,7 @@ export default function ServersListCols(props: any) {
   const fetcher = (...args: [any, any]) =>
     fetch(...args).then((res) => res.json());
   const { data, error, mutate } = useSWR(
-    "https://shadowmere.akiel.dev/api/proxies/?format=json&is_active=true&location_country_code=" +
+    `${process.env.BASE_URL}&is_active=true&location_country_code=` +
       countryFilter +
       "&port=" +
       portFilter +
