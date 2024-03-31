@@ -16,6 +16,7 @@ import {
   proxiesCount,
   proxiesObj,
   loaderPage,
+  apiBaseUrl,
 } from "../libs/store";
 import ServerSkeleton from "./serverSkeleton";
 import ServerCol from "./serverCol";
@@ -30,11 +31,12 @@ export default function ServersListCols(props: any) {
   const [proxyCounter, setProxyCounter] = useRecoilState(proxiesCount);
   // const [data, setData] = useRecoilState<Proxies>(proxiesObj)
   const [noResults, setNoResults] = useState("No results has been found");
+  const [apiBaseUrlGlobal, setApiBaseUrlGlobal] = useRecoilState(apiBaseUrl);
 
   const fetcher = (...args: [any, any]) =>
     fetch(...args).then((res) => res.json());
   const { data, error, mutate } = useSWR(
-    `${process.env.BASE_URL}&is_active=true&location_country_code=` +
+    `${apiBaseUrlGlobal}/proxies/?format=json&is_active=true&location_country_code=` +
       countryFilter +
       "&port=" +
       portFilter +

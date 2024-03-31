@@ -2,7 +2,7 @@ import Head, { defaultHead } from "next/head";
 import Script from "next/script";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { countryFilterState, pageCounterState, portFilterState } from "../libs/store";
+import { apiBaseUrl, countryFilterState, pageCounterState, portFilterState } from "../libs/store";
 
 type Props = {
 	title: string;
@@ -14,6 +14,8 @@ export function Meta({ title, keywords, description }: Props) {
 	const [pageCounter, setPageCounter] = useRecoilState(pageCounterState);
 	const [portFilter, setPortFilter] = useRecoilState(portFilterState);
 	const [countryFilter, setCountryFilter] = useRecoilState(countryFilterState);
+	const [apiBaseUrlGlobal, setApiBaseUrlGlobal] = useRecoilState(apiBaseUrl);
+
 	return (
 		<Head>
 			<meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
@@ -23,7 +25,7 @@ export function Meta({ title, keywords, description }: Props) {
 			<link rel="icon" type="image/svg+xml" href="/logo.svg" sizes="any" />
 			<link
 				rel="preload"
-				href={`${process.env.BASE_URL}&is_active=true&location_country_code=${countryFilter}&port=${portFilter}&page=${pageCounter?.toString()}`}
+				href={`${apiBaseUrlGlobal}/proxies/?format=json&is_active=true&location_country_code=${countryFilter}&port=${portFilter}&page=${pageCounter?.toString()}`}
 				as="fetch"
 				crossOrigin="anonymous"></link>
 			<title>{title}</title>

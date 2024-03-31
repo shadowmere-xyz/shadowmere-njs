@@ -3,7 +3,7 @@ import Navbar from "./navbar";
 import Sidebar from "./sidebar";
 import ModalQR from "./modalQR";
 import { useRecoilState } from "recoil";
-import { proxiesObj, qrScreen } from "../libs/store";
+import { apiBaseUrl, proxiesObj, qrScreen } from "../libs/store";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
 import {
@@ -28,11 +28,13 @@ export default function Layout({ children }: any) {
 	const [loader, setLoader] = useRecoilState(loaderPage);
 	const [prox, setProx] = useRecoilState(proxiesObj);
 	const [time, setTime] = useState("");
+	const [apiBaseUrlGlobal, setApiBaseUrlGlobal] = useRecoilState(apiBaseUrl);
+
 
 	const fetcher = (...args: [any, any]) =>
 		fetch(...args).then((res) => res.json());
 	const { data: proxies, error } = useSWR(
-		`${process.env.BASE_URL}&is_active=true&location_country_code=` +
+		`${apiBaseUrlGlobal}/proxies/?format=json&is_active=true&location_country_code=` +
 			countryFilter +
 			"&port=" +
 			portFilter +

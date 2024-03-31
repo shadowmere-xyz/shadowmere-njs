@@ -57,3 +57,8 @@ export const viewDataLayout = atom({
     key: 'viewDataLayout',
     default: 'details'
 })
+
+export const apiBaseUrl = atom({
+    key: 'apiBaseUrl',
+    default: process.env.BASE_URL
+})
