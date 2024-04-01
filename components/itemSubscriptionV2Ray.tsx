@@ -1,12 +1,12 @@
 import { IconCheck, IconClipboardCopy } from "@tabler/icons-react";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
-import { apiBaseUrl } from "../libs/store";
+import { apiBaseUrl } from "../vars/variables";
+
 
 export default function ItemSubscriptionV2Ray(props: any) {
   const [isOver, setIsOver] = useState(false);
   const [timeCopy, setTimeCopy] = useState(false);
-  const [apiBaseUrlGlobal, setApiBaseUrlGlobal] = useRecoilState(apiBaseUrl);
 
 
   const handleOver = () => {
@@ -20,7 +20,7 @@ export default function ItemSubscriptionV2Ray(props: any) {
     setTimeCopy(true);
 
     navigator.clipboard
-      .writeText(`${apiBaseUrlGlobal}/b64sub/`)
+      .writeText(`${apiBaseUrl}/b64sub/`)
       .then(() => {
         setTimeout(() => {
           setTimeCopy(false);

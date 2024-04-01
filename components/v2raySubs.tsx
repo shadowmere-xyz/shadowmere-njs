@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useRecoilState } from "recoil";
-import { apiBaseUrl } from "../libs/store";
+import { apiBaseUrl } from "../vars/variables";
 
 export default function V2raySubs() {
   const [copyLink, setCopyLink] = useState(false);
-  const [apiBaseUrlGlobal, setApiBaseUrlGlobal] = useRecoilState(apiBaseUrl);
 
 
   return (
@@ -22,7 +21,7 @@ export default function V2raySubs() {
         <span
           onClick={() => {
             navigator.clipboard.writeText(
-              `${apiBaseUrlGlobal}/b64sub/`
+              `${apiBaseUrl}/b64sub/`
             );
             setCopyLink(true);
             setTimeout(() => {

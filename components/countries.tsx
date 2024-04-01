@@ -1,20 +1,20 @@
 import useSWR from "swr";
 import React, { useEffect, useState } from "react";
 import { getFlagEmoji, getPercentage } from "../libs/functions";
-import { apiBaseUrl, countryFilterState, pageCounterState } from "../libs/store";
+import { countryFilterState, pageCounterState } from "../libs/store";
 import { useRecoilState } from "recoil";
+import { apiBaseUrl } from "../vars/variables";
 
 export default function Countries(props: any) {
 	const [country, setCountry] = useRecoilState(countryFilterState);
 	const [pageFilter, setPageFilter] = useRecoilState(pageCounterState);
-	const [apiBaseUrlGlobal, setApiBaseUrlGlobal] = useRecoilState(apiBaseUrl);
 
 
 	const fetcher = (...args: [any, any]) =>
 		fetch(...args).then((res) => res.json());
 
 	const { data: countries, error } = useSWR(
-		`${apiBaseUrlGlobal}/country-codes`,
+		`${apiBaseUrl}/country-codes`,
 		fetcher
 	);
 

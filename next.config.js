@@ -3,9 +3,7 @@ const nextConfig = {
   distDir: 'dist',
   reactStrictMode: true,
   swcMinify: true,
-  // env: {
-  //   BASE_URL:'https://shadowmere.akiel.dev/api',
-  // },
+  
   staticPageGenerationTimeout: 1000,
   images: {
     unoptimized: true,

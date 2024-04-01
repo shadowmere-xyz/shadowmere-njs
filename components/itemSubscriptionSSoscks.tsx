@@ -6,12 +6,12 @@ import {
 } from "@tabler/icons-react";
 import { useState } from "react";
 import { useRecoilState } from "recoil";
-import { apiBaseUrl } from "../libs/store";
+import { apiBaseUrl } from "../vars/variables";
+
 
 export default function ItemSubscriptionSSocks(props: any) {
   const [isOver, setIsOver] = useState(false);
   const [timeCopy, setTimeCopy] = useState(false);
-  const [apiBaseUrlGlobal, setApiBaseUrlGlobal] = useRecoilState(apiBaseUrl);
 
 
   const handleOver = () => {
@@ -25,7 +25,7 @@ export default function ItemSubscriptionSSocks(props: any) {
     setTimeCopy(true);
 
     navigator.clipboard
-    .writeText(`${apiBaseUrlGlobal}/sub/`)
+    .writeText(`${apiBaseUrl}/sub/`)
       .then(() => {
         setTimeout(() => {
           setTimeCopy(false);
