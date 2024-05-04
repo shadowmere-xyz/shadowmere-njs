@@ -1,11 +1,13 @@
-import Sidebar from "../components/sidebar";
-import Navbar from "../components/navbar";
+import Sidebar from "./sidebar";
+import Navbar from "./navbar";
 import Head from "next/head";
 import Image from "next/image";
 import { useRecoilState } from "recoil";
 import { activeTab } from "../libs/store";
 import { useEffect } from "react";
 import Link from "next/link";
+import front from "../public/front.png";
+import back from "../public/back.png";
 
 export default function Support() {
   const [tabActive, setTabActive] = useRecoilState(activeTab);
@@ -13,6 +15,19 @@ export default function Support() {
   useEffect(() => {
     setTabActive("support");
   }, [setTabActive]);
+
+  {
+    /* <Link
+								href={"/support-us"}
+								onClick={() => setTabActive("support")}
+								className={
+									"relative dark:text-[#cfcfcf] font-medium group w-auto h-12 flex items-center justify-center px-3 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors active:scale-[99%] " +
+									(tabActive === "support" && "bg-[#EBEBEB] dark:bg-[#1B1B1B]")
+								}>
+								Support Us
+								<NewFeature />
+							</Link> */
+  }
 
   return (
     <div className="contenido-support col-span-12 xl:col-span-9 w-full h-fit bg-white dark:bg-[#212121] dark:text-[#cfcfcf] rounded-lg flex flex-col gap-6 p-8 mb-4 2xl:mb-40 border border-[#e0e0e0] dark:border-[#303030]">
@@ -29,7 +44,8 @@ export default function Support() {
       </div>
       <div className="relative flex flex-col justify-center lg:flex-row gap-4 w-full h-auto">
         <Image
-          src="https://vangogh.teespring.com/v3/image/DFqA9cbp7_Wq95i0JwY5ul66ENI/800/800.jpg"
+          // src="https://vangogh.teespring.com/v3/image/DFqA9cbp7_Wq95i0JwY5ul66ENI/800/800.jpg"
+          src={front}
           alt="Shadowmere tshirt front"
           width={328}
           height={328}

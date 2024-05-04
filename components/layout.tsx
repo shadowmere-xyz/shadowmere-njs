@@ -19,6 +19,7 @@ import ServerStatsCard from "./serversStatsCard";
 import ItemSubscription from "./itemSubscriptionSSoscks";
 import ItemSubscriptionSSocks from "./itemSubscriptionSSoscks";
 import ItemSubscriptionV2Ray from "./itemSubscriptionV2Ray";
+import SupportSide from "./support-side";
 
 export default function Layout({ children }: any) {
 	const [qrScreenCode, setQRScreenCode] = useRecoilState(qrScreen);
@@ -81,7 +82,7 @@ export default function Layout({ children }: any) {
 				position: "bottom",
 			});
 		});
-	}, [proxies]);
+	}, [proxies, countryFilter, pageCounter, portFilter, setProx]);
 
 	return (
 		<>
@@ -99,8 +100,10 @@ export default function Layout({ children }: any) {
 						</div>
 					</div>
 					<Sidebar data={proxies} time={time} />
+					<SupportSide visibleResponsive="desktop"/>
 				</div>
 				{children}
+				<SupportSide visibleResponsive="mobile"/>
 			</main>
 		</>
 	);

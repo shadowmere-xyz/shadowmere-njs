@@ -136,19 +136,7 @@ export default function Navbar({ handleDark }: any) {
 									"relative dark:text-[#cfcfcf] font-medium group w-auto h-12 flex items-center justify-center px-3 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors active:scale-[99%] " +
 									(tabActive === "sub" && "bg-[#EBEBEB] dark:bg-[#1B1B1B]")
 								}>
-								Subscription
-								<NewFeature />
-							</Link>
-
-							<Link
-								href={"/support-us"}
-								onClick={() => setTabActive("support")}
-								className={
-									"relative dark:text-[#cfcfcf] font-medium group w-auto h-12 flex items-center justify-center px-3 rounded-md hover:bg-[#EBEBEB] active:bg-[#D7D7D7] dark:hover:bg-[#1B1B1B] dark:active:bg-[#111111] cursor-pointer transition-colors active:scale-[99%] " +
-									(tabActive === "support" && "bg-[#EBEBEB] dark:bg-[#1B1B1B]")
-								}>
-								Support Us
-								<NewFeature />
+								Servers Subscriptions
 							</Link>
 
 							<Link
