@@ -31,7 +31,7 @@ export default function SupportSide(props: PanelProps) {
   const [mouseOver, setMouseOver] = useState(false);
 
   return (
-    <div className={`sidebar col-span-12 xl:col-span-3 w-full h-fit 2xl:h-fit mb-4 bg-white dark:bg-[#212121] dark:text-[#cfcfcf] ${props.visibleResponsive == 'desktop' && 'hidden xl:flex'} ${props.visibleResponsive == 'mobile' && 'xl:hidden flex'} flex-col xl:flex-col gap-6 p-4 rounded-lg border border-[#e0e0e0] dark:border-[#303030]`}>
+    <div className={`sidebar col-span-12 xl:col-span-3 w-full h-fit 2xl:h-fit mb-4 bg-white dark:bg-[#212121] dark:text-[#cfcfcf] ${props.visibleResponsive == 'desktop' && 'hidden xl:flex'} ${props.visibleResponsive == 'mobile' && 'xl:hidden flex text-sm'} flex-col xl:flex-col gap-6 p-4 rounded-lg border border-[#e0e0e0] dark:border-[#303030]`}>
       <div className="flex gap-4 justify-between">
         <div className="relative w-full h-[209px] rounded-md bg-slate-200">
           <Image
