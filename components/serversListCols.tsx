@@ -40,7 +40,8 @@ export default function ServersListCols(props: any) {
       portFilter +
       "&page=" +
       pageCounter?.toString(),
-    fetcher
+    fetcher,
+    { refreshInterval: 10000 }
   );
 
   useEffect(() => {
@@ -129,7 +130,7 @@ export default function ServersListCols(props: any) {
   return (
     <div
       id="cuerpo"
-      className={`lista-servers-vpns col-span-12 xl:col-span-9 w-full h-full grid grid-cols-12 auto-rows-auto gap-[16px] `}
+      className={`lista-servers-vpns col-span-12 xl:col-span-9 w-full h-auto grid grid-cols-12 auto-rows-auto gap-4 `}
     >
       <p className="dark:text-white col-span-12">
         <span className="font-bold dark:text-white">Disclaimer: </span>This
