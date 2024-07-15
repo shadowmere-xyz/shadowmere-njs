@@ -81,7 +81,7 @@ export default function Layout({ children }: any) {
     });
   }, [
     proxies,
-    countryFilter === "" && pageCounter == 1 && portFilter === "",
+    countryFilter === "", pageCounter == 1, portFilter === "",
     setProx,
   ]);
 
