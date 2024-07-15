@@ -3,27 +3,21 @@ const nextConfig = {
   distDir: 'dist',
   reactStrictMode: true,
   swcMinify: true,
-  // compiler: {
-  //   styledComponents: {
-  //     displayName: true,
-  //     ssr: true
-  //   },
-  // },
+  
   staticPageGenerationTimeout: 1000,
-  // output: 'standalone',
   images: {
     unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'vangogh.teespring.com',
-        port: '',
+        port: '80',
         pathname: '/v3/image/**',
       },
       {
         protocol: 'https',
         hostname: 'mockup-api.teespring.com',
-        port: '',
+        port: '80',
         pathname: '/v3/image/**',
       },
     ],

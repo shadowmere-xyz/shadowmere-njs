@@ -3,12 +3,20 @@ import React, { useEffect, useState } from "react";
 import { getFlagEmoji, getPercentage } from "../libs/functions";
 import { countryFilterState, pageCounterState } from "../libs/store";
 import { useRecoilState } from "recoil";
+import { apiBaseUrl } from "../vars/variables";
 import { IconWorldPin } from "@tabler/icons-react";
 
 export default function Countries(props: any) {
   const [country, setCountry] = useRecoilState(countryFilterState);
   const [pageFilter, setPageFilter] = useRecoilState(pageCounterState);
 
+	const fetcher = (...args: [any, any]) =>
+		fetch(...args).then((res) => res.json());
+
+	const { data: countries, error } = useSWR(
+		`${apiBaseUrl}/country-codes`,
+		fetcher
+	);
   useEffect(() => {
     window.addEventListener("keydown", function(event) {
 			if (event.key === "u") {
@@ -27,15 +35,6 @@ export default function Countries(props: any) {
       setPageFilter(1);
     }
   };
-  
-
-  const fetcher = (...args: [any, any]) =>
-    fetch(...args).then((res) => res.json());
-
-  const { data: countries, error } = useSWR(
-    "https://shadowmere.akiel.dev/api/country-codes",
-    fetcher
-  );
 
   if (error) return <>Error</>;
 

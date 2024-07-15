@@ -29,7 +29,7 @@ export default function Sub() {
 
     useEffect(()=>{
         setTabActive('sub')
-    },[])
+    },[setTabActive])
 
 	const handleClick = (t: string) => {
 		setTab(t);
