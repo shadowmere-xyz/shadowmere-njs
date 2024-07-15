@@ -15,7 +15,7 @@ export default function DetailsLayoutButton() {
 	useEffect(() => {
 		const view = JSON.parse(localStorage.getItem('viewMode')!)
 		setViewMode(view)
-	}, [])
+	}, [setViewMode])
 
 	return (
 		<div

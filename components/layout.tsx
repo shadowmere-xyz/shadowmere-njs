@@ -82,7 +82,7 @@ export default function Layout({ children }: any) {
         position: "bottom",
       });
     });
-  }, [proxies]);
+  }, [proxies, countryFilter, pageCounter, portFilter, setProx]);
 
   return (
     <>

@@ -14,6 +14,7 @@ import {
 import NewFeature from "./newFeature";
 import NewServer from "./newServer";
 import Link from "next/link";
+import { rootUrl } from "../vars/variables";
 
 export default function ServerCol(dataServer: { proxy: any }) {
   const [timeCopy, setTimeCopy] = useState(false);
@@ -177,7 +178,7 @@ export default function ServerCol(dataServer: { proxy: any }) {
         <Link
           title="Download"
           data-umami-event={"Download"}
-          href={`https://shadowmere.akiel.dev/${dataServer.proxy.id}/config`}
+          href={`${rootUrl}/${dataServer.proxy.id}/config`}
           className="opt-descargar w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all duration-150 active:scale-[95%]"
         >
           <IconDownload />

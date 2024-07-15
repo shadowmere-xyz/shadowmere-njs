@@ -12,7 +12,7 @@ export default function Why() {
 
     useEffect(()=>{
         setTabActive('why')
-    },[]) 
+    },[setTabActive]) 
 	
 	return (
 
@@ -24,7 +24,9 @@ export default function Why() {
 				since her first appearance in The Elder Scrolls IV: Oblivion&apos;s Dark
 				Brotherhood questline.
 			</p>
-			<img
+			<Image
+				width={160}
+				height={160}
 				src="https://images.uesp.net/thumb/b/be/SR-creature-Shadowmere.jpg/600px-SR-creature-Shadowmere.jpg"
 				alt=""
 				className="w-40 h-auto rounded-lg"

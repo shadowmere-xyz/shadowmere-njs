@@ -11,7 +11,7 @@ export default function About() {
 		if (router.pathname === '/about'){
 			setTabActive('about')
 		}
-    },[])
+    },[router.pathname, setTabActive])
 
 	return (
 		<div className="contenido-about col-span-12 xl:col-span-9 w-full h-fit bg-white dark:bg-[#212121] dark:text-[#cfcfcf] rounded-lg flex flex-col gap-6 p-8 mb-4 2xl:mb-40 border border-[#e0e0e0] dark:border-[#303030]">
