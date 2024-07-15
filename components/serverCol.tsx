@@ -52,7 +52,7 @@ export default function ServerCol(dataServer: { proxy: any }) {
     <div
       ref={ref}
       onMouseMoveCapture={handleMoveCapture}
-      className={`item-server-vpn relative overflow-hidden w-auto h-24 sm:h-24 bg-white dark:bg-[#212121] dark:text-[#cfcfcf] rounded-lg shrink-0 flex items-center justify-between px-4 py-2 md:py-4 hover:cursor-pointer hover:-translate-y-[2px]  transition-all border border-[#e0e0e0] dark:border-[#303030] hover:border-[#3a3a3a] dark:hover:border-[#3a3a3a] after:blur-3xl backdrop-blur-sm duration-300 ${
+      className={`item-server-vpn relative overflow-hidden w-auto h-24 sm:h-24 bg-white dark:bg-[#212121] dark:text-[#cfcfcf] rounded-lg shrink-0 flex items-center justify-between px-4 py-3 md:py-4 hover:cursor-pointer hover:-translate-y-[2px]  transition-all border border-[#e0e0e0] dark:border-[#303030] hover:border-[#3a3a3a] dark:hover:border-[#3a3a3a] after:blur-3xl backdrop-blur-sm duration-300 ${
         viewMode === "details" && "col-span-12"
       } ${viewMode === "cols" && "col-span-6"} `}
     >
@@ -140,11 +140,11 @@ export default function ServerCol(dataServer: { proxy: any }) {
         </div>
       </div>
       {/* onMouseMove={(e:any)=>e.stopPropagation()} */}
-      <div className="data-operations gap-4 flex flex-row-reverse items-center">
+      <div className="data-operations h-full gap-2 md:gap-4 flex flex-row-reverse items-end md:items-center">
         <div
           title="Copy"
           data-umami-event={"Copy"}
-          className="opt-copiar w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all duration-150 active:scale-[95%]"
+          className="opt-copiar w-8 h-8 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all duration-150 active:scale-[95%]"
           onClick={() => {
             navigator.clipboard
               .writeText(
@@ -163,16 +163,16 @@ export default function ServerCol(dataServer: { proxy: any }) {
               });
           }}
         >
-          {timeCopy ? <IconCheck /> : <IconClipboard />}
+          {timeCopy ? <IconCheck size={"24"} /> : <IconClipboard size={"24"} />}
         </div>
 
         <button
           onClick={handleQR}
           data-umami-event={"QR"}
           title="QR Code"
-          className="opt-codigo-qr w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all duration-150 active:scale-[95%]"
+          className="opt-codigo-qr w-8 h-8 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all duration-150 active:scale-[95%]"
         >
-          <IconQrcode />
+          <IconQrcode size={"24"} />
         </button>
 
         <Link
@@ -181,7 +181,7 @@ export default function ServerCol(dataServer: { proxy: any }) {
           href={`${rootUrl}/${dataServer.proxy.id}/config`}
           className="opt-descargar w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all duration-150 active:scale-[95%]"
         >
-          <IconDownload />
+          <IconDownload size={"24"} />
         </Link>
       </div>
     </div>
