@@ -79,11 +79,7 @@ export default function Layout({ children }: any) {
         position: "bottom",
       });
     });
-  }, [
-    proxies,
-    countryFilter === "", pageCounter == 1, portFilter === "",
-    setProx,
-  ]);
+  }, [proxies, countryFilter, pageCounter, portFilter, setProx]);
 
   return (
     <>
