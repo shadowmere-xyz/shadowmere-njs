@@ -35,15 +35,6 @@ export default function Countries(props: any) {
       setPageFilter(1);
     }
   };
-  
-
-  const fetcher = (...args: [any, any]) =>
-    fetch(...args).then((res) => res.json());
-
-  const { data: countries, error } = useSWR(
-    "https://shadowmere.akiel.dev/api/country-codes",
-    fetcher
-  );
 
   if (error) return <>Error</>;
 

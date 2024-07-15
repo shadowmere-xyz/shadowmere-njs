@@ -11,13 +11,13 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'vangogh.teespring.com',
-        port: '',
+        port: '80',
         pathname: '/v3/image/**',
       },
       {
         protocol: 'https',
         hostname: 'mockup-api.teespring.com',
-        port: '',
+        port: '80',
         pathname: '/v3/image/**',
       },
     ],
