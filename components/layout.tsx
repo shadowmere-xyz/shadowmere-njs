@@ -59,6 +59,62 @@ export default function Layout({ children }: any) {
         "dark:bg-[#141414]",
         "text-[#212121]"
       );
+    setProx(proxies);
+    setTime(proxies?.results[0]?.last_checked);
+    window.addEventListener("load", function () {
+      (window as any).wpcc?.init({
+        border: "thin",
+        corners: "small",
+        colors: {
+          popup: {
+            background: "#f6f6f6",
+            text: "#000000",
+            border: "#cfcfcf",
+          },
+          button: {
+            background: "#303030",
+            text: "#ffffff",
+          },
+        },
+        position: "bottom",
+      });
+    });
+  }, [
+    proxies,
+    countryFilter === "" && pageCounter == 1 && portFilter === "",
+    setProx,
+  ]);
+
+  return (
+    <>
+      {/* <Loader isLoading={loader} /> */}
+      <Meta />
+      <Navbar />
+      {qrScreenCode && <ModalQR />}
+      <main className="wrapper container mx-auto w-full h-full xl:h-full grid grid-cols-12 auto-rows-auto mb-16 2xl:mb-0 mt-20 py-6 xl:py-8 gap-[30px] px-4 pb-4">
+        <div className="sidebar-wrapper col-span-12 xl:col-span-3 gap-4 ">
+          <div className="server-subs-wrapper w-full h-auto flex gap-4 shrink-0 ">
+            <ServerStatsCard data={proxies} time={time} />
+            <div className="server-subs-wrapper w-1/2 h-auto flex flex-col ">
+              <ItemSubscriptionSSocks />
+              <ItemSubscriptionV2Ray />
+            </div>
+          </div>
+          <Sidebar data={proxies} time={time} />
+        </div>
+        {children}
+      </main>
+    </>
+  );
+  useEffect(() => {
+    document
+      .querySelector("body")
+      ?.classList.add(
+        "overflow-y-scroll",
+        "bg-[#F8F8F8]",
+        "dark:bg-[#141414]",
+        "text-[#212121]"
+      );
     if (proxies) {
       setProx(proxies);
       if (countryFilter === "" && pageCounter == 1 && portFilter === "") {
@@ -91,7 +147,7 @@ export default function Layout({ children }: any) {
       <Meta />
       <Navbar />
       {qrScreenCode && <ModalQR />}
-      <main className="wrapper container mx-auto w-full h-full xl:h-full grid grid-cols-12 auto-rows-auto mb-16 2xl:mb-0 mt-20 py-6 xl:py-8 gap-[30px] px-4 pb-4">
+      <main className="wrapper container mx-auto w-full h-full xl:h-full grid grid-cols-12 auto-rows-auto mb-16 2xl:mb-0 mt-16 py-6 xl:py-8 gap-[30px] px-4 pb-4">
         <div className="sidebar-wrapper col-span-12 xl:col-span-3 gap-4 ">
           <div className="server-subs-wrapper w-full h-auto flex gap-4 shrink-0 ">
             <ServerStatsCard data={proxies} time={time} />
@@ -101,67 +157,11 @@ export default function Layout({ children }: any) {
             </div>
           </div>
           <Sidebar data={proxies} time={time} />
+          <SupportSide visibleResponsive="desktop" />
         </div>
         {children}
+        <SupportSide visibleResponsive="mobile" />
       </main>
     </>
   );
-	useEffect(() => {
-		document
-			.querySelector("body")
-			?.classList.add(
-				"overflow-y-scroll",
-				"bg-[#F8F8F8]",
-				"dark:bg-[#141414]",
-				"text-[#212121]"
-			);
-		if (proxies) {
-			setProx(proxies);
-			if (countryFilter === "" && pageCounter == 1 && portFilter === "") {
-				setTime(proxies?.results[0]?.last_checked);
-			}
-		}
-		window.addEventListener("load", function() {
-			(window as any).wpcc?.init({
-				border: "thin",
-				corners: "small",
-				colors: {
-					popup: {
-						background: "#f6f6f6",
-						text: "#000000",
-						border: "#cfcfcf",
-					},
-					button: {
-						background: "#303030",
-						text: "#ffffff",
-					},
-				},
-				position: "bottom",
-			});
-		});
-	}, [proxies, countryFilter, pageCounter, portFilter, setProx]);
-
-	return (
-		<>
-			{/* <Loader isLoading={loader} /> */}
-			<Meta />
-			<Navbar />
-			{qrScreenCode && <ModalQR />}
-			<main className="wrapper container mx-auto w-full h-full xl:h-full grid grid-cols-12 auto-rows-auto mb-16 2xl:mb-0 mt-16 py-6 xl:py-8 gap-[30px] px-4 pb-4">
-				<div className="sidebar-wrapper col-span-12 xl:col-span-3 gap-4 ">
-					<div className="server-subs-wrapper w-full h-auto flex gap-4 shrink-0 ">
-						<ServerStatsCard data={proxies} time={time} />
-						<div className="server-subs-wrapper w-1/2 h-auto flex flex-col ">
-							<ItemSubscriptionSSocks/>
-							<ItemSubscriptionV2Ray/>
-						</div>
-					</div>
-					<Sidebar data={proxies} time={time} />
-					<SupportSide visibleResponsive="desktop"/>
-				</div>
-				{children}
-				<SupportSide visibleResponsive="mobile"/>
-			</main>
-		</>
-	);
 }
