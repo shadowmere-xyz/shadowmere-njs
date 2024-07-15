@@ -106,7 +106,6 @@ export default function Layout({ children }: any) {
       </main>
     </>
   );
-=======
 	useEffect(() => {
 		document
 			.querySelector("body")
