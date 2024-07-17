@@ -30,7 +30,7 @@ export default function V2raySubs() {
           }}
           className=" group text-[#579eff] cursor-pointer font-bold hover:text-[#467ecc] transition-colors after:pl-1 dark:after:text-[#7a7a7a] after:text-[#c1c1c1] after:font-awesome after:text-sm "
         >
-          https://shadowmere.akiel.dev/api/b64sub/ 
+          https://shadowmere.xyz/api/b64sub/ 
           <span
             className={
               "font-semibold text-[#c1c1c1] dark:text-[#7a7a7a] " +
@@ -52,7 +52,7 @@ export default function V2raySubs() {
       <h2 className="font-bold">Tutorial video</h2>
       <iframe
         className="w-full h-[640px] rounded-lg"
-        src="https://www.youtube.com/embed/YvQjOExb4no"
+        src="https://youtube.com/shorts/dvt_zKRHu2E?si=NMqFFzpSWsAokSys"
         title="Set up shadowsocks subscription from Shadowmere"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

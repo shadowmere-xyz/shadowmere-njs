@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { rootUrl } from "../vars/variables";
 
 export default function ShadowsockSubs() {
 	const [copyLink, setCopyLink] = useState(false);
@@ -17,7 +18,7 @@ export default function ShadowsockSubs() {
 				<span
 					onClick={() => {
 						navigator.clipboard.writeText(
-							"https://shadowmere.akiel.dev/api/sub"
+							`${rootUrl}/api/sub`
 						);
 						setCopyLink(true);
 						setTimeout(() => {
@@ -25,7 +26,7 @@ export default function ShadowsockSubs() {
 						}, 1000);
 					}}
 					className=" group text-[#579eff] cursor-pointer font-bold hover:text-[#467ecc] transition-colors after:pl-1 dark:after:text-[#7a7a7a] after:text-[#c1c1c1] after:font-awesome after:text-sm ">
-					https://shadowmere.akiel.dev/api/sub{" "}
+					https://shadowmere.xyz/api/sub{" "}
 					<span
 						className={
 							"font-semibold text-[#c1c1c1] dark:text-[#7a7a7a] " +
