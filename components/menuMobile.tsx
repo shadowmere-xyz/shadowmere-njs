@@ -50,7 +50,7 @@ export default function MenuMobile(props: any) {
             </Link>
 
             <Link
-              href={"https://github.com/jadolg/shadowmere"}
+              href={"https://github.com/shadowmere-xyz"}
               target={"_blank"}
               rel="noreferrer"
               title="fork"
