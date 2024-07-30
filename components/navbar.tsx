@@ -91,7 +91,7 @@ export default function Navbar({ handleDark }: any) {
 							</svg>
 						</button>
 						<a
-							href="https://github.com/jadolg/shadowmere"
+							href="https://github.com/shadowmere-xyz"
 							target={"_blank"}
 							rel="noreferrer"
 							className=" font-medium">
