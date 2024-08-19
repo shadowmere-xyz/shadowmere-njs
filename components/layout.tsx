@@ -21,6 +21,9 @@ import ItemSubscriptionSSocks from "./itemSubscriptionSSoscks";
 import ItemSubscriptionV2Ray from "./itemSubscriptionV2Ray";
 import { apiBaseUrl } from "../vars/variables";
 import SupportSide from "./support-side";
+import UmamiScripts from "./umamiScripts";
+import { hasCookie, getCookie } from "cookies-next";
+
 
 export default function Layout({ children }: any) {
   const [qrScreenCode, setQRScreenCode] = useRecoilState(qrScreen);
@@ -30,6 +33,7 @@ export default function Layout({ children }: any) {
   const [loader, setLoader] = useRecoilState(loaderPage);
   const [prox, setProx] = useRecoilState(proxiesObj);
   const [time, setTime] = useState("");
+  const [cookiesAccepted, setCookiesAcepted] = useState(false);
 
   const fetcher = (...args: [any, any]) =>
     fetch(...args).then((res) => res.json());
@@ -83,13 +87,13 @@ export default function Layout({ children }: any) {
 
   useEffect(() => {
     document
-    .querySelector("body")
-    ?.classList.add(
-      "overflow-y-scroll",
-      "bg-[#F8F8F8]",
-      "dark:bg-[#141414]",
-      "text-[#212121]"
-    );
+      .querySelector("body")
+      ?.classList.add(
+        "overflow-y-scroll",
+        "bg-[#F8F8F8]",
+        "dark:bg-[#141414]",
+        "text-[#212121]"
+      );
     if (proxies) {
       setProx(proxies);
       if (countryFilter === "" && pageCounter == 1 && portFilter === "") {
@@ -114,12 +118,28 @@ export default function Layout({ children }: any) {
         position: "bottom",
       });
     });
+    // if (hasCookie("cookie_consent_user_accepted")) {
+    //   console.log("hay cookie")
+    // } else {
+    //   console.log("No hay cookie")
+    // }
+    // document
+    //   .querySelector("cc-nb-okagree")
+    //   ?.addEventListener("click", function () {
+    //     let firstScript = document.createElement("script");
+    //     firstScript.setAttribute("data-cookie-consent", "tracking")
+    //     firstScript.src = "https://umami.akiel.dev/script.js";
+    //     firstScript.setAttribute("data-website-id", "67d430ad-af2b-4010-8585-7aa2d423e934")
+    //     document.querySelector("head")?.appendChild(firstScript)
+    //     // setCookiesAcepted(true);
+    //   });
   }, [proxies, countryFilter, pageCounter, portFilter, setProx]);
-  
+
   return (
     <>
       {/* <Loader isLoading={loader} /> */}
       <Meta />
+      {/* {cookiesAccepted && <UmamiScripts />} */}
       <Navbar />
       {qrScreenCode && <ModalQR />}
       <main className="wrapper container mx-auto w-full h-full xl:h-full grid grid-cols-12 auto-rows-auto mb-16 2xl:mb-0 mt-16 py-6 xl:py-8 gap-[30px] px-4 pb-4">
