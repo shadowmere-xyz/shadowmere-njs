@@ -6,16 +6,9 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5397268423562454"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-        <Script
           strategy="beforeInteractive"
           src="https://www.termsfeed.com/public/cookie-consent/4.1.0/cookie-consent.js"
         />
-
         <Script
           id={`cookie_consent`}
           strategy="beforeInteractive"
