@@ -60,7 +60,15 @@ export default function V2raySubs() {
       <iframe
         className="w-full h-[640px] rounded-lg"
         src="https://www.youtube.com/embed/dvt_zKRHu2E"
-        title="Set up shadowsocks subscription from Shadowmere"
+        title="Set up shadowsocks subscription from Shadowmere (v2ray)"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      ></iframe>
+      <iframe
+        className="w-full h-[640px] rounded-lg"
+        src="https://www.youtube.com/embed/FeO8MszIy6w"
+        title="Set up shadowsocks subscription from Shadowmere (Potatso)"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
