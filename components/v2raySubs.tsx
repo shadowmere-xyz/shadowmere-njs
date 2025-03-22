@@ -16,6 +16,13 @@ export default function V2raySubs() {
         >
           V2Ray for Android
         </a>
+        {` and `}
+        <a
+          href="https://apps.apple.com/us/app/potatso/id1239860606"
+          className="text-[#579eff] font-bold after:content-['\f08e'] hover:text-[#467ecc] transition-colors after:pl-1 after:font-awesome after:text-sm"
+        >
+          Potatso for iOS
+        </a>
         {` allow`} users to subscribe to a list of servers. You can subscribe to
         Shadowmere&apos;s using this link: 
         <span
