@@ -52,7 +52,7 @@ export default function V2raySubs() {
       <h2 className="font-bold">Tutorial video</h2>
       <iframe
         className="w-full h-[640px] rounded-lg"
-        src="https://youtube.com/shorts/dvt_zKRHu2E?si=NMqFFzpSWsAokSys"
+        src="https://www.youtube.com/shorts/dvt_zKRHu2E"
         title="Set up shadowsocks subscription from Shadowmere"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
