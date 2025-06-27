@@ -22,6 +22,7 @@ export function Meta({ title, keywords, description }: Props) {
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<meta name="keywords" content={keywords} />
 			<meta name="description" content={description} />
+			<meta name="robots" content="index, follow"/>
 			<link rel="icon" type="image/svg+xml" href="/logo.svg" sizes="any" />
 			<link
 				rel="preload"
@@ -36,6 +37,6 @@ export function Meta({ title, keywords, description }: Props) {
 Meta.defaultProps = {
 	title: "Shadowmere",
 	keywords:
-		"vpn, proxies, freedom of internet, community, productivity, shadowsocks, cuba, iran, india, china, servers, internet",
-	description: "A list of Shadowsocks proxies to avoid censorship",
+		"free vpn, vpn, proxy, shadowsocks, free server, free key, internet, outline, outline key, outlinevpn, free shadowsocks, shadowsocks tunnel, ",
+	description: "A list of free Shadowsocks proxies to fight censorship",
 };
