@@ -20,7 +20,7 @@ export default function About() {
 			<p>Shadowmere. A list of Shadowsocks proxies</p>
 			<h2 className="font-bold">Disclaimer.</h2>
 			<p>
-				This website is only a list of tunnels collected all around
+				This website is a list of free shadowsocks keys collected all around
 				internet. We do NOT provide or maintain any of these tunnels.{" "}
 				<span className="bg-red-600 text-white">
 					Use them at your own risk.

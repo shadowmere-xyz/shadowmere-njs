@@ -76,7 +76,7 @@ export default function ServersListCols(props: any) {
       >
         <p className="dark:text-white col-span-12">
           <span className="font-bold dark:text-white">Disclaimer: </span>This
-          website is only a list of tunnels collected all around internet. We do{" "}
+          website is a list of free shadowsocks keys collected all around internet. We do{" "}
           <span className="font-bold ">NOT</span> provide or maintain any of
           these tunnels.{" "}
           <span className="bg-red-600 text-white">
@@ -97,7 +97,7 @@ export default function ServersListCols(props: any) {
       >
         <p className="dark:text-white">
           <span className="font-bold dark:text-white">Disclaimer: </span>This
-          website is only a list of tunnels collected all around internet. We do{" "}
+          website is a list of free shadowsocks keys collected all around internet. We do{" "}
           <span className="font-bold ">NOT</span> provide or maintain any of
           these tunnels.{" "}
           <span className="bg-red-600 text-white">
@@ -135,7 +135,7 @@ export default function ServersListCols(props: any) {
     >
       <p className="dark:text-white col-span-12">
         <span className="font-bold dark:text-white">Disclaimer: </span>This
-        website is only a list of tunnels collected all around internet. We do{" "}
+        website is a list of free shadowsocks keys collected all around internet. We do{" "}
         <span className="font-bold ">NOT</span> provide or maintain any of these
         tunnels.{" "}
         <span className="bg-red-600 text-white">
