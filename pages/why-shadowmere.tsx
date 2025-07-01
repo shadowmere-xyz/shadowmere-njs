@@ -61,7 +61,12 @@ export default function Why() {
 				reincarnates between eras, potentially changing subspecies of horse,
 				and genders.
 			</p>
-			<a href="https://skyrim.fandom.com/wiki/Shadowmere" target="_blank">https://skyrim.fandom.com/wiki/Shadowmere</a>
+			<a 
+				href="https://skyrim.fandom.com/wiki/Shadowmere" 
+				className="text-[#579eff] font-bold after:content-['\f08e'] hover:text-[#467ecc] transition-colors after:pl-1 after:font-awesome after:text-sm"
+				target="_blank">
+					https://skyrim.fandom.com/wiki/Shadowmere
+			</a>
 			{/* <!-- Aqui va el contenido del About --> */}
 		</div>
 	);
