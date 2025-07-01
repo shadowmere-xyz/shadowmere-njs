@@ -35,8 +35,8 @@ export function Meta({ title, keywords, description }: Props) {
 }
 
 Meta.defaultProps = {
-	title: "Shadowmere",
+	title: "Shadowmere - Free shadowsocks/outline keys",
 	keywords:
-		"free vpn, vpn, proxy, shadowsocks, free server, free key, internet, outline, outline key, outlinevpn, free shadowsocks, shadowsocks tunnel, ",
-	description: "A list of free Shadowsocks proxies to fight censorship",
+		"free vpn, vpn, proxy, shadowsocks, free server, free key, outline, outline key, outlinevpn, free shadowsocks, shadowsocks proxy, free outline",
+	description: "A list of free Shadowsocks keys to fight censorship",
 };
