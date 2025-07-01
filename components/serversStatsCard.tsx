@@ -29,7 +29,7 @@ export default function ServerStatsCard(props: any) {
 							/>
 						</svg>
 					</div>
-					<span className="text-sm">Online VPNs</span>
+					<span className="text-sm">Online</span>
 				</div>
 				<div className="">
 					<div className="flex gap-2 items-center">
@@ -83,7 +83,7 @@ export default function ServerStatsCard(props: any) {
 								</clipPath>
 							</defs>
 						</svg>
-						<span className="dark:text-[#949494] text-sm">Servers</span>
+						<span className="dark:text-[#949494] text-sm">Keys</span>
 					</div>
 					<div>
 						<h1 className="text-4xl font-bold">{props.data?.count}</h1>
