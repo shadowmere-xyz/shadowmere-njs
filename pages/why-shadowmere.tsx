@@ -64,7 +64,9 @@ export default function Why() {
 			<a 
 				href="https://skyrim.fandom.com/wiki/Shadowmere" 
 				className="text-[#579eff] font-bold after:content-['\f08e'] hover:text-[#467ecc] transition-colors after:pl-1 after:font-awesome after:text-sm"
-				target="_blank">
+				target="_blank"
+				rel="noreferrer"
+				>
 					https://skyrim.fandom.com/wiki/Shadowmere
 			</a>
 			{/* <!-- Aqui va el contenido del About --> */}
