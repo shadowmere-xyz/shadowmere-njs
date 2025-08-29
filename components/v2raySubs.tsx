@@ -11,7 +11,7 @@ export default function V2raySubs() {
       <p>
         {"Some applications like "}
         <a
-          href="https://play.google.com/store/apps/details?id=com.github.shadowsocks"
+          href="https://github.com/2dust/v2rayNG/releases"
           className="text-[#579eff] font-bold after:content-['\f08e'] hover:text-[#467ecc] transition-colors after:pl-1 after:font-awesome after:text-sm"
         >
           V2Ray for Android
