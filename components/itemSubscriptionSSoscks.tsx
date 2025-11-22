@@ -41,7 +41,6 @@ export default function ItemSubscriptionSSocks(props: any) {
 
   return (
     <div
-      data-umami-event={"Shadowsocks"}
       className={`itemSub w-full h-full mb-4 bg-white dark:bg-[#212121] flex items-center gap-2
                  p-4 rounded-lg border border-[#e0e0e0] dark:border-[#303030] hover:border-[#3a3a3a] cursor-pointer item-server-vpn after:blur-3xl backdrop-blur-sm overflow-hidden transition-all `}
       onMouseEnter={handleOver}

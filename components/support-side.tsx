@@ -57,7 +57,6 @@ export default function SupportSide(props: PanelProps) {
         </div>
       </div>
       <Link
-        data-umami-event={"tshirt"}
         href={`https://swordfest.creator-spring.com/listing/shadowmere`}
         target="_blank"
         className="button-reset w-auto h-12 flex gap-2 items-center justify-center px-5 rounded-md bg-[#212121] hover:bg-[#444444] active:bg-[#303030] dark:bg-[#303030] dark:transition-colors text-white border dark:border-[#3a3a3a] transition-all item-server-vpn after:blur-3xl backdrop-blur-sm overflow-hidden"

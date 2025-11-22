@@ -143,7 +143,6 @@ export default function ServerCol(dataServer: { proxy: any }) {
       <div className="data-operations h-full gap-2 md:gap-4 flex flex-row-reverse items-end md:items-center">
         <div
           title="Copy"
-          data-umami-event={"Copy"}
           className="opt-copiar w-8 h-8 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all duration-150 active:scale-[95%]"
           onClick={() => {
             navigator.clipboard
@@ -168,7 +167,6 @@ export default function ServerCol(dataServer: { proxy: any }) {
 
         <button
           onClick={handleQR}
-          data-umami-event={"QR"}
           title="QR Code"
           className="opt-codigo-qr w-8 h-8 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all duration-150 active:scale-[95%]"
         >
@@ -177,7 +175,6 @@ export default function ServerCol(dataServer: { proxy: any }) {
 
         <Link
           title="Download"
-          data-umami-event={"Download"}
           href={`${rootUrl}/${dataServer.proxy.id}/config`}
           className="opt-descargar w-4 h-4 sm:w-10 sm:h-10 rounded-md flex items-center justify-center cursor-pointer hover:bg-[#EBEBEB] dark:hover:bg-[#1B1B1B] active:bg-[#D7D7D7] dark:active:bg-[#111111] transition-all duration-150 active:scale-[95%]"
         >

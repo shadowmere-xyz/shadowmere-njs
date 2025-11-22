@@ -65,7 +65,6 @@ export default function Support() {
       </div>
       <div className="w-full h-auto flex items-center justify-center">
         <Link
-          data-umami-event={"tshirt"}
           className="button-fork w-full h-12 lg:w-fit flex items-center justify-center px-16 rounded-md dark:text-[#303030] font-medium bg-[#303030] hover:bg-[#444444] active:bg-[#303030] dark:bg-[#cfcfcf] dark:hover:bg-[#bfbfbf] dark:active:bg-white dark:transition-colors text-white"
           href={`https://swordfest.creator-spring.com/listing/shadowmere`}
           target="_blank"
